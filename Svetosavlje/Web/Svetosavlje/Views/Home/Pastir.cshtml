@@ -1,0 +1,233 @@
+﻿@using System.Globalization;
+@using Svetosavlje.Models;
+@using Svetosavlje.Data_Layer
+@model List<Svetosavlje.Data_Layer.PitanjeInfo>
+
+
+@{
+    ViewBag.Title = "Питање пастиру";
+}
+
+
+    <div class="container-fluid">
+        <!-- Logo i Zitija svetih -->
+        <div class="row-fluid">
+            <div class="span6">
+               <img src="http://dummyimage.com/530x150/666/fff&amp;text=slika+oca+justina+i+logo+svetosavlje+ide+ovde" width="60%">
+            </div><!-- /span6 -->
+                        
+        </div><!-- /row-fluid -->
+        <hr>
+        
+        <!-- Glavni sadrzaj -->
+        <div class="row-fluid">
+            
+            <div class="span12">            
+            
+            <ul class="breadcrumb">
+              <li><a href="#">Светосавље.орг</a> <span class="divider">/</span></li>
+              <li class="active">Питање пастиру</li>
+            </ul>
+           
+           <div style="margin:0 auto; text-align: center; width: 60%;">
+               <h1>Питање пастиру</h1>
+               <p><strong>Драга браћо и сестре,</strong></p>
+               <p>Молимо вас да у молитвама поменете оце који се труде да осветле наш пут у необјашњиво Царство Божије у вечности, да одговоре са тачке гледишта нашег вечног живота и спасења, а не по пролазној и променљивој "мудрости овога света". (Упореди I Кор. 3,19) Нека Господ нашим свештеницима и свима који га траже, подари разума и снаге, да написано буде корисно душама нашим.</p>
+               <ul class="thumbnails" style="text-align: center">
+                  <li class="span2">
+                    <div class="thumbnail">
+                      <img src="http://svetosavlje.org/pastir/bmp/o_srboljub2.jpg" alt="">
+                      <p><a href="http://svetosavlje.org/pastir/o_srboljub.htm">Прот. Србољуб Милетић</a></p>
+                    </div>
+                  </li>
+                   <li class="span2">
+                    <div class="thumbnail">
+                      <img src="http://svetosavlje.org/pastir/bmp/o_ljubo2.jpg" alt="">
+                      <p><a href="http://svetosavlje.org/pastir/o_srboljub.htm">Прот. Љубо Милошевић</a></p>
+                    </div>
+                  </li>
+                  <li class="span2">
+                    <div class="thumbnail">
+                      <img src="http://svetosavlje.org/pastir/bmp/o_dusan2.jpg" alt="">
+                      <p><a href="http://svetosavlje.org/pastir/o_srboljub.htm">Прот. Душан Колунџић</a></p>
+                    </div>
+                  </li>
+                  <li class="span2">
+                    <div class="thumbnail">
+                      <img src="http://svetosavlje.org/pastir/bmp/o_rade2.jpg" alt="">
+                      <p><a href="http://svetosavlje.org/pastir/o_srboljub.htm">Прот. Раде Вимбиш</a></p>
+                    </div>
+                  </li>
+                  <li class="span2">
+                    <div class="thumbnail">
+                      <img src="http://svetosavlje.org/pastir/bmp/o_Ivan2.jpg" alt="">
+                      <p><a href="http://svetosavlje.org/pastir/o_srboljub.htm">Јереј Иван Делић</a></p>
+                    </div>
+                  </li>
+                </ul>
+           </div><!-- /uvod, slike otaca-->
+           
+    </div><!-- /row fluid -->
+    
+    <div class="row-fluid">
+        
+         <div class="span4">
+            <h4>Неколико последњих питања:</h4>
+            <ol>
+                @foreach (PitanjeInfo q in Model)
+                {
+                   <li> <a href="http://www.svetosavlje.org/pastir/index.php?qa=@q.Broj">@q.Naslov</a> </li>
+                }
+            </ol>
+        </div><!-- /span4, poslednji odgovori -->
+        
+        <div class="span4">
+            <h4>Све Теме</h4>
+            <div class="accordion" id="accordion1">
+               
+               <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">Мишљења на савремене теме</a>
+                </div>
+                <div id="collapseOne" class="accordion-body collapse">
+                    <ol>
+                        <li><a href="#">Освећење дарова</a></li>
+                        <li><a href="#">duhovno srodstvo</a></li>
+                        <li><a href="#">Крштење детета</a></li>
+                        <li><a href="#">Malovernost</a></li>
+                        <li><a href="#">Освећење дарова</a></li>
+                        <li><a href="#">duhovno srodstvo</a></li>
+                        <li><a href="#">Крштење детета</a></li>
+                        <li><a href="#">Malovernost</a></li>
+                    </ol>
+                 </div>
+              </div><!-- Misljenja -->
+                
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo">Свете тајне (крштење, венчање, причешће, исповест ...)</a>
+                </div>
+                <div id="collapseTwo" class="accordion-body collapse">
+                    <ol>
+                        <li><a href="#">Освећење дарова</a></li>
+                        <li><a href="#">duhovno srodstvo</a></li>
+                        <li><a href="#">Крштење детета</a></li>
+                        <li><a href="#">Malovernost</a></li>
+                        <li><a href="#">Освећење дарова</a></li>
+                        <li><a href="#">duhovno srodstvo</a></li>
+                        <li><a href="#">Крштење детета</a></li>
+                        <li><a href="#">Malovernost</a></li>
+                    </ol>
+                </div>
+              </div><!-- Свете тајне -->
+              
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseThree">Мишљења на савремене теме</a>
+                </div>
+                <div id="collapseThree" class="accordion-body collapse">
+                  <div class="accordion-inner">
+                     <a href="#">Православље и информационе технологије</a>
+                  </div>
+                </div>
+              </div><!-- Мишљења на савремене теме -->
+              
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseFour">Историја, календар</a>
+                </div>
+                <div id="collapseFour" class="accordion-body collapse">
+                  <div class="accordion-inner">
+                     <a href="#">Православље и информационе технологије</a>
+                  </div>
+                </div>
+              </div><!-- Историја, календар -->
+              
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseFive">Црквена уметност (иконе, појање, ...)</a>
+                </div>
+                <div id="collapseFive" class="accordion-body collapse">
+                  <div class="accordion-inner">
+                     <a href="#">Православље и информационе технологије</a>
+                  </div>
+                </div>
+              </div><!-- Историја, календар -->
+              
+            </div><!-- /Accordion -->
+            
+        </div><!-- /span4 teme navigacija-->
+        
+        <div class="span4">
+             <h4>Претражи постојећа питања</h4>
+            <form class="form-search">              
+              <input class="input-large" type="text" placeholder="Укуцај текст за претрагу">
+              <button type="submit" class="btn">Тражи</button>
+            </form>
+            
+            <h4>Постави питање</h4>
+            <p class="alert alert alert-info">Молимо вас да пре него што пошаљете питање проверите да ли је слично питање већ постављено.</p>
+            
+           <!-- Button to trigger modal -->
+            <a href="#postaviPitanje" role="button" class="btn btn-large btn-primary" data-toggle="modal">Постави ново питање</a>
+             
+            <!-- postaviPitanje modal -->
+            <div id="postaviPitanje" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="postaviPitanjeLabel" aria-hidden="true">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="postaviPitanjeLabel">Постави ново питање</h3>
+                <p>Питања такође можете поставити путем e-mail адресе: <a href="pastiru@svetosavlje.org">pastiru@svetosavlje.org</a></p>
+              </div>
+              <div class="modal-body">
+              
+              <form>                
+              <label>Име: <span class="alert-error">*</span></label>
+              <input class="input-xlarge" type="text">
+              
+              <label>Email:</label>
+              <input class="input-xlarge" type="text">
+              
+              <label class="checkbox">
+                <input type="checkbox"> Ако не желите да се ваше име објави, означите квадрат
+              </label>
+              
+              <h5>Тема <span class="alert-error">*</span></h5>
+              <select class="input-xlarge" name="tema" size="1" id="tema">Теме<option value="16">Разно</option>
+                  <option value="15">Мишљења на савремене теме</option>
+                  <option value="14">Историја, календар</option>
+                  <option value="13">Црквена уметност (иконе, појање, ...)</option>
+                  <option value="12">Смрт, загробни живот, Страшни Суд</option>
+                  <option value="11">Светитељи</option><option value="10">Свето Писмо</option>
+                  <option value="9">Црква, остале вере, покрети и организације</option>
+                  <option value="8">Свештенство и монаштво</option><option value="7">Духовни живот, снови, борба са искушењима</option>
+                  <option value="6">Слава, празници, обичаји, традиција</option><option value="5">Пост</option>
+                  <option value="4">Свете тајне (крштење, венчање, причешће, исповест ...)</option>
+                  <option value="3">Брак, деца, породични односи</option><option value="2">Молитва и Богослужење</option>
+                  <option value="1">Вера и Православље</option>                  
+              </select>
+              
+              <label>Наслов: <span class="alert-error">*</span></label>
+              <input class="input-xlarge" type="text">
+              
+              <label>Питање: <span class="alert-error">*</span></label>
+              <textarea name="pitanje" class="input-xlarge" rows="7" cols="165"></textarea>
+              
+              <div class="alert alert-error">
+                  <p><strong>Важна напомена</strong></p>                
+                  <p>Када пошаљете питање, добићете од нас копију ваше поруке. Молимо вас да тада кликните на "reply" и одмах на "send". Није потребно ништа додавати или мењати.</p>
+              </div>
+              <button type="button" class="btn btn-primary">Пошаљи</button>
+              <button type="button" class="btn">Поништи</button>
+           </form>
+              </div>
+              <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Одустани</button>
+                <button class="btn btn-primary">Пошаљи</button>
+              </div>
+            </div><!-- postaviPitanje modal -->
+
+        </div><!-- /span4 pretraga pitanja, postavi pitanje-->
+        
+    </div><!-- /row-fluid -->        
+        
+    </div><!-- /container fluid -->
