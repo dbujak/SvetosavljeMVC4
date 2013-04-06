@@ -2,26 +2,26 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Svetosavlje.Services.Interfaces;
+using Svetosavlje.Data_Layer.Interfaces;
 using Svetosavlje.Data_Layer;
 
 namespace Svetosavlje.Services
 {
     public class DatabaseProvider : IDataProvider
     {
-        private IDataProvider _provider = new DummyDataProvider();
+        private IDataProvider _provider = new MySQLProvider();
 
-        public IList<MailListTopicInfo> TopicList(int rows)
+        public IList<MailListTopicInfo> GetTopicList(int rows)
         {
-            return _provider.TopicList(rows);
+            return _provider.GetTopicList(rows);
         }
 
 
 
 
-        public IList<PitanjeInfo> QuestionList(int rows)
+        public IList<PitanjeInfo> GetQuestionList(int rows)
         {
-            return _provider.QuestionList(rows);
+            return _provider.GetQuestionList(rows);
         }
 
 
@@ -53,9 +53,5 @@ namespace Svetosavlje.Services
         }
 
 
-        public IList<WPBlogModel> GetNews(int rows)
-        {
-            return _provider.GetNews(rows);
-        }
     }
 }

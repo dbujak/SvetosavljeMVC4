@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Svetosavlje.Services.Interfaces;
+using Svetosavlje.Data_Layer.Interfaces;
 using Svetosavlje.Data_Layer;
 using System.Web;
 
 namespace Svetosavlje.Services
 {
-    class DummyDataProvider : IDataProvider
+    class DummyDataProvider : IDataProvider, IBlogProvider
     {
 
-        public IList<MailListTopicInfo> TopicList(int rows)
+        public IList<MailListTopicInfo> GetTopicList(int rows)
         {
             IList<MailListTopicInfo> topicList = new List<MailListTopicInfo>(rows);
 
@@ -32,7 +32,7 @@ namespace Svetosavlje.Services
 
 
 
-        public IList<PitanjeInfo> QuestionList(int rows)
+        public IList<PitanjeInfo> GetQuestionList(int rows)
         {
 
             IList<PitanjeInfo> questionList = new List<PitanjeInfo>(rows);
@@ -93,23 +93,33 @@ namespace Svetosavlje.Services
         }
 
 
-        public IList<WPBlogModel> GetNews(int rows)
+
+
+        #region INews Members
+
+        public IList<WPBlogModel> GetNews()
         {
-
-            IList<WPBlogModel> newsList = new List<WPBlogModel>(rows);
-
-            for (int i = 1; i <= rows; i++)
-            {
-                string content = "Контент поста " + i.ToString();
-                string title = "Наслов поста " + i.ToString();
-                string link = "Линк " + i.ToString();
-
-                WPBlogModel v = new WPBlogModel(new HtmlString(title), new HtmlString(content), link);
-                newsList.Add(v);
-            }
-
-            return newsList;
+            throw new NotImplementedException();
         }
 
+        #endregion
+
+        #region IEditorNews Members
+
+        public IList<WPBlogModel> GetEditorNews()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+        #region IMissionNews Members
+
+        public IList<WPBlogModel> GetMissionNews()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
     }
 }

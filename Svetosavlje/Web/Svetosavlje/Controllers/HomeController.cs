@@ -25,44 +25,6 @@ namespace Svetosavlje.Controllers
         {
             ViewBag.Message = "Welcome to ASP.NET MVC!";
 
-            XNamespace xsd = "http://www.w3.org/2005/Atom";
-            var client = new WebClient();
-            client.Encoding = System.Text.Encoding.UTF8;
-            var feed = client.DownloadString("http://blogs.svetosavlje.org/vesti/feed/atom");
-            var document = XDocument.Parse(feed);
-            var blogsV =
-              from e in document.Descendants(xsd + "entry")
-              select new WPBlogModel()
-              {
-                  Title = new HtmlString((string)e.Element(xsd + "title")),
-                  Link = (string)e.Element(xsd + "id"),
-                  Content = new HtmlString((string)e.Element(xsd + "summary"))
-              };
-
-            /*var*/
-            feed = client.DownloadString("http://www.svedokverni.org/feed/atom/");
-            /*var*/
-            document = XDocument.Parse(feed);
-            var blogsM =
-              from e in document.Descendants(xsd + "entry")
-              select new WPBlogModel()
-              {
-                  Title = new HtmlString((string)e.Element(xsd + "title")),
-                  Link = (string)e.Element(xsd + "id"),
-                  Content = new HtmlString((string)e.Element(xsd + "summary"))
-              };
-
-            feed = client.DownloadString("http://blogs.svetosavlje.org/urednistvo/feed/atom");
-            document = XDocument.Parse(feed);
-            var blogsU =
-              from e in document.Descendants(xsd + "entry")
-              select new WPBlogModel()
-              {
-                  Title = new HtmlString((string)e.Element(xsd + "title")),
-                  Link = (string)e.Element(xsd + "id"),
-                  Content = new HtmlString((string)e.Element(xsd + "summary"))
-              };
-
             DateTime today = DateTime.Today.AddDays(-13);     // Julian date
 
             Random random = new Random();
@@ -70,11 +32,11 @@ namespace Svetosavlje.Controllers
             int Day = random.Next(1, 30);
 
 
-            Svetosavlje.Models.Main M = new Main(blogsV.ToList<WPBlogModel>(),     //blogs.GetNews(10)
-                                                  blogsM.ToList<WPBlogModel>(),
-                                                  blogsU.ToList<WPBlogModel>(),
-                                                  listArhiva.TopicList(10),
-                                                  pitanjaPastiru.QuestionList(10),
+            Svetosavlje.Models.Main M = new Main(blogs.GetNews(),     //blogs.GetNews(10)
+                                                  blogs.GetMissionNews(),
+                                                  blogs.GetEditorNews(),
+                                                  listArhiva.GetTopicList(10),
+                                                  pitanjaPastiru.GetQuestionList(10),
                                                   svetiDana.GetList(today.Month, today.Day),
                                                   izDanaUDan.GetQuote(1, /*today.Month, today.Day*/Month, Day),
                                                   izDanaUDan.GetZachala(today.Month, today.Day, today.Year),
@@ -101,7 +63,7 @@ namespace Svetosavlje.Controllers
 
         public ActionResult Pastir()
         {
-            return View(pitanjaPastiru.QuestionList(12));
+            return View(pitanjaPastiru.GetQuestionList(12));
         }
 
         public ActionResult Biblioteka()

@@ -245,11 +245,11 @@
     <Content Include="Views\Home\Svetinje.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Svetosavlje\Data_Layer\Svetosavlje.Data_Layer\Svetosavlje.Data_Layer.csproj">
+    <ProjectReference Include="..\..\Data_Layer\Svetosavlje.Data_Layer\Svetosavlje.Data_Layer.csproj">
       <Project>{D45DC115-0724-415C-86FB-825BFA06D571}</Project>
       <Name>Svetosavlje.Data_Layer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Svetosavlje\Services\Svetosavlje.Services\Svetosavlje.Services.csproj">
+    <ProjectReference Include="..\..\Services\Svetosavlje.Services\Svetosavlje.Services.csproj">
       <Project>{59484584-502F-492A-9368-4C1FC95689D3}</Project>
       <Name>Svetosavlje.Services</Name>
     </ProjectReference>

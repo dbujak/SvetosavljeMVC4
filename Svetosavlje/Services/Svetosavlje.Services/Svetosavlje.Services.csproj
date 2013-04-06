@@ -41,13 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BlogProvider.cs" />
     <Compile Include="DatabaseProvider.cs" />
     <Compile Include="DummyDataProvider.cs" />
-    <Compile Include="Interfaces\IDataProvider.cs" />
     <Compile Include="MySQLProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Data_Layer\Svetosavlje.Data_Layer\Svetosavlje.Data_Layer.csproj">
       <Project>{D45DC115-0724-415C-86FB-825BFA06D571}</Project>
