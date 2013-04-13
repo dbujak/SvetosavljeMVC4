@@ -52,6 +52,7 @@
     <Compile Include="Interfaces\IBlogProvider.cs" />
     <Compile Include="Interfaces\IDataProvider.cs" />
     <Compile Include="MailListTopicInfo.cs" />
+    <Compile Include="MySQLServices\PastirTopicsList.cs" />
     <Compile Include="PitanjeInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MySQLServices\CitanjaList.cs" />

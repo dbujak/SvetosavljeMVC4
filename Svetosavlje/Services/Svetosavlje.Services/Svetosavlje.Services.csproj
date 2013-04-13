@@ -41,9 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AtomBlogProvider.cs" />
     <Compile Include="BlogProvider.cs" />
     <Compile Include="DatabaseProvider.cs" />
-    <Compile Include="DummyDataProvider.cs" />
+    <Compile Include="DummyBlogProvider.cs" />
+    <Compile Include="DummyDatabaseProvider.cs" />
     <Compile Include="MySQLProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -123,9 +123,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PastirController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\PastirModel.cs" />
     <Compile Include="Models\SvetoModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -216,6 +218,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Pastir\images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -253,6 +256,24 @@
       <Project>{59484584-502F-492A-9368-4C1FC95689D3}</Project>
       <Name>Svetosavlje.Services</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Pastir\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Pastir\OtacSrboljub.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Pastir\OtacLjubo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Pastir\OtacDusan.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Pastir\OtacRade.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Pastir\OtacIvan.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -4,29 +4,37 @@ using System.Linq;
 using System.Text;
 using Svetosavlje.Data_Layer.Interfaces;
 using Svetosavlje.Data_Layer;
-using Svetosavlje.Data_Layer.BlogServices;
+using System.Web;
 
 namespace Svetosavlje.Services
 {
-    public class BlogProvider : IBlogProvider
+    class DummyBlogProvider : IBlogProvider
     {
-        private IBlogProvider _provider = new AtomBlogProvider();
-
+        #region INews Members
 
         public IList<WPBlogModel> GetNews()
         {
-            return _provider.GetNews();
+            throw new NotImplementedException();
         }
+
+        #endregion
+
+        #region IEditorNews Members
 
         public IList<WPBlogModel> GetEditorNews()
         {
-            return _provider.GetEditorNews();
+            throw new NotImplementedException();
         }
+
+        #endregion
+
+        #region IMissionNews Members
 
         public IList<WPBlogModel> GetMissionNews()
         {
-            return _provider.GetMissionNews();
+            throw new NotImplementedException();
         }
 
+        #endregion
     }
 }

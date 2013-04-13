@@ -124,12 +124,12 @@
             <!-- Pastir -->
             <div class="row">
                 <div class="span8">
-                    <h2> @Html.ActionLink("Питање пастиру", "Pastir") »</h2>
+                    <h2> @Html.ActionLink("Питање пастиру", "Index", "Pastir") »</h2>
 
                     <ul>
                     @foreach (PitanjeInfo q in Model.Pastir)
                     {
-                       <li> <a href="http://www.svetosavlje.org/pastir/index.php?qa=@q.Broj">@q.Naslov</a> </li>
+                        <li>@Html.ActionLink(q.Naslov, "Item", "Pastir", new{id = q.Broj}, null)</li>
                     }
                     </ul>
                 </div>

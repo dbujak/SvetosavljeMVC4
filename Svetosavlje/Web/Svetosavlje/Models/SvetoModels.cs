@@ -44,16 +44,7 @@ namespace Svetosavlje.Models
         }
     }
 
-    public class PitanjaPastiru : IQuestionList
-    {
-        private DatabaseProvider _provider = new DatabaseProvider();
 
-        public IList<PitanjeInfo> GetQuestionList(int rows)
-        {
-            return _provider.GetQuestionList(rows);
-        }
-
-    }
 
     public class SvetiDana : IGetList
     {

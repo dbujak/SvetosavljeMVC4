@@ -6,7 +6,7 @@ using Svetosavlje.Data_Layer;
 
 namespace Svetosavlje.Data_Layer.Interfaces
 {
-    public interface IDataProvider : ITopicList, IQuestionList, IGetList, IQuote, IZachala, IFastingType
+    public interface IDataProvider : ITopicList, IQuestionList, IGetList, IQuote, IZachala, IFastingType, IPastirTopicsList
     {
 
     }
@@ -19,6 +19,11 @@ namespace Svetosavlje.Data_Layer.Interfaces
     public interface IQuestionList
     {
         IList<PitanjeInfo> GetQuestionList(int rows);
+    }
+
+    public interface IPastirTopicsList
+    {
+        IList<PastirTopic> GetPastirTopicList();
     }
 
     public interface IGetList

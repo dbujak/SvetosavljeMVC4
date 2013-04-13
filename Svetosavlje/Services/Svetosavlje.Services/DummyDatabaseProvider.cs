@@ -8,7 +8,7 @@ using System.Web;
 
 namespace Svetosavlje.Services
 {
-    class DummyDataProvider : IDataProvider, IBlogProvider
+    class DummyDatabaseProvider : IDataProvider
     {
 
         public IList<MailListTopicInfo> GetTopicList(int rows)
@@ -95,31 +95,19 @@ namespace Svetosavlje.Services
 
 
 
-        #region INews Members
 
-        public IList<WPBlogModel> GetNews()
+
+        public IList<PastirTopic> GetPastirTopicList()
         {
-            throw new NotImplementedException();
+            IList<PastirTopic> list = new List<PastirTopic>();
+
+            list.Add(new PastirTopic(1, "Topic 1"));
+            list.Add(new PastirTopic(2, "Topic 2"));
+            list.Add(new PastirTopic(3, "Topic 3"));
+            list.Add(new PastirTopic(4, "Topic 4"));
+
+            return list;
         }
 
-        #endregion
-
-        #region IEditorNews Members
-
-        public IList<WPBlogModel> GetEditorNews()
-        {
-            throw new NotImplementedException();
-        }
-
-        #endregion
-
-        #region IMissionNews Members
-
-        public IList<WPBlogModel> GetMissionNews()
-        {
-            throw new NotImplementedException();
-        }
-
-        #endregion
     }
 }

@@ -59,6 +59,15 @@ namespace Svetosavlje.Services
 
         }
 
-        
+
+
+
+        public IList<PastirTopic> GetPastirTopicList()
+        {
+            PastirTopicsList list = new PastirTopicsList();
+
+            return list.GetPastirTopicList();
+        }
+
     }
 }

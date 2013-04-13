@@ -18,4 +18,19 @@ namespace Svetosavlje.Data_Layer
         }
 
     }
+
+    /// <summary>
+    /// Represents one Topic under "Pitanja Pastiru"
+    /// </summary>
+    public class PastirTopic
+    {
+        public int ID { get; set; }
+        public string Title { get; set; }
+
+        public PastirTopic(int id, string title)
+        {
+            ID = id;
+            Title = title;
+        }
+    }
 }

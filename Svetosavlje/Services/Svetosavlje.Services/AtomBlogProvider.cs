@@ -8,24 +8,25 @@ using Svetosavlje.Data_Layer.BlogServices;
 
 namespace Svetosavlje.Services
 {
-    public class BlogProvider : IBlogProvider
+    public class AtomBlogProvider : IBlogProvider
     {
-        private IBlogProvider _provider = new AtomBlogProvider();
-
 
         public IList<WPBlogModel> GetNews()
         {
-            return _provider.GetNews();
+            NewsList list = new NewsList();
+            return list.GetNews();
         }
 
         public IList<WPBlogModel> GetEditorNews()
         {
-            return _provider.GetEditorNews();
+            EditorNewsList list = new EditorNewsList();
+            return list.GetEditorNews();
         }
 
         public IList<WPBlogModel> GetMissionNews()
         {
-            return _provider.GetMissionNews();
+            MissionNewsList list = new MissionNewsList();
+            return list.GetMissionNews();
         }
 
     }
