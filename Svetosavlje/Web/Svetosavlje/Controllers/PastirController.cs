@@ -21,9 +21,19 @@ namespace Svetosavlje.Controllers
             PastirModel model = new PastirModel();
             PitanjaPastiru data = new PitanjaPastiru();
 
-            model.LatestQuestions = data.GetQuestionList(10);
-            model.Topics = data.GetPastirTopicList();
+            model.PastirTopics = data.GetPastirTopicList();
             return View(model);
+        }
+
+        public ActionResult PastirQuestions(int topicID = 0, int rows = 0, bool orderedList = false)
+        {
+            PastirModel model = new PastirModel();
+            PitanjaPastiru data = new PitanjaPastiru();
+
+            model.PastirQuestions = data.GetQuestionList(topicID, rows);
+            model.orderedList = orderedList;
+
+            return PartialView("_PastirQuestions", model);
         }
 
         public ActionResult OtacSrboljub()

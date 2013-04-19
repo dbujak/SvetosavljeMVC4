@@ -36,7 +36,7 @@ namespace Svetosavlje.Controllers
                                                   blogs.GetMissionNews(),
                                                   blogs.GetEditorNews(),
                                                   listArhiva.GetTopicList(10),
-                                                  pitanjaPastiru.GetQuestionList(10),
+                                                  pitanjaPastiru.GetQuestionList(0, 10),
                                                   svetiDana.GetList(today.Month, today.Day),
                                                   izDanaUDan.GetQuote(1, /*today.Month, today.Day*/Month, Day),
                                                   izDanaUDan.GetZachala(today.Month, today.Day, today.Year),
@@ -61,10 +61,6 @@ namespace Svetosavlje.Controllers
             return View();
         }
 
-        public ActionResult Pastir()
-        {
-            return View(pitanjaPastiru.GetQuestionList(12));
-        }
 
         public ActionResult Biblioteka()
         {

@@ -32,7 +32,7 @@ namespace Svetosavlje.Services
 
 
 
-        public IList<PitanjeInfo> GetQuestionList(int rows)
+        public IList<PitanjeInfo> GetQuestionList(int topicID, int rows)
         {
 
             IList<PitanjeInfo> questionList = new List<PitanjeInfo>(rows);
@@ -107,6 +107,27 @@ namespace Svetosavlje.Services
             list.Add(new PastirTopic(4, "Topic 4"));
 
             return list;
+        }
+
+
+
+        public PitanjeInfo GetPastirQuestion(int questionID)
+        {
+            string question = "";
+            string answer = "";
+            StringBuilder str = new StringBuilder();
+
+            for (int i = 0; i < 100; i++)
+            {
+                str.Append("blah ");
+            }
+
+            question = "Dear Brothers and Sisters, <p>" + str.ToString();
+            answer = "Dear Brother, <p>" + str.ToString();
+
+            PitanjeInfo pitanje = new PitanjeInfo(0,"Sample Question", question, answer, 0, "Sample Topic", "Some Author");
+
+            return pitanje;
         }
 
     }

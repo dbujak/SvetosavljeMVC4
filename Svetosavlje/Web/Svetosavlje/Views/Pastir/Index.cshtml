@@ -8,15 +8,7 @@
 }
 
 
-    <div class="container-fluid">
-        <!-- Logo i Zitija svetih -->
-        <div class="row-fluid">
-            <div class="span6">
-               <img src="http://dummyimage.com/530x150/666/fff&amp;text=slika+oca+justina+i+logo+svetosavlje+ide+ovde" width="60%">
-            </div><!-- /span6 -->
-                        
-        </div><!-- /row-fluid -->
-        <hr>
+
         
         <!-- Glavni sadrzaj -->
         <div class="row-fluid">
@@ -35,32 +27,32 @@
                <ul class="thumbnails" style="text-align: center">
                   <li class="span2">
                     <div class="thumbnail">
-                      <img src="http://svetosavlje.org/pastir/bmp/o_srboljub2.jpg" alt="">
-                      <p>@Html.ActionLink("Прот. Србољуб Милетић", "OtacSrboljub", "Pastir")</a></p>
+                      <a href="@Url.Action("OtacSrboljub", "Pastir")"><img src="@Url.Content("~/content/images/Pastir/o_srboljub2.jpg")" alt="Прот. Србољуб Милетић">
+                      <p>Прот. Србољуб Милетић</a></p>
                     </div>
                   </li>
                    <li class="span2">
                     <div class="thumbnail">
-                      <img src="http://svetosavlje.org/pastir/bmp/o_ljubo2.jpg" alt="">
-                      <p>@Html.ActionLink("Прот. Љубо Милошевић", "OtacLjubo", "Pastir")</a></p>
+                      <a href="@Url.Action("OtacLjubo", "Pastir")"><img src="@Url.Content("~/content/images/Pastir/o_ljubo2.jpg")" alt="Прот. Љубо Милошевић">
+                      <p>Прот. Љубо Милошевић</a></p>
                     </div>
                   </li>
                   <li class="span2">
                     <div class="thumbnail">
-                      <img src="http://svetosavlje.org/pastir/bmp/o_dusan2.jpg" alt="">
-                      <p>@Html.ActionLink("Прот. Душан Колунџић", "OtacDusan", "Pastir")</a></p>
+                      <a href="@Url.Action("OtacDusan", "Pastir")"><img src="@Url.Content("~/content/images/Pastir/o_dusan2.jpg")" alt="Прот. Душан Колунџић">
+                      <p>Прот. Душан Колунџић</a></p>
                     </div>
                   </li>
                   <li class="span2">
                     <div class="thumbnail">
-                      <img src="http://svetosavlje.org/pastir/bmp/o_rade2.jpg" alt="">
-                      <p>@Html.ActionLink("Прот. Раде Вимбиш", "OtacRade", "Pastir")</p>
+                      <a href="@Url.Action("OtacRade", "Pastir")"><img src="@Url.Content("~/content/images/Pastir/o_rade2.jpg")" alt="Прот. Раде Вимбиш">
+                      <p>Прот. Раде Вимбиш</p>
                     </div>
                   </li>
                   <li class="span2">
                     <div class="thumbnail">
-                      <img src="http://svetosavlje.org/pastir/bmp/o_Ivan2.jpg" alt="">
-                      <p>@Html.ActionLink("Јереј Иван Делић", "OtacIvan", "Pastir")</a></p>
+                      <a href="@Url.Action("OtacIvan", "Pastir")"><img src="@Url.Content("~/content/images/Pastir/o_Ivan2.jpg")" alt="Јереј Иван Делић">
+                      <p>Јереј Иван Делић</a></p>
                     </div>
                   </li>
                 </ul>
@@ -72,96 +64,47 @@
         
          <div class="span4">
             <h4>Неколико последњих питања:</h4>
-            <ol>
-                @foreach (PitanjeInfo q in Model.LatestQuestions)
-                {
-                   <li>@Html.ActionLink(q.Naslov, "Item", "Pastir", new{id=q.Broj}, null)</li>
-                }
-            </ol>
+            @Html.Action("PastirQuestions", "Pastir", new { topicID = 0, rows = 12, orderedList = true })
         </div><!-- /span4, poslednji odgovori -->
         
         <div class="span4">
             <h4>Све Теме</h4>
-            <div class="accordion" id="accordion1">
-               
-               <ol>
-                @foreach (PastirTopic topic in Model.Topics)
-                {
-                    <li>@topic.Title</li>
-                }
-               </ol>
 
+            <link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css" />
+            <link href="~/Content/responsive.css" rel="stylesheet" type="text/css" />
+
+
+ 
+
+             <div class="accordion" id="accordion1">
+            
+            @foreach (PastirTopic topic in Model.PastirTopics)
+            {
+                string divID = "collapse" + topic.ID.ToString();
                <div class="accordion-group">
                 <div class="accordion-heading">
-                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">Мишљења на савремене теме</a>
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href=#@divID>@topic.Title</a>
                 </div>
-                <div id="collapseOne" class="accordion-body collapse">
-                    <ol>
-                        <li><a href="#">Освећење дарова</a></li>
-                        <li><a href="#">duhovno srodstvo</a></li>
-                        <li><a href="#">Крштење детета</a></li>
-                        <li><a href="#">Malovernost</a></li>
-                        <li><a href="#">Освећење дарова</a></li>
-                        <li><a href="#">duhovno srodstvo</a></li>
-                        <li><a href="#">Крштење детета</a></li>
-                        <li><a href="#">Malovernost</a></li>
-                    </ol>
-                 </div>
-              </div><!-- Misljenja -->
-                
-              <div class="accordion-group">
-                <div class="accordion-heading">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo">Свете тајне (крштење, венчање, причешће, исповест ...)</a>
+                <div id=@divID class="accordion-body collapse">
+                    @Html.Action("PastirQuestions", "Pastir", new { topicID = @topic.ID, rows = 0, orderedList = true })
                 </div>
-                <div id="collapseTwo" class="accordion-body collapse">
-                    <ol>
-                        <li><a href="#">Освећење дарова</a></li>
-                        <li><a href="#">duhovno srodstvo</a></li>
-                        <li><a href="#">Крштење детета</a></li>
-                        <li><a href="#">Malovernost</a></li>
-                        <li><a href="#">Освећење дарова</a></li>
-                        <li><a href="#">duhovno srodstvo</a></li>
-                        <li><a href="#">Крштење детета</a></li>
-                        <li><a href="#">Malovernost</a></li>
-                    </ol>
-                </div>
-              </div><!-- Свете тајне -->
-              
-              <div class="accordion-group">
-                <div class="accordion-heading">
-                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseThree">Мишљења на савремене теме</a>
-                </div>
-                <div id="collapseThree" class="accordion-body collapse">
-                  <div class="accordion-inner">
-                     <a href="#">Православље и информационе технологије</a>
-                  </div>
-                </div>
-              </div><!-- Мишљења на савремене теме -->
-              
-              <div class="accordion-group">
-                <div class="accordion-heading">
-                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseFour">Историја, календар</a>
-                </div>
-                <div id="collapseFour" class="accordion-body collapse">
-                  <div class="accordion-inner">
-                     <a href="#">Православље и информационе технологије</a>
-                  </div>
-                </div>
-              </div><!-- Историја, календар -->
-              
-              <div class="accordion-group">
-                <div class="accordion-heading">
-                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseFive">Црквена уметност (иконе, појање, ...)</a>
-                </div>
-                <div id="collapseFive" class="accordion-body collapse">
-                  <div class="accordion-inner">
-                     <a href="#">Православље и информационе технологије</a>
-                  </div>
-                </div>
-              </div><!-- Историја, календар -->
-              
-            </div><!-- /Accordion -->
+               </div>
+            }
             
+            </div>  
+
+
+
+
+
+
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="~/Content/bootstrap.min.js"></script>
+
+
+
+      
         </div><!-- /span4 teme navigacija-->
         
         <div class="span4">

@@ -21,11 +21,11 @@ namespace Svetosavlje.Services
 
         }
 
-        public IList<PitanjeInfo> GetQuestionList(int rows)
+        public IList<PitanjeInfo> GetQuestionList(int topicID, int rows)
         {
             QuestionsList list = new QuestionsList();
 
-            return list.GetQuestionList(rows);
+            return list.GetQuestionList(topicID, rows);
 
         }
 
@@ -67,6 +67,15 @@ namespace Svetosavlje.Services
             PastirTopicsList list = new PastirTopicsList();
 
             return list.GetPastirTopicList();
+        }
+
+
+
+        public PitanjeInfo GetPastirQuestion(int questionID)
+        {
+            PastirQuestion question = new PastirQuestion();
+
+            return question.GetPastirQuestion(questionID);
         }
 
     }

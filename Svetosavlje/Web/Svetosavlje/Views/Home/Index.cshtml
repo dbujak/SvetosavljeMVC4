@@ -13,6 +13,7 @@
     string Mjes = sr.DateTimeFormat.MonthNames[(int)today.Month - 1];
 }
 
+@section HeaderSection {
    <!-- logo i slika oca Justina -->
     <div class="row">
         <div class="span6">
@@ -39,8 +40,7 @@
             </div>
         </div>
     </div><!-- row -->
-
-    <hr />
+}
 
 
 
@@ -126,12 +126,7 @@
                 <div class="span8">
                     <h2> @Html.ActionLink("Питање пастиру", "Index", "Pastir") »</h2>
 
-                    <ul>
-                    @foreach (PitanjeInfo q in Model.Pastir)
-                    {
-                        <li>@Html.ActionLink(q.Naslov, "Item", "Pastir", new{id = q.Broj}, null)</li>
-                    }
-                    </ul>
+                    @Html.Action("PastirQuestions", "Pastir", new { topicID = 0, rows = 10, orderedList = false })
                 </div>
             </div>
 

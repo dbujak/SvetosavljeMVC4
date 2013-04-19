@@ -19,9 +19,9 @@ namespace Svetosavlje.Services
 
 
 
-        public IList<PitanjeInfo> GetQuestionList(int rows)
+        public IList<PitanjeInfo> GetQuestionList(int topicID, int rows)
         {
-            return _provider.GetQuestionList(rows);
+            return _provider.GetQuestionList(topicID, rows);
         }
 
 
@@ -58,6 +58,13 @@ namespace Svetosavlje.Services
         public IList<PastirTopic> GetPastirTopicList()
         {
             return _provider.GetPastirTopicList();
+        }
+
+
+
+        public PitanjeInfo GetPastirQuestion(int questionID)
+        {
+            return _provider.GetPastirQuestion(questionID);
         }
 
     }
