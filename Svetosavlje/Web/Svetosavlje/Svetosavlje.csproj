@@ -282,6 +282,18 @@
   <ItemGroup>
     <Content Include="Views\Shared\_PastirQuestions.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Pastir\PitanjeOdgovor.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Pastir\_Svestenici.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Pastir\_PretragaNovoPitanje.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Pastir\_SveTemeSaPitanjima.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

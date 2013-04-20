@@ -36,6 +36,25 @@ namespace Svetosavlje.Controllers
             return PartialView("_PastirQuestions", model);
         }
 
+        [OutputCache(Duration = 7200, VaryByParam = "none")] // 7200 sekundi = 2 sata - ucitaj nove podatke svaka 2 sata (ovaj dio se ne bi trebao mijenjati cesto)
+        public ActionResult SveTemeSaPitanjima()
+        {
+            PastirModel model = new PastirModel();
+            PitanjaPastiru data = new PitanjaPastiru();
+
+            model.PastirTopics = data.GetPastirTopicList();
+            return PartialView("_SveTemeSaPitanjima", model);
+        }
+
+        public ActionResult PitanjeOdgovor(int id)
+        {
+            PastirModel model = new PastirModel();
+            PitanjaPastiru data = new PitanjaPastiru();
+
+            model.PastirQuestion = data.GetPastirQuestion(id);
+            return View(model);
+        }
+
         public ActionResult OtacSrboljub()
         {
             return View();

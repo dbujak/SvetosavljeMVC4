@@ -1,0 +1,52 @@
+﻿@model Svetosavlje.Models.PastirModel
+@{
+    ViewBag.Title = Model.PastirQuestion.Naslov;
+}
+@section HeaderSection {
+    <!-- logo i slika oca Justina -->
+    <div class="row">
+        <div class="span4">
+            <img src="http://dummyimage.com/530x150/666/fff&amp;text=slika+oca+justina+i+logo+svetosavlje+ide+ovde">
+        </div>
+        <div class="span7">
+            <h2>
+                Питање пастиру</h2>
+            @Html.Partial("_Svestenici")
+        </div>
+    </div>
+    <!-- row -->
+}
+<div class="row-fluid">
+    <div class="span12">
+        <ul class="breadcrumb">
+            <li>@Html.ActionLink("Светосавље.орг", "Index", "Home")<span class="divider">/</span></li>
+            <li>@Html.ActionLink("Питање пастиру", "Index", "Pastir")<span class="divider">/</span></li>
+            <li class="active">@Model.PastirQuestion.Topic<span class="divider">/</span></li>
+            <li class="active">@Model.PastirQuestion.Naslov</li>
+        </ul>
+    </div>
+    <div class="span7">
+        <h3>
+            Тема: @Model.PastirQuestion.Topic</h3>
+        <h2>
+            Питање: @Model.PastirQuestion.Naslov</h2>
+        <blockquote>
+            @Html.Raw(System.Web.HttpUtility.HtmlDecode(Model.PastirQuestion.Question))
+            <br />@Model.PastirQuestion.Author
+        </blockquote>
+        <h2>
+            Одговор: </h2>
+        <blockquote>
+            @Html.Raw(System.Web.HttpUtility.HtmlDecode(Model.PastirQuestion.Answer))
+        </blockquote>
+    </div>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/responsive.css" rel="stylesheet" type="text/css" />
+    <div class="span4">
+        <h3>Све Теме</h3>
+        @Html.Action("SveTemeSaPitanjima", "Pastir")
+        @Html.Partial("_PretragaNovoPitanje")
+    </div>
+</div>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="~/Content/bootstrap.min.js"></script>

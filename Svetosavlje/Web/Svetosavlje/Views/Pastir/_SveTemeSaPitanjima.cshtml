@@ -1,0 +1,17 @@
+﻿@using System.Globalization;
+@using Svetosavlje.Models;
+@using Svetosavlje.Data_Layer@model Svetosavlje.Models.PastirModel
+<div class="accordion" id="accordion1">
+    @foreach (PastirTopic topic in Model.PastirTopics)
+    {
+        string divID = "collapse" + topic.ID.ToString();
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href=#@divID>@topic.Title</a>
+            </div>
+            <div id=@divID class="accordion-body collapse">
+                @Html.Action("PastirQuestions", "Pastir", new { topicID = @topic.ID, rows = 0, orderedList = true })
+            </div>
+        </div>
+    }
+</div>

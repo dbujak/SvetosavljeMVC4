@@ -13,11 +13,12 @@ namespace Svetosavlje.Models
     {
         public IList<PitanjeInfo> PastirQuestions { get; set; }
         public IList<PastirTopic> PastirTopics { get; set; }
+        public PitanjeInfo PastirQuestion { get; set; }
         public bool orderedList { get; set; }
     }
 
 
-    public class PitanjaPastiru : IQuestionList, IPastirTopicsList
+    public class PitanjaPastiru : IQuestionList, IPastirTopicsList, IPastirQuestion
     {
         private DatabaseProvider _provider = new DatabaseProvider();
 
@@ -31,6 +32,12 @@ namespace Svetosavlje.Models
         public IList<PastirTopic> GetPastirTopicList()
         {
             return _provider.GetPastirTopicList();
+        }
+
+
+        public PitanjeInfo GetPastirQuestion(int questionID)
+        {
+            return _provider.GetPastirQuestion(questionID);
         }
 
     }

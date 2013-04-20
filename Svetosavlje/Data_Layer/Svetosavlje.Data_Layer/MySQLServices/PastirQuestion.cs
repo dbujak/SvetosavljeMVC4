@@ -18,7 +18,7 @@ namespace Svetosavlje.Data_Layer.MySQLServices
 
             PitanjeInfo pitanje;
 
-            string strSQL = @"SELECT p.ID, p.Naslov, p.Pitanje, p.Odgovor, t.ID TemaID, t.Tema, p.Ime FROM pp_pitanja_utf8 p Inner Join pp_teme_utf8 t On p.TemaID=t.ID Where p.ID=" + questionID.ToString() + ";";
+            string strSQL = @"SELECT p.ID, p.NaslovPitanja, p.Pitanje, p.Odgovor, t.ID TemaID, t.Tema, p.Ime FROM pp_pitanja_utf8 p Inner Join pp_teme_utf8 t On p.TemaID=t.ID Where p.ID=" + questionID.ToString() + ";";
 
 
             DataTable list = dbConn.GetDataTable(strSQL, dbConnection.Connenction.PitanjaPastiru);
@@ -26,7 +26,7 @@ namespace Svetosavlje.Data_Layer.MySQLServices
             if (list.Rows.Count > 0)
             {
                 DataRow row = list.Rows[0];
-                pitanje = new PitanjeInfo(Convert.ToInt32(row["ID"]), row["Naslov"].ToString(),
+                pitanje = new PitanjeInfo(Convert.ToInt32(row["ID"]), row["NaslovPitanja"].ToString(),
                         row["Pitanje"].ToString(), row["Odgovor"].ToString(), Convert.ToInt32(row["TemaID"]), row["Tema"].ToString(), row["Ime"].ToString());
             }
             else return null;
