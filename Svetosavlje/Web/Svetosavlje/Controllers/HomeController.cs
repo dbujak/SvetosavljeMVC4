@@ -8,6 +8,7 @@ using System.Xml.Linq;
 using Svetosavlje.Models;
 using Svetosavlje.Data_Layer;
 using Svetosavlje.Services;
+using Svetosavlje.Data_Layer.Interfaces;
 
 namespace Svetosavlje.Controllers
 {
@@ -37,7 +38,7 @@ namespace Svetosavlje.Controllers
                                                   blogs.GetEditorNews(),
                                                   listArhiva.GetTopicList(10),
                                                   pitanjaPastiru.GetQuestionList(0, 10),
-                                                  svetiDana.GetList(today.Month, today.Day),
+                                                  svetiDana.GetSaintNamesList(today.Month, today.Day),
                                                   izDanaUDan.GetQuote(1, /*today.Month, today.Day*/Month, Day),
                                                   izDanaUDan.GetZachala(today.Month, today.Day, today.Year),
                                                   izDanaUDan.GetFastingType(today.Month, today.Day));
@@ -51,10 +52,6 @@ namespace Svetosavlje.Controllers
             return View();
         }
 
-        public ActionResult Prolog()
-        {
-            return View();
-        }
 
         public ActionResult Molitve()
         {
@@ -82,4 +79,63 @@ namespace Svetosavlje.Controllers
             return View();
         }
     }
+
+    public class ListArhiva : ITopicList
+    {
+        private DatabaseProvider _provider = new DatabaseProvider();
+
+        public IList<MailListTopicInfo> GetTopicList(int rows)
+        {
+            return _provider.GetTopicList(rows);
+        }
+
+    }
+
+    public class Blogs : IBlogProvider
+    {
+        private BlogProvider _provider = new BlogProvider();
+
+
+        public IList<WPBlogModel> GetNews()
+        {
+            return _provider.GetNews();
+        }
+
+        public IList<WPBlogModel> GetEditorNews()
+        {
+            return _provider.GetEditorNews();
+        }
+
+        public IList<WPBlogModel> GetMissionNews()
+        {
+            return _provider.GetMissionNews();
+        }
+    }
+
+
+
+
+
+    public class IzDanaUDan : IQuote, IFastingType, IZachala
+    {
+
+        private DatabaseProvider _provider = new DatabaseProvider();
+
+        public string GetQuote(int Autor, int Mjesec, int Dan)
+        {
+            return _provider.GetQuote(Autor, Mjesec, Dan);
+        }
+
+        public string GetFastingType(int Mjesec, int Dan)
+        {
+            return _provider.GetFastingType(Mjesec, Dan);
+        }
+
+        public string GetZachala(int Mjesec, int Dan, int Godina)
+        {
+            return _provider.GetZachala(Mjesec, Dan, Godina);
+        }
+
+    }
+
 }

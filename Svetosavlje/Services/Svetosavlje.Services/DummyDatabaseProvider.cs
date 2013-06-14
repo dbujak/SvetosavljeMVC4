@@ -47,7 +47,7 @@ namespace Svetosavlje.Services
 
 
 
-        public IList<string> GetList(int Mjesec, int Dan)
+        public IList<string> GetSaintNamesList(int Mjesec, int Dan)
         {
 
             List<string> topicList = new List<string>();
@@ -128,6 +128,32 @@ namespace Svetosavlje.Services
             PitanjeInfo pitanje = new PitanjeInfo(0,"Sample Question", question, answer, 0, "Sample Topic", "Some Author");
 
             return pitanje;
+        }
+
+
+
+        public IList<Prolog> GetSaintNamesAndLivesList(int Mjesec, int Dan)
+        {
+            List<Prolog> ret = new List<Prolog>();
+
+            for (int i = 0; i < 5; i++)
+            {
+                Prolog prolog = new Prolog("Sv. " + i.ToString(), "Zitija za Sv. " + i.ToString());
+            }
+            return ret;
+        }
+
+
+
+        public PrologOther GetProlog(int Mjesec, int Dan)
+        {
+            PrologOther other = new PrologOther();
+            other.Pjesma = "Pjesma";
+            other.Rasudjivanje = "Rasudjivanje";
+            other.Sozercanje = "Sozercanje";
+            other.Besjeda = "Besjeda";
+
+            return other;
         }
 
     }

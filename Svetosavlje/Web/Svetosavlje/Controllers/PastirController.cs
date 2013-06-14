@@ -8,6 +8,7 @@ using System.Xml.Linq;
 using Svetosavlje.Models;
 using Svetosavlje.Data_Layer;
 using Svetosavlje.Services;
+using Svetosavlje.Data_Layer.Interfaces;
 
 namespace Svetosavlje.Controllers
 {
@@ -81,4 +82,29 @@ namespace Svetosavlje.Controllers
         }
 
     }
+
+    public class PitanjaPastiru : IQuestionList, IPastirTopicsList, IPastirQuestion
+    {
+        private DatabaseProvider _provider = new DatabaseProvider();
+
+        public IList<PitanjeInfo> GetQuestionList(int topicID, int rows)
+        {
+            return _provider.GetQuestionList(topicID, rows);
+        }
+
+
+
+        public IList<PastirTopic> GetPastirTopicList()
+        {
+            return _provider.GetPastirTopicList();
+        }
+
+
+        public PitanjeInfo GetPastirQuestion(int questionID)
+        {
+            return _provider.GetPastirQuestion(questionID);
+        }
+
+    }
+
 }

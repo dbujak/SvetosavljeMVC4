@@ -10,6 +10,7 @@ namespace Svetosavlje.Services
     public class DatabaseProvider : IDataProvider
     {
         private IDataProvider _provider = new MySQLProvider();
+        //private IDataProvider _provider = new DummyDatabaseProvider();
 
         public IList<MailListTopicInfo> GetTopicList(int rows)
         {
@@ -26,9 +27,9 @@ namespace Svetosavlje.Services
 
 
 
-        public IList<string> GetList(int Mjesec, int Dan)
+        public IList<string> GetSaintNamesList(int Mjesec, int Dan)
         {
-            return _provider.GetList(Mjesec, Dan);
+            return _provider.GetSaintNamesList(Mjesec, Dan);
         }
 
 
@@ -65,6 +66,17 @@ namespace Svetosavlje.Services
         public PitanjeInfo GetPastirQuestion(int questionID)
         {
             return _provider.GetPastirQuestion(questionID);
+        }
+
+
+        public IList<Prolog> GetSaintNamesAndLivesList(int Mjesec, int Dan)
+        {
+            return _provider.GetSaintNamesAndLivesList(Mjesec, Dan);
+        }
+
+        public PrologOther GetProlog(int Mjesec, int Dan)
+        {
+            return _provider.GetProlog(Mjesec, Dan);
         }
 
     }

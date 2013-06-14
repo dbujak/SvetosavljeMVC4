@@ -23,17 +23,17 @@ namespace Svetosavlje.Services
 
         public IList<PitanjeInfo> GetQuestionList(int topicID, int rows)
         {
-            QuestionsList list = new QuestionsList();
+            PitanjePastiruService list = new PitanjePastiruService();
 
             return list.GetQuestionList(topicID, rows);
 
         }
 
-        public IList<string> GetList(int Mjesec, int Dan)
+        public IList<string> GetSaintNamesList(int Mjesec, int Dan)
         {
-            ZitijasList list = new ZitijasList();
+            PrologService list = new PrologService();
 
-            return list.GetList(Mjesec, Dan);
+            return list.GetSaintNamesList(Mjesec, Dan);
         }
 
         public string GetQuote(int Autor, int Mjesec, int Dan)
@@ -64,7 +64,7 @@ namespace Svetosavlje.Services
 
         public IList<PastirTopic> GetPastirTopicList()
         {
-            PastirTopicsList list = new PastirTopicsList();
+            PitanjePastiruService list = new PitanjePastiruService();
 
             return list.GetPastirTopicList();
         }
@@ -73,9 +73,25 @@ namespace Svetosavlje.Services
 
         public PitanjeInfo GetPastirQuestion(int questionID)
         {
-            PastirQuestion question = new PastirQuestion();
+            PitanjePastiruService question = new PitanjePastiruService();
 
             return question.GetPastirQuestion(questionID);
+        }
+
+
+
+        public IList<Prolog> GetSaintNamesAndLivesList(int Mjesec, int Dan)
+        {
+            PrologService prolog = new PrologService();
+            return prolog.GetSaintNamesAndLivesList(Mjesec, Dan);
+        }
+
+
+        public PrologOther GetProlog(int Mjesec, int Dan)
+        {
+            PrologService prolog = new PrologService();
+
+            return prolog.GetProlog(Mjesec, Dan);
         }
 
     }

@@ -1,0 +1,46 @@
+﻿@using System.Globalization;
+@using Svetosavlje.Models;
+@using Svetosavlje.Data_Layer
+@model Svetosavlje.Models.PrologModel
+@{
+    ViewBag.Title = "Пролог";
+}
+<div class="row-fluid">
+    <div class="span12">
+        <ul class="breadcrumb">
+            <li>@Html.ActionLink("Светосавље.орг", "Index", "Home")<span class="divider">/</span></li>
+            <li class="active">Пролог</li>
+        </ul>
+        <div style="margin: 0 auto; text-align: center; width: 60%;">
+            <h1>
+                Пролог</h1>
+        </div>
+    </div>
+    @{int i = 0;}
+    @foreach (Prolog prolog in Model.Sveti)
+    {
+        i = i + 1;
+        <p>
+            <b>
+                @i
+                .&nbsp;&nbsp;
+                @prolog.ImeSveca
+            </b>
+            @prolog.ZitijaSveca
+        </p>
+    }
+    <p>
+        <br />
+        @Html.Raw(Model.Pjesma)
+    </p>
+    <br />
+    <p>
+        <b>Расуђивање</b></p>
+    <p>@Html.Raw(Model.Rasudjivanje)</p>
+    <p>
+        <b>Созерцање</b></p>
+    <p>@Html.Raw(Model.Sozercanje)</p>
+    <p>
+        <b>Бесједа</b></p>
+    <p>@Html.Raw(Model.Besjeda)</p>
+</div>

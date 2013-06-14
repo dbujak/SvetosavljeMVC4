@@ -6,7 +6,7 @@ using Svetosavlje.Data_Layer;
 
 namespace Svetosavlje.Data_Layer.Interfaces
 {
-    public interface IDataProvider : ITopicList, IQuestionList, IGetList, IQuote, IZachala, IFastingType, IPastirTopicsList, IPastirQuestion
+    public interface IDataProvider : ITopicList, IQuestionList, ISaintNamesList, ISaintNamesAndLivesList, IProlog, IQuote, IZachala, IFastingType, IPastirTopicsList, IPastirQuestion
     {
 
     }
@@ -31,9 +31,19 @@ namespace Svetosavlje.Data_Layer.Interfaces
         IList<PastirTopic> GetPastirTopicList();
     }
 
-    public interface IGetList
+    public interface ISaintNamesList
     {
-        IList<string> GetList(int Mjesec, int Dan);
+        IList<string> GetSaintNamesList(int Mjesec, int Dan);
+    }
+
+    public interface ISaintNamesAndLivesList
+    {
+        IList<Prolog> GetSaintNamesAndLivesList(int Mjesec, int Dan);
+    }
+
+    public interface IProlog
+    {
+        PrologOther GetProlog(int Mjesec, int Dan);
     }
 
     public interface IQuote
