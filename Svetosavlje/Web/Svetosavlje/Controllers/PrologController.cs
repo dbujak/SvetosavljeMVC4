@@ -17,20 +17,26 @@ namespace Svetosavlje.Controllers
         //
         // GET: /PrologOther/
 
-        public ActionResult Index()
+        public ActionResult Index(string dtProlog)
         {
             PrologModel model = new PrologModel();
             SvetiDana data = new SvetiDana();
+            DateTime dtDate;
 
-            DateTime today = DateTime.Today.AddDays(-13);     // Julian date
-            model.Sveti = data.GetSaintNamesAndLivesList(today.Month, today.Day);
+            if (!DateTime.TryParse(dtProlog, out dtDate))
+            {
+                dtDate = DateTime.Today.AddDays(-13);
+            }
+
+            model.Sveti = data.GetSaintNamesAndLivesList(dtDate.Month, dtDate.Day);
             PrologOther prolog = new PrologOther();
-            prolog = data.GetProlog(today.Month, today.Day);
+            prolog = data.GetProlog(dtDate.Month, dtDate.Day);
 
             model.Pjesma = prolog.Pjesma;
             model.Rasudjivanje = prolog.Rasudjivanje;
             model.Sozercanje = prolog.Sozercanje;
             model.Besjeda = prolog.Besjeda;
+            model.Datum = dtDate.Day.ToString() + "/" + dtDate.Month.ToString() + "/" + dtDate.Year.ToString();
 
             return View(model);
         }

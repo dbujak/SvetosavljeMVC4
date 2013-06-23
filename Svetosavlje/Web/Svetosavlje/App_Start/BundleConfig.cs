@@ -38,6 +38,21 @@ namespace Svetosavlje
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/julianCalendar").Include(
+                "~/Scripts/julian/jquery.calendars.js",
+                "~/Scripts/julian/jquery.calendars.plus.js",
+                "~/Scripts/julian/jquery.calendars.picker.js",
+                "~/Scripts/julian/jquery.calendars.picker-sr.js",
+                "~/Scripts/julian/jquery.calendars.julian.js",
+                "~/Scripts/julian/jquery.calendars-sr.js"));
+
+            //<script type="text/javascript" src="jquery.calendars.js"></script>
+//<script type="text/javascript" src="jquery.calendars.plus.js"></script>
+//<script type="text/javascript" src="jquery.calendars.picker.js"></script>
+//<script type="text/javascript" src="jquery.calendars.picker-sr.js"></script>
+//<script type="text/javascript" src="jquery.calendars.julian.js"></script>
+//<script type="text/javascript" src="jquery.calendars-sr.js"></script>
         }
     }
 }

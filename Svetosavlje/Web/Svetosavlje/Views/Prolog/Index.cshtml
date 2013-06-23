@@ -5,6 +5,26 @@
 @{
     ViewBag.Title = "Пролог";
 }
+
+<link rel="stylesheet" type="text/css" href="/Scripts/julian/humanity.calendars.picker.css">
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+    @Scripts.Render("~/bundles/julianCalendar")
+    
+<script>
+    $(function () {
+        $('#inlineDatepicker').calendarsPicker({ calendar: $.calendars.instance('julian', 'sr'), onSelect: showDate, changeMonth: false, defaultDate: '@Model.Datum' });
+    });
+
+
+    function showDate(date) {
+        $("#dtProlog").val(date);
+        $('form').submit();
+    }
+
+
+</script>
 <div class="row-fluid">
     <div class="span12">
         <ul class="breadcrumb">
@@ -14,6 +34,11 @@
         <div style="margin: 0 auto; text-align: center; width: 60%;">
             <h1>
                 Пролог</h1>
+            @using (Html.BeginForm("Index", "Prolog"))
+            {
+                <div id="inlineDatepicker"></div>
+                <input type="hidden" id="dtProlog" name="dtProlog" />
+            }
         </div>
     </div>
     @{int i = 0;}

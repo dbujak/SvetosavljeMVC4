@@ -177,6 +177,13 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.js" />
+    <Content Include="Content\calendar\jquery.calendars-sr.js" />
+    <Content Include="Content\calendar\jquery.calendars.js" />
+    <Content Include="Content\calendar\jquery.calendars.julian.js" />
+    <Content Include="Content\calendar\jquery.calendars.picker-sr.js" />
+    <Content Include="Content\calendar\jquery.calendars.picker.css" />
+    <Content Include="Content\calendar\jquery.calendars.picker.js" />
+    <Content Include="Content\calendar\jquery.calendars.plus.js" />
     <Content Include="Content\images\Pastir\o_dusan2.jpg" />
     <Content Include="Content\images\Pastir\o_Ivan2.jpg" />
     <Content Include="Content\images\Pastir\o_ljubo2.jpg" />
@@ -251,6 +258,17 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\julian\humanity.calendars.picker.css" />
+    <Content Include="Scripts\julian\jquery.calendars-sr.js" />
+    <Content Include="Scripts\julian\jquery.calendars.js" />
+    <Content Include="Scripts\julian\jquery.calendars.julian.js" />
+    <Content Include="Scripts\julian\jquery.calendars.julian.min.js" />
+    <Content Include="Scripts\julian\jquery.calendars.min.js" />
+    <Content Include="Scripts\julian\jquery.calendars.picker-sr.js" />
+    <Content Include="Scripts\julian\jquery.calendars.picker.css" />
+    <Content Include="Scripts\julian\jquery.calendars.picker.js" />
+    <Content Include="Scripts\julian\jquery.calendars.plus.js" />
+    <Content Include="Scripts\julian\jquery.calendars.plus.min.js" />
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />

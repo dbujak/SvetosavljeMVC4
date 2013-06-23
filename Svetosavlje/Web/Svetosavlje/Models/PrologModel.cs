@@ -13,5 +13,6 @@ namespace Svetosavlje.Models
         public string Rasudjivanje { get; set; }
         public string Sozercanje { get; set; }
         public string Besjeda { get; set; }
+        public string Datum { get; set; } // so I can format it to Serbian date - dd/mm/yyyy
     }
 }
