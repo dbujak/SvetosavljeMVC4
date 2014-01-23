@@ -6,15 +6,16 @@
     ViewBag.Title = "Пролог";
 }
 
-<link rel="stylesheet" type="text/css" href="/Scripts/julian/humanity.calendars.picker.css">
-
+<link rel="stylesheet" type="text/css" href="~/Scripts/julian/jquery.calendars.picker.css">
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<style>
+    .underline {border-bottom:solid 1px black; font-weight:bold}
+</style>
+@Scripts.Render("~/bundles/julianCalendar")
 
-    @Scripts.Render("~/bundles/julianCalendar")
-    
 <script>
     $(function () {
-        $('#inlineDatepicker').calendarsPicker({ calendar: $.calendars.instance('julian', 'sr'), onSelect: showDate, changeMonth: false, defaultDate: '@Model.Datum' });
+        $('#inlineDatepicker').calendarsPicker({ calendar: $.calendars.instance('julian', 'sr'), onSelect: showDate, changeMonth: false, monthsToShow: 3, defaultDate: '@Model.Datum' });
     });
 
 
@@ -32,8 +33,7 @@
             <li class="active">Пролог</li>
         </ul>
         <div style="margin: 0 auto; text-align: center; width: 60%;">
-            <h1>
-                Пролог</h1>
+            <h1>Пролог</h1>
             @using (Html.BeginForm("Index", "Prolog"))
             {
                 <div id="inlineDatepicker"></div>
@@ -41,6 +41,10 @@
             }
         </div>
     </div>
+    &nbsp;
+<div style="border-bottom: solid 1px black; border-top: solid 1px black; padding: 2px;
+    margin: 2px; background-color: #F0F0F0; font-weight: bold; text-align: center">@Model.Dan
+    @Model.Mjesec</div>
     @{int i = 0;}
     @foreach (Prolog prolog in Model.Sveti)
     {
@@ -59,13 +63,16 @@
         @Html.Raw(Model.Pjesma)
     </p>
     <br />
-    <p>
-        <b>Расуђивање</b></p>
+    <div class="underline">
+        <b>Расуђивање</b>
+    </div>
     <p>@Html.Raw(Model.Rasudjivanje)</p>
-    <p>
-        <b>Созерцање</b></p>
+    <div class="underline">
+        <b>Созерцање</b>
+    </div>
     <p>@Html.Raw(Model.Sozercanje)</p>
-    <p>
-        <b>Бесједа</b></p>
+    <div class="underline">
+        <b>Бесједа</b>
+    </div>
     <p>@Html.Raw(Model.Besjeda)</p>
 </div>

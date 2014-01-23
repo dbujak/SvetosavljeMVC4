@@ -37,10 +37,27 @@ namespace Svetosavlje.Controllers
             model.Sozercanje = prolog.Sozercanje;
             model.Besjeda = prolog.Besjeda;
             model.Datum = dtDate.Day.ToString() + "/" + dtDate.Month.ToString() + "/" + dtDate.Year.ToString();
+            model.Dan = dtDate.Day.ToString() + ".";
+            model.Mjesec = this.Mjesec(dtDate.Month);
 
             return View(model);
         }
 
+        private string Mjesec(int mjesec)
+        {
+            switch (mjesec)
+            {
+                case 1:
+                    return "јануар";
+                    break;
+                case 2:
+                    return "фебруар";
+                    break;
+                default:
+                    break;
+            }
+            return "";
+        }
     }
 
     public class SvetiDana : ISaintNamesList, ISaintNamesAndLivesList, IProlog
