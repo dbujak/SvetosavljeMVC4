@@ -53,6 +53,36 @@ namespace Svetosavlje.Controllers
                 case 2:
                     return "фебруар";
                     break;
+                case 3:
+                    return "март";
+                    break;
+                case 4:
+                    return "април";
+                    break;
+                case 5:
+                    return "мај";
+                    break;
+                case 6:
+                    return "јуни";
+                    break;
+                case 7:
+                    return "јули";
+                    break;
+                case 8:
+                    return "август";
+                    break;
+                case 9:
+                    return "септембар";
+                    break;
+                case 10:
+                    return "октобар";
+                    break;
+                case 11:
+                    return "новембар";
+                    break;
+                case 12:
+                    return "децембар";
+                    break;
                 default:
                     break;
             }
