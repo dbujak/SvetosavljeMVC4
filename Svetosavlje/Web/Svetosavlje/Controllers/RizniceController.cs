@@ -16,5 +16,10 @@ namespace Svetosavlje.Controllers
             return View();
         }
 
+        public ActionResult Ikone()
+        {
+            return View();
+        }
+
     }
 }
