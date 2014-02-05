@@ -21,5 +21,14 @@ namespace Svetosavlje.Controllers
             return View();
         }
 
+        public ActionResult IkoneICXC1()
+        {
+            return View();
+        }
+
+        public ActionResult IkoneICXC2()
+        {
+            return View();
+        }
     }
 }

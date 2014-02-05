@@ -367,6 +367,12 @@
   <ItemGroup>
     <Content Include="Views\Riznice\Ikone.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Riznice\IkoneICXC1.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Riznice\IkoneICXC2.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
