@@ -1,9 +1,13 @@
 ﻿@{
-    ViewBag.Title = "OtacRade";
+    ViewBag.Title = "Otac Rade";
 }
 
 <h2>Отац Раде</h2>
-
+         <ul class="breadcrumb">
+            <li>@Html.ActionLink("Светосавље.орг", "Index", "Home")<span class="divider">/</span></li>
+             <li>@Html.ActionLink("Пастир", "Index", "Pastir")<span class="divider">/</span></li>
+            <li class="active">Отац Раде</li>
+        </ul>
 
       <p>
           <img title="Отац Раде" src="~/Content/images/Pastir/o_rade.jpg"" hspace="2" vspace="2" border="1" align="left" style="margin:2px 10px 5px 0px;"></p>

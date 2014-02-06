@@ -373,6 +373,18 @@
   <ItemGroup>
     <Content Include="Views\Riznice\IkoneICXC2.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Riznice\Ikone_Bogorodice1.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Riznice\Ikone_Bogorodice2.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Riznice\Ikone_Bogorodice3.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Riznice\Ikone_Bogorodice4.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

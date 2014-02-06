@@ -29,6 +29,31 @@ namespace Svetosavlje.Controllers
         public ActionResult IkoneICXC2()
         {
             return View();
+
+        }
+
+        public ActionResult Ikone_Bogorodice1()
+        {
+            return View();
+
+        }
+
+        public ActionResult Ikone_Bogorodice2()
+        {
+            return View();
+
+        }
+
+        public ActionResult Ikone_Bogorodice3()
+        {
+            return View();
+
+        }
+
+        public ActionResult Ikone_Bogorodice4()
+        {
+            return View();
+
         }
     }
 }
