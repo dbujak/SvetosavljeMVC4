@@ -385,6 +385,39 @@
   <ItemGroup>
     <Content Include="Views\Riznice\Ikone_Bogorodice4.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Riznice\Ikone_Angela1.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Riznice\Ikone_Angela2.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Riznice\Ikone_Praznika1.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Riznice\Ikone_Praznika2.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Riznice\Jevandjelja.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Riznice\Krasnopis.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Riznice\Freske.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Riznice\Tekstovi.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Riznice\Utvari.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Riznice\Duborez.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Riznice\Odezde.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

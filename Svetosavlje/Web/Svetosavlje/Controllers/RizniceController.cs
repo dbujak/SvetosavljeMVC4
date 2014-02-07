@@ -55,5 +55,71 @@ namespace Svetosavlje.Controllers
             return View();
 
         }
+
+        public ActionResult Ikone_Angela1()
+        {
+            return View();
+
+        }
+
+        public ActionResult Ikone_Angela2()
+        {
+            return View();
+
+        }
+
+        public ActionResult Ikone_Praznika1()
+        {
+            return View();
+
+        }
+
+        public ActionResult Ikone_Praznika2()
+        {
+            return View();
+
+        }
+
+        public ActionResult Jevandjelja()
+        {
+            return View();
+
+        }
+
+        public ActionResult Krasnopis()
+        {
+            return View();
+
+        }
+
+        public ActionResult Freske()
+        {
+            return View();
+
+        }
+
+        public ActionResult Tekstovi()
+        {
+            return View();
+
+        }
+
+        public ActionResult Utvari()
+        {
+            return View();
+
+        }
+
+        public ActionResult Duborez()
+        {
+            return View();
+
+        }
+
+        public ActionResult Odezde()
+        {
+            return View();
+
+        }
     }
 }
