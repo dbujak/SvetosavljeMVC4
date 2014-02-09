@@ -15,7 +15,7 @@
 
 <script>
     $(function () {
-        $('#inlineDatepicker').calendarsPicker({ calendar: $.calendars.instance('julian', 'sr'), onSelect: showDate, changeMonth: false, monthsToShow: 3, defaultDate: '@Model.Datum' });
+        $('#inlineDatepicker').calendarsPicker({ calendar: $.calendars.instance('julian', 'sr'), onSelect: showDate, changeMonth: false, monthsToShow: 3, defaultDate: '@Model.Datum', firstDay: 1 });
     });
 
 
