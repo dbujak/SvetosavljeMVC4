@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Svetosavlje.Data_Layer;
+using Svetosavlje.Interfaces.Classes;
 
-namespace Svetosavlje.Data_Layer.Interfaces
+namespace Svetosavlje.Interfaces.Interfaces
 {
     public interface IBlogProvider : INews, IEditorNews, IMissionNews
     {

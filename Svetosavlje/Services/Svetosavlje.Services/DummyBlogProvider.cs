@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Svetosavlje.Data_Layer.Interfaces;
+using Svetosavlje.Interfaces.Interfaces;
+using Svetosavlje.Interfaces.Classes;
 using Svetosavlje.Data_Layer;
 using System.Web;
 

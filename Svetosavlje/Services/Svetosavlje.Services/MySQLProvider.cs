@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Svetosavlje.Data_Layer.Interfaces;
+using Svetosavlje.Interfaces.Interfaces;
+using Svetosavlje.Interfaces.Classes;
 using Svetosavlje.Data_Layer;
 using Svetosavlje.Data_Layer.Core;
 using Svetosavlje.Data_Layer.MySQLServices;
@@ -13,9 +14,9 @@ namespace Svetosavlje.Services
     {
         
 
-        public IList<MailListTopicInfo> GetTopicList(int rows)
+        public IList<ListaArhiva> GetTopicList(int rows)
         {
-            TopicsList list = new TopicsList();
+            ListaArhivaService list = new ListaArhivaService();
 
             return list.GetTopicList(rows);
 
@@ -94,5 +95,20 @@ namespace Svetosavlje.Services
             return prolog.GetProlog(Mjesec, Dan);
         }
 
+
+
+        public IList<ListaArhiva> GetTopicList(int page, int rows)
+        {
+            ListaArhivaService list = new ListaArhivaService();
+
+            return list.GetTopicList(page, rows);
+        }
+
+        public int GetTotalTopics()
+        {
+            ListaArhivaService list = new ListaArhivaService();
+
+            return list.GetTotalTopics();
+        }
     }
 }

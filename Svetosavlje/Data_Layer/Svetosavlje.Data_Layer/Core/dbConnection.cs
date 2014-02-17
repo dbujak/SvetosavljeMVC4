@@ -82,6 +82,21 @@ namespace Svetosavlje.Data_Layer.Core
         
         }
 
+        public object GetScalar(string strSQL, Connenction connection)
+        {
+            this.Connection = connection;
+            object scalar = null;
+
+            using (MySqlConnection con = MySqlConn())
+            {
+                MySqlCommand cmd = new MySqlCommand(strSQL, con);
+                con.Open();
+                scalar = cmd.ExecuteScalar();
+                con.Close();
+            }
+
+            return scalar;
+        }
 
         private MySqlConnection MySqlConn()
         {

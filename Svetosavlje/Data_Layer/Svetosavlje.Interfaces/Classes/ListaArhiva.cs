@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace Svetosavlje.Data_Layer
+namespace Svetosavlje.Interfaces.Classes
 {
-    public class MailListTopicInfo
+    public class ListaArhiva
     {
         public int id;
         public string naziv;
@@ -14,7 +11,7 @@ namespace Svetosavlje.Data_Layer
         public int updaterID;
         public DateTime? datum;
 
-        public MailListTopicInfo(int i, string n, long c, string u, DateTime? d, int updId)
+        public ListaArhiva(int i, string n, long c, string u, DateTime? d, int updId)
         {
             id = i;
             naziv = n;

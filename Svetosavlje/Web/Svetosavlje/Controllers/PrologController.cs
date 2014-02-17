@@ -6,9 +6,9 @@ using System.Web.Mvc;
 using System.Net;
 using System.Xml.Linq;
 using Svetosavlje.Models;
-using Svetosavlje.Data_Layer;
 using Svetosavlje.Services;
-using Svetosavlje.Data_Layer.Interfaces;
+using Svetosavlje.Interfaces.Interfaces;
+using Svetosavlje.Interfaces.Classes;
 
 namespace Svetosavlje.Controllers
 {

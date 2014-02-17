@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Svetosavlje.Data_Layer.Interfaces;
+using Svetosavlje.Interfaces.Interfaces;
+using Svetosavlje.Interfaces.Classes;
 using Svetosavlje.Data_Layer;
 
 namespace Svetosavlje.Services
 {
     public class DatabaseProvider : IDataProvider
     {
-        //private IDataProvider _provider = new MySQLProvider();
-        private IDataProvider _provider = new DummyDatabaseProvider();
+        private IDataProvider _provider = new MySQLProvider();
+        //private IDataProvider _provider = new DummyDatabaseProvider();
 
-        public IList<MailListTopicInfo> GetTopicList(int rows)
+        public IList<ListaArhiva> GetTopicList(int rows)
         {
             return _provider.GetTopicList(rows);
         }
@@ -79,5 +80,16 @@ namespace Svetosavlje.Services
             return _provider.GetProlog(Mjesec, Dan);
         }
 
+
+
+        public IList<ListaArhiva> GetTopicList(int page, int rows)
+        {
+            return _provider.GetTopicList(page,rows);
+        }
+
+        public int GetTotalTopics()
+        {
+            return _provider.GetTotalTopics();
+        }
     }
 }

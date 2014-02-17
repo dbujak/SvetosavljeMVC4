@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Svetosavlje", "Web\Svetosavlje\Svetosavlje.csproj", "{1336F9B6-D404-4884-BE7C-7F8BF96F0BA4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Svetosavlje.Tests", "Web\Svetosavlje.Tests\Svetosavlje.Tests.csproj", "{F0F02D92-AFD9-447A-B89C-BD4F1E40B4C3}"
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Svetosavlje.Services", "Services\Svetosavlje.Services\Svetosavlje.Services.csproj", "{59484584-502F-492A-9368-4C1FC95689D3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Svetosavlje.Data_Layer", "Data_Layer\Svetosavlje.Data_Layer\Svetosavlje.Data_Layer.csproj", "{D45DC115-0724-415C-86FB-825BFA06D571}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Svetosavlje.Interfaces", "Data_Layer\Svetosavlje.Interfaces\Svetosavlje.Interfaces.csproj", "{BAF057B6-C366-4F97-A888-A2E5F30BBED5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,12 +37,17 @@ Global
 		{D45DC115-0724-415C-86FB-825BFA06D571}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D45DC115-0724-415C-86FB-825BFA06D571}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D45DC115-0724-415C-86FB-825BFA06D571}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAF057B6-C366-4F97-A888-A2E5F30BBED5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAF057B6-C366-4F97-A888-A2E5F30BBED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAF057B6-C366-4F97-A888-A2E5F30BBED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAF057B6-C366-4F97-A888-A2E5F30BBED5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D45DC115-0724-415C-86FB-825BFA06D571} = {41505981-F1A7-419A-B5A3-168BCD6BB6F9}
+		{BAF057B6-C366-4F97-A888-A2E5F30BBED5} = {41505981-F1A7-419A-B5A3-168BCD6BB6F9}
 		{59484584-502F-492A-9368-4C1FC95689D3} = {BA10A77F-BAE2-4D21-9B5C-0E9793A5BE52}
 	EndGlobalSection
 EndGlobal

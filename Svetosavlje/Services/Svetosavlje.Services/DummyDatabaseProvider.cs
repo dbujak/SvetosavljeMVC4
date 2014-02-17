@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Svetosavlje.Data_Layer.Interfaces;
+using Svetosavlje.Interfaces.Interfaces;
+using Svetosavlje.Interfaces.Classes;
 using Svetosavlje.Data_Layer;
 using System.Web;
 
@@ -11,9 +12,9 @@ namespace Svetosavlje.Services
     class DummyDatabaseProvider : IDataProvider
     {
 
-        public IList<MailListTopicInfo> GetTopicList(int rows)
+        public IList<ListaArhiva> GetTopicList(int rows)
         {
-            IList<MailListTopicInfo> topicList = new List<MailListTopicInfo>(rows);
+            IList<ListaArhiva> topicList = new List<ListaArhiva>(rows);
 
             for (int i = 1; i <= rows; i++ )
             {
@@ -23,7 +24,7 @@ namespace Svetosavlje.Services
                 string user = "User " + i.ToString();
                 DateTime updated = DateTime.Now;
                 int updId = i;
-                MailListTopicInfo ti = new MailListTopicInfo(msgId, title, count, user, updated, updId);
+                ListaArhiva ti = new ListaArhiva(msgId, title, count, user, updated, updId);
                 topicList.Add(ti);
             }
 
@@ -156,5 +157,16 @@ namespace Svetosavlje.Services
             return other;
         }
 
+
+
+        public IList<ListaArhiva> GetTopicList(int page, int rows)
+        {
+            return GetTopicList(rows);
+        }
+
+        public int GetTotalTopics()
+        {
+            return 333;
+        }
     }
 }

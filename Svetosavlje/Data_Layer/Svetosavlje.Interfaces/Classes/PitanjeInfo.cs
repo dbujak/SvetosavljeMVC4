@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Svetosavlje.Data_Layer
+namespace Svetosavlje.Interfaces.Classes
 {
     public class PitanjeInfo
     {

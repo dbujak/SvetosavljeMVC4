@@ -2,18 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Svetosavlje.Data_Layer;
+using Svetosavlje.Interfaces.Classes;
 
-namespace Svetosavlje.Data_Layer.Interfaces
+namespace Svetosavlje.Interfaces.Interfaces
 {
-    public interface IDataProvider : ITopicList, IQuestionList, ISaintNamesList, ISaintNamesAndLivesList, IProlog, IQuote, IZachala, IFastingType, IPastirTopicsList, IPastirQuestion
+    public interface IDataProvider : IListaArhiva, IQuestionList, ISaintNamesList, ISaintNamesAndLivesList, IProlog, IQuote, IZachala, IFastingType, IPastirTopicsList, IPastirQuestion
     {
 
     }
 
-    public interface ITopicList
+    public interface IListaArhiva
     {
-        IList<MailListTopicInfo> GetTopicList(int rows);
+        IList<ListaArhiva> GetTopicList(int rows);
+        IList<ListaArhiva> GetTopicList(int page, int rows);
+        int GetTotalTopics();
     }
 
     public interface IPastirQuestion

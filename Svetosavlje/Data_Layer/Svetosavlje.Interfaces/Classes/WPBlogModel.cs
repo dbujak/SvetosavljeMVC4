@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 
-namespace Svetosavlje.Data_Layer
+namespace Svetosavlje.Interfaces.Classes
 {
     public class WPBlogModel
     {

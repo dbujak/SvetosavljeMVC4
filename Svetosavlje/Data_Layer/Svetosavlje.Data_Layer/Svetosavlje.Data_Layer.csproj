@@ -52,21 +52,23 @@
     <Compile Include="BlogServices\NewsList.cs" />
     <Compile Include="Core\blogConnection.cs" />
     <Compile Include="Core\dbConnection.cs" />
-    <Compile Include="Interfaces\IBlogProvider.cs" />
-    <Compile Include="Interfaces\IDataProvider.cs" />
-    <Compile Include="MailListTopicInfo.cs" />
-    <Compile Include="PitanjeInfo.cs" />
-    <Compile Include="Prolog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MySQLServices\CitanjaList.cs" />
     <Compile Include="MySQLServices\FastingType.cs" />
     <Compile Include="MySQLServices\Quote.cs" />
     <Compile Include="MySQLServices\PitanjePastiruService.cs" />
-    <Compile Include="MySQLServices\TopicsList.cs" />
+    <Compile Include="MySQLServices\ListaArhivaService.cs" />
     <Compile Include="MySQLServices\PrologService.cs" />
-    <Compile Include="WPBlogModel.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Svetosavlje.Interfaces\Svetosavlje.Interfaces.csproj">
+      <Project>{baf057b6-c366-4f97-a888-a2e5f30bbed5}</Project>
+      <Name>Svetosavlje.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

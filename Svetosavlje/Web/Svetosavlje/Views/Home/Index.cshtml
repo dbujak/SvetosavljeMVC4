@@ -1,6 +1,6 @@
 ﻿@using System.Globalization;
 @using Svetosavlje.Models;
-@using Svetosavlje.Data_Layer
+@using Svetosavlje.Interfaces.Classes;
 @model Svetosavlje.Models.Main
 
 @{
@@ -111,7 +111,7 @@
                     <h2> <a href="http://www.svetosavlje.org/listarhiva/Home.aspx">Листа</a> »</h2>
 
                     <ul>
-                    @foreach (MailListTopicInfo t in Model.Lista)
+                    @foreach (ListaArhiva t in Model.Lista)
                     {
                        <li> <a href="http://www.svetosavlje.org/listarhiva/Home.aspx/Topic?topicId=@t.id">@t.naziv</a> (@Html.Encode(t.count)) : <a href="http://www.svetosavlje.org/listarhiva/Home.aspx/UserMessages?userId=@t.updaterID">@t.updater</a>, @t.datum.ToString() </li>
                     }

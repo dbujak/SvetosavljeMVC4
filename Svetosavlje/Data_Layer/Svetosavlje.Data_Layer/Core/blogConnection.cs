@@ -5,6 +5,7 @@ using System.Net;
 using System.Text;
 using System.Xml.Linq;
 using System.Web;
+using Svetosavlje.Interfaces.Classes;
 
 namespace Svetosavlje.Data_Layer.Core
 {

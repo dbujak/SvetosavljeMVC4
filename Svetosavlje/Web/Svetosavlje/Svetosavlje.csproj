@@ -168,12 +168,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ListaController.cs" />
     <Compile Include="Controllers\PastirController.cs" />
     <Compile Include="Controllers\PrologController.cs" />
     <Compile Include="Controllers\RizniceController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ListaModel.cs" />
     <Compile Include="Models\PastirModel.cs" />
     <Compile Include="Models\PrologModel.cs" />
     <Compile Include="Models\SvetoModels.cs" />
@@ -318,9 +320,9 @@
     <Content Include="Views\Home\Svetinje.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Data_Layer\Svetosavlje.Data_Layer\Svetosavlje.Data_Layer.csproj">
-      <Project>{D45DC115-0724-415C-86FB-825BFA06D571}</Project>
-      <Name>Svetosavlje.Data_Layer</Name>
+    <ProjectReference Include="..\..\Data_Layer\Svetosavlje.Interfaces\Svetosavlje.Interfaces.csproj">
+      <Project>{baf057b6-c366-4f97-a888-a2e5f30bbed5}</Project>
+      <Name>Svetosavlje.Interfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Services\Svetosavlje.Services\Svetosavlje.Services.csproj">
       <Project>{59484584-502F-492A-9368-4C1FC95689D3}</Project>
@@ -419,6 +421,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Riznice\Odezde.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Lista\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

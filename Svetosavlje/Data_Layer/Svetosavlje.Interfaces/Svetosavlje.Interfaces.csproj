@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{59484584-502F-492A-9368-4C1FC95689D3}</ProjectGuid>
+    <ProjectGuid>{BAF057B6-C366-4F97-A888-A2E5F30BBED5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Svetosavlje.Services</RootNamespace>
-    <AssemblyName>Svetosavlje.Services</AssemblyName>
+    <RootNamespace>Svetosavlje.Interfaces</RootNamespace>
+    <AssemblyName>Svetosavlje.Interfaces</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,27 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AtomBlogProvider.cs" />
-    <Compile Include="BlogProvider.cs" />
-    <Compile Include="DatabaseProvider.cs" />
-    <Compile Include="DummyBlogProvider.cs" />
-    <Compile Include="DummyDatabaseProvider.cs" />
-    <Compile Include="MySQLProvider.cs" />
+    <Compile Include="Classes\ListaArhiva.cs" />
+    <Compile Include="Classes\PitanjeInfo.cs" />
+    <Compile Include="Classes\Prolog.cs" />
+    <Compile Include="Classes\WPBlogModel.cs" />
+    <Compile Include="Interfaces\IBlogProvider.cs" />
+    <Compile Include="Interfaces\IDataProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Data_Layer\Svetosavlje.Data_Layer\Svetosavlje.Data_Layer.csproj">
-      <Project>{D45DC115-0724-415C-86FB-825BFA06D571}</Project>
-      <Name>Svetosavlje.Data_Layer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Data_Layer\Svetosavlje.Interfaces\Svetosavlje.Interfaces.csproj">
-      <Project>{baf057b6-c366-4f97-a888-a2e5f30bbed5}</Project>
-      <Name>Svetosavlje.Interfaces</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -6,16 +6,16 @@ using System.Web.Mvc;
 using System.Net;
 using System.Xml.Linq;
 using Svetosavlje.Models;
-using Svetosavlje.Data_Layer;
 using Svetosavlje.Services;
-using Svetosavlje.Data_Layer.Interfaces;
+using Svetosavlje.Interfaces.Interfaces;
+using Svetosavlje.Interfaces.Classes;
 
 namespace Svetosavlje.Controllers
 {
     public class HomeController : Controller
     {
         private Blogs blogs = new Blogs();
-        private ListArhiva listArhiva = new ListArhiva();
+        private ListArhivaData listArhiva = new ListArhivaData();
         private PitanjaPastiru pitanjaPastiru = new PitanjaPastiru();
         private SvetiDana svetiDana = new SvetiDana();
         private IzDanaUDan izDanaUDan = new IzDanaUDan();
@@ -80,16 +80,6 @@ namespace Svetosavlje.Controllers
         }
     }
 
-    public class ListArhiva : ITopicList
-    {
-        private DatabaseProvider _provider = new DatabaseProvider();
-
-        public IList<MailListTopicInfo> GetTopicList(int rows)
-        {
-            return _provider.GetTopicList(rows);
-        }
-
-    }
 
     public class Blogs : IBlogProvider
     {
