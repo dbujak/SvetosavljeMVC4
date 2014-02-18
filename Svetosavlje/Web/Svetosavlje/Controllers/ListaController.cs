@@ -30,6 +30,24 @@ namespace Svetosavlje.Controllers
             return View(model);
         }
 
+        public ActionResult ListaTopics(int rows, int page = 0, bool boolList = false)
+        {
+            if (rows == 0)
+            {
+                rows = Convert.ToInt32(WebConfigurationManager.AppSettings["ListaArhiva_TopicsPerPage"].ToString());
+            }
+
+            ListaModel model = new ListaModel();
+            ListArhivaData data = new ListArhivaData();
+
+            model.boolList = boolList;
+
+            model.CurrentPage = page;
+            model.TotalPages = data.GetTotalTopics() / rows;
+            model.ListaTopics = data.GetTopicList(page, rows);
+
+            return PartialView("_ListaTopics", model);
+        }
     }
 
     public class ListArhivaData : IListaArhiva

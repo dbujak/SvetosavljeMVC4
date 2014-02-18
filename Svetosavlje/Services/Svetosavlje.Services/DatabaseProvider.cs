@@ -91,5 +91,10 @@ namespace Svetosavlje.Services
         {
             return _provider.GetTotalTopics();
         }
+
+        public IList<TopicMessage> GetTopicMessages(int topicID)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -168,5 +168,17 @@ namespace Svetosavlje.Services
         {
             return 333;
         }
+
+        public IList<TopicMessage> GetTopicMessages(int topicID)
+        {
+            IList<TopicMessage> topics = new List<TopicMessage>();
+
+            for (int i = 0; i < 10; i++)
+            {
+                TopicMessage msg = new TopicMessage(i, i, "name " + i.ToString(), DateTime.Now, "html Text of the mssg " + i.ToString(), null, i, "hdr " + i.ToString());
+                topics.Add(msg);
+            }
+            return topics;
+        }
     }
 }

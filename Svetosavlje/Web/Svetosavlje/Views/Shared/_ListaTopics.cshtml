@@ -1,0 +1,28 @@
+﻿@using System.Web.Configuration;
+@using Svetosavlje.Interfaces.Classes;
+@model Svetosavlje.Models.ListaModel
+
+@if (Model.boolList)
+{
+    <ul>
+        @foreach (ListaArhiva t in Model.ListaTopics)
+        {
+            <li><a href="http://www.svetosavlje.org/listarhiva/Home.aspx/Topic?topicId=@t.id">@t.naziv</a> (@Html.Encode(t.count)) : <a href="http://www.svetosavlje.org/listarhiva/Home.aspx/UserMessages?userId=@t.updaterID">@t.updater</a>, @t.datum.ToString() </li>
+        }
+    </ul>
+}
+else
+{
+    foreach (ListaArhiva topic in Model.ListaTopics)
+    {
+        
+        <div>
+            @topic.naziv;
+        </div>
+        <div class="underline">
+            Писац: @topic.updater
+            - број порука: @topic.count
+            – последња порука послана: @topic.datum
+        </div>
+    }
+}

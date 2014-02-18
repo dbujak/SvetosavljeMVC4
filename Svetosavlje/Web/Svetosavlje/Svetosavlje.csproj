@@ -425,6 +425,12 @@
   <ItemGroup>
     <Content Include="Views\Lista\Index.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Lista\Topic.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_ListaTopics.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

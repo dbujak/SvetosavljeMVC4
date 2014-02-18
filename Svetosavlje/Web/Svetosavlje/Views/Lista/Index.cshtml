@@ -1,4 +1,5 @@
 ﻿@using System.Globalization;
+@using System.Web.Configuration;
 @using Svetosavlje.Models;
 @using Svetosavlje.Interfaces.Classes;
 @model Svetosavlje.Models.ListaModel
@@ -24,16 +25,6 @@
     <!-- /row fluid -->
 
     <div>Paging goes here...</div>
-
-    @foreach (ListaArhiva topic in Model.ListaTopics)
-    {
-        <div>
-            @topic.naziv;
-        </div>
-        <div class="underline">
-            Писац: @topic.updater
-            - број порука: @topic.count
-            – последња порука послана: @topic.datum
-        </div>
-    }
+    
+    @Html.Action("ListaTopics","Lista", new {rows = Convert.ToInt32(WebConfigurationManager.AppSettings["ListaArhiva_TopicsPerPage"].ToString()), boolList = false})
 </div>

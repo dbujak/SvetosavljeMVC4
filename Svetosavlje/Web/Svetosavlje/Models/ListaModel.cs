@@ -13,5 +13,8 @@ namespace Svetosavlje.Models
         public IList<ListaArhiva> ListaTopics;
         public int CurrentPage;
         public int TotalPages;
+        public bool boolList;
+
+        
     }
 }
