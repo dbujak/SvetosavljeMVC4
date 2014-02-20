@@ -10,8 +10,8 @@ namespace Svetosavlje.Services
 {
     public class DatabaseProvider : IDataProvider
     {
-        private IDataProvider _provider = new MySQLProvider();
-        //private IDataProvider _provider = new DummyDatabaseProvider();
+        //private IDataProvider _provider = new MySQLProvider();
+        private IDataProvider _provider = new DummyDatabaseProvider();
 
         public IList<ListaArhiva> GetTopicList(int rows)
         {

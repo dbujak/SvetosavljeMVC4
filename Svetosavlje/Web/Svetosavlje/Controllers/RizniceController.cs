@@ -121,5 +121,54 @@ namespace Svetosavlje.Controllers
             return View();
 
         }
+
+        public ActionResult Freske_Ohrid1()
+        {
+            return View();
+
+        }
+
+        public ActionResult Freske_Ohrid2()
+        {
+            return View();
+
+        }
+
+        public ActionResult Freske_Protat01()
+        {
+            return View();
+
+        }
+
+        public ActionResult Freske_Protat02()
+        {
+            return View();
+
+        }
+
+        public ActionResult Freske_Protat03()
+        {
+            return View();
+
+        }
+
+        public ActionResult Freske_Protat04()
+        {
+            return View();
+
+        }
+
+        public ActionResult Freske_Kraljeva()
+        {
+            return View();
+
+        }
+
+        public ActionResult Freske_Sopocani()
+        {
+            return View();
+
+
+        }
     }
 }

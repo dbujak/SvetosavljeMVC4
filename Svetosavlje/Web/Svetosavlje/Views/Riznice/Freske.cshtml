@@ -1,8 +1,10 @@
 ﻿@{
-    ViewBag.Title = "Freske";
+    ViewBag.Title = "Фреске";
 }
+<p align="right">
+    <img src="~/Content/images/Riznice/riznice.jpg" width="304" height="98" hspace="15" vspace="15">
 
-<h2>Фреске</h2>
+</p>
          <ul class="breadcrumb">
             <li>@Html.ActionLink("Светосавље.орг", "Index", "Home")<span class="divider">/</span></li>
             <li>@Html.ActionLink("Ризнице", "Index", "Riznice")<span class="divider">/</span></li>
@@ -37,7 +39,7 @@
               </tr>
               <tr valign="top"> 
                 <td width="3%" height="22" bgcolor="#E8E7D9" valign="middle">&nbsp;</td>
-                <td width="50%" height="22" bgcolor="#E8E7D9" valign="middle"><b><font face="Arial, Helvetica, sans-serif" size="2"><a href="Freske%20Ohrid%201.htm">Богородица 
+                <td width="50%" height="22" bgcolor="#E8E7D9" valign="middle"><b><font face="Arial, Helvetica, sans-serif" size="2"><a href="@Url.Action("Freske_Ohrid1", "Riznice")">Богородица 
                   Перивлепта</a></font></b></td>
                 <td height="22" width="39%" bgcolor="#E8E7D9" valign="middle"><b><font face="Arial, Helvetica, sans-serif" size="2">Охрид</font></b></td>
                 <td height="22" width="8%" valign="middle" bgcolor="#E8E7D9"> 
@@ -46,7 +48,7 @@
               </tr>
               <tr valign="top"> 
                 <td width="3%" height="22" valign="middle">&nbsp;</td>
-                <td width="50%" height="22" valign="middle"><b><font face="Arial, Helvetica, sans-serif" size="2"><a href="Freske%20Protat01.htm">Протат</a></font></b></td>
+                <td width="50%" height="22" valign="middle"><b><font face="Arial, Helvetica, sans-serif" size="2"><a href="@Url.Action("Freske_Protat01", "Riznice")">Протат</a></font></b></td>
                 <td height="22" width="39%" valign="middle"><b><font face="Arial, Helvetica, sans-serif" size="2">Света 
                   Гора Атонска</font></b></td>
                 <td height="22" width="8%" valign="middle"> 
@@ -55,7 +57,7 @@
               </tr>
               <tr valign="top"> 
                 <td width="3%" height="22" bgcolor="#E8E7D9" valign="middle">&nbsp;</td>
-                <td width="50%" height="22" bgcolor="#E8E7D9" valign="middle"><b><font face="Arial, Helvetica, sans-serif" size="2"><a href="Freske%20Kraljeva.htm">Студеница- 
+                <td width="50%" height="22" bgcolor="#E8E7D9" valign="middle"><b><font face="Arial, Helvetica, sans-serif" size="2"><a href="@Url.Action("Freske_Kraljeva", "Riznice")">Студеница- 
                   Краљева црква</a></font></b></td>
                 <td height="22" width="39%" bgcolor="#E8E7D9" valign="middle"><b><font face="Arial, Helvetica, sans-serif" size="2">Студеница</font></b></td>
                 <td height="22" width="8%" valign="middle" bgcolor="#E8E7D9"> 
@@ -118,7 +120,7 @@
               </tr>
               <tr valign="top"> 
                 <td width="3%" height="22" valign="middle">&nbsp;</td>
-                <td width="50%" height="22" valign="middle"><b><font face="Arial, Helvetica, sans-serif" size="2"><a href="Freske%20Sopochani.htm">Сопоћани</a></font></b></td>
+                <td width="50%" height="22" valign="middle"><b><font face="Arial, Helvetica, sans-serif" size="2"><a href="@Url.Action("Freske_Sopocani", "Riznice")">Сопоћани</a></font></b></td>
                 <td height="22" width="39%" valign="middle"><b><font face="Arial, Helvetica, sans-serif" size="2">Сопоћани</font></b></td>
                 <td height="22" width="8%" valign="middle"> 
                   <div align="left"><b><font face="Arial, Helvetica, sans-serif" color="#000000" size="2">1260.</font></b></div>
