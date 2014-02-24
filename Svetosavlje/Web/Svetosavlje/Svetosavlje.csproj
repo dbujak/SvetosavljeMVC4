@@ -191,6 +191,12 @@
     <Content Include="Content\calendar\jquery.calendars.picker.css" />
     <Content Include="Content\calendar\jquery.calendars.picker.js" />
     <Content Include="Content\calendar\jquery.calendars.plus.js" />
+    <Content Include="Content\images\Biblioteka\IkonaSvihSvetih4.jpg" />
+    <Content Include="Content\images\Biblioteka\mmakaveji.jpg" />
+    <Content Include="Content\images\Biblioteka\mprolog.jpg" />
+    <Content Include="Content\images\Biblioteka\vdobro.jpg" />
+    <Content Include="Content\images\Biblioteka\vpsaltir.gif" />
+    <Content Include="Content\images\Biblioteka\zicki.jpg" />
     <Content Include="Content\images\Pastir\o_dusan.jpg" />
     <Content Include="Content\images\Pastir\o_dusan2.jpg" />
     <Content Include="Content\images\Pastir\o_ivan.jpg" />
