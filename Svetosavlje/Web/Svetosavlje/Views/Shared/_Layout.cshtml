@@ -7,7 +7,7 @@
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryui")
-    @Styles.Render("~/Content/themes/base/css", "~/Content/css") 
+    @Styles.Render("~/Content/themes/base/css", "~/Content/css")
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="description" content="" />
@@ -38,8 +38,9 @@
             js = d.createElement(s); js.id = id;
             js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
             fjs.parentNode.insertBefore(js, fjs);
-        } (document, 'script', 'facebook-jssdk'));
+        }(document, 'script', 'facebook-jssdk'));
     </script>
+
 </head>
 <body>
     <!-- glavna navigacija -->
@@ -51,24 +52,62 @@
                 </a>
                 <div class="nav-collapse">
                     <ul class="nav">
-                        <li ID="home">@Html.ActionLink("Светосавље.орг", "Index", "Home")</li>
-                        <li ID="pastir">@Html.ActionLink("Питање пастиру", "Index", "Pastir")</li>
-                        <li ID="prolog">@Html.ActionLink("Пролог", "Index", "Prolog")</li>
-                        <li ID="molitve">@Html.ActionLink("Молитве", "Molitve", "Home")</li>
-                        <li ID="lista">@Html.ActionLink("Листа", "Index", "Lista")</li>
-                        <li ID="biblioteka">@Html.ActionLink("Библиотека", "Biblioteka", "Home")</li>
+                        <li id="home">@Html.ActionLink("Светосавље.орг", "Index", "Home")</li>
+                        <li id="pastir">@Html.ActionLink("Питање пастиру", "Index", "Pastir")</li>
+                        <li id="prolog">@Html.ActionLink("Пролог", "Index", "Prolog")</li>
+                        <li id="molitve">@Html.ActionLink("Молитве", "Molitve", "Home")</li>
+                        <li id="lista">@Html.ActionLink("Листа", "Index", "Lista")</li>
+                        <li id="biblioteka">@Html.ActionLink("Библиотека", "Biblioteka", "Home")</li>
                         <li><a href="http://blogs.svetosavlje.org/vesti/" target="_blank">Вести</a></li>
                         <li><a href="http://www.svedokverni.org/" target="_blank">Мисија</a></li>
-                        <li ID="pojanje">@Html.ActionLink("Појање", "Pojanje", "Home")</li>
-                        <li ID="svetinje">@Html.ActionLink("Светиње", "Svetinje", "Home")</li>
-                        <li ID="riznice">@Html.ActionLink("Ризнице", "Index", "Riznice")</li>
-                        <li ID="crkvenoslovenski">@Html.ActionLink("Црквенословенски језик", "Crkvenoslovenski", "Home")</li> 
+                        <li id="pojanje">@Html.ActionLink("Појање", "Pojanje", "Home")</li>
+                        <li id="svetinje">@Html.ActionLink("Светиње", "Svetinje", "Home")</li>
+                        <li id="riznice">@Html.ActionLink("Ризнице", "Index", "Riznice")</li>
+                        <li id="crkvenoslovenski">@Html.ActionLink("Црквенословенски језик", "Crkvenoslovenski", "Home")</li>
                     </ul>
                 </div>
                 <!--/.nav-collapse -->
             </div>
         </div>
     </div>
+    <!-- Mark correct navigation link -->
+    <script type="text/javascript">
+        var loc = "/" + window.location.pathname.toLowerCase();
+        switch (true) {
+            case (loc.indexOf("pastir") > -1 ? true : false):
+                $('#pastir').addClass('active');
+                break;
+            case (loc.indexOf("prolog") > -1 ? true : false):
+                $('#prolog').addClass('active');
+                break;
+            case (loc.indexOf("molitve") > -1 ? true : false):
+                $('#molitve').addClass('active');
+                break;
+            case (loc.indexOf("lista") > -1 ? true : false):
+                $('#lista').addClass('active');
+                break;
+            case (loc.indexOf("biblioteka") > -1 ? true : false):
+                $('#biblioteka').addClass('active');
+                break;
+            case (loc.indexOf("pojanje") > -1 ? true : false):
+                $('#pojanje').addClass('active');
+                break;
+            case (loc.indexOf("svetinje") > -1 ? true : false):
+                $('#svetinje').addClass('active');
+                break;
+            case (loc.indexOf("riznice") > -1 ? true : false):
+                $('#riznice').addClass('active');
+                break;
+            case (loc.indexOf("crkvenoslovenski") > -1 ? true : false):
+                $('#crkvenoslovenski').addClass('active');
+                break;
+            default:
+                $('#home').addClass('active');
+                break;
+        }
+    </script>
+
+
     <!-- navbar -->
     <div class="container">
         <div class="HeaderSection">
@@ -92,5 +131,8 @@
     </div>
     <div id="fb-root">
     </div>
+
+
+
 </body>
 </html>
