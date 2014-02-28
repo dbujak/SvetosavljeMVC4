@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryui")
     @Styles.Render("~/Content/themes/base/css", "~/Content/css") 
 
@@ -50,18 +51,18 @@
                 </a>
                 <div class="nav-collapse">
                     <ul class="nav">
-                        <li class="active">@Html.ActionLink("Светосавље.орг", "Index", "Home")</li>
-                        <li>@Html.ActionLink("Питање пастиру", "Index", "Pastir")</li>
-                        <li>@Html.ActionLink("Пролог", "Index", "Prolog")</li>
-                        <li>@Html.ActionLink("Молитве", "Molitve", "Home")</li>
-                        <li>@Html.ActionLink("Листа", "Index", "Lista")</li>
-                        <li>@Html.ActionLink("Библиотека", "Biblioteka", "Home")</li>
-                        <li><a href="http://blogs.svetosavlje.org/vesti/">Вести</a></li>
-                        <li><a href="http://www.svedokverni.org/">Мисија</a></li>
-                        <li>@Html.ActionLink("Појање", "Pojanje", "Home")</li>
-                        <li>@Html.ActionLink("Светиње", "Svetinje", "Home")</li>
-                        <li>@Html.ActionLink("Ризнице", "Index", "Riznice")</li>
-                        <li>@Html.ActionLink("Црквенословенски језик", "Crkvenoslovenski", "Home")</li>
+                        <li ID="home">@Html.ActionLink("Светосавље.орг", "Index", "Home")</li>
+                        <li ID="pastir">@Html.ActionLink("Питање пастиру", "Index", "Pastir")</li>
+                        <li ID="prolog">@Html.ActionLink("Пролог", "Index", "Prolog")</li>
+                        <li ID="molitve">@Html.ActionLink("Молитве", "Molitve", "Home")</li>
+                        <li ID="lista">@Html.ActionLink("Листа", "Index", "Lista")</li>
+                        <li ID="biblioteka">@Html.ActionLink("Библиотека", "Biblioteka", "Home")</li>
+                        <li><a href="http://blogs.svetosavlje.org/vesti/" target="_blank">Вести</a></li>
+                        <li><a href="http://www.svedokverni.org/" target="_blank">Мисија</a></li>
+                        <li ID="pojanje">@Html.ActionLink("Појање", "Pojanje", "Home")</li>
+                        <li ID="svetinje">@Html.ActionLink("Светиње", "Svetinje", "Home")</li>
+                        <li ID="riznice">@Html.ActionLink("Ризнице", "Index", "Riznice")</li>
+                        <li ID="crkvenoslovenski">@Html.ActionLink("Црквенословенски језик", "Crkvenoslovenski", "Home")</li> 
                     </ul>
                 </div>
                 <!--/.nav-collapse -->
