@@ -72,33 +72,33 @@
     </div>
     <!-- Mark correct navigation link -->
     <script type="text/javascript">
-        var loc = "/" + window.location.pathname.toLowerCase();
+        var svetosavljeNavLoc = "/" + window.location.pathname.toLowerCase();
         switch (true) {
-            case (loc.indexOf("pastir") > -1 ? true : false):
+            case (svetosavljeNavLoc.indexOf("pastir") > -1 ? true: false):
                 $('#pastir').addClass('active');
                 break;
-            case (loc.indexOf("prolog") > -1 ? true : false):
+            case (svetosavljeNavLoc.indexOf("prolog") > -1 ? true: false):
                 $('#prolog').addClass('active');
                 break;
-            case (loc.indexOf("molitve") > -1 ? true : false):
+            case (svetosavljeNavLoc.indexOf("molitve") > -1 ? true: false):
                 $('#molitve').addClass('active');
                 break;
-            case (loc.indexOf("lista") > -1 ? true : false):
+            case (svetosavljeNavLoc.indexOf("lista") > -1 ? true: false):
                 $('#lista').addClass('active');
                 break;
-            case (loc.indexOf("biblioteka") > -1 ? true : false):
+            case (svetosavljeNavLoc.indexOf("biblioteka") > -1 ? true: false):
                 $('#biblioteka').addClass('active');
                 break;
-            case (loc.indexOf("pojanje") > -1 ? true : false):
+            case (svetosavljeNavLoc.indexOf("pojanje") > -1 ? true: false):
                 $('#pojanje').addClass('active');
                 break;
-            case (loc.indexOf("svetinje") > -1 ? true : false):
+            case (svetosavljeNavLoc.indexOf("svetinje") > -1 ? true: false):
                 $('#svetinje').addClass('active');
                 break;
-            case (loc.indexOf("riznice") > -1 ? true : false):
+            case (svetosavljeNavLoc.indexOf("riznice") > -1 ? true: false):
                 $('#riznice').addClass('active');
                 break;
-            case (loc.indexOf("crkvenoslovenski") > -1 ? true : false):
+            case (svetosavljeNavLoc.indexOf("crkvenoslovenski") > -1 ? true: false):
                 $('#crkvenoslovenski').addClass('active');
                 break;
             default:
