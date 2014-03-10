@@ -12,9 +12,9 @@ namespace Svetosavlje.Services
     class DummyDatabaseProvider : IDataProvider
     {
 
-        public IList<ListaArhiva> GetTopicList(int rows)
+        public IList<MessageThread> GetMessageThreads(int rows)
         {
-            IList<ListaArhiva> topicList = new List<ListaArhiva>(rows);
+            IList<MessageThread> topicList = new List<MessageThread>(rows);
 
             for (int i = 1; i <= rows; i++ )
             {
@@ -24,7 +24,7 @@ namespace Svetosavlje.Services
                 string user = "User " + i.ToString();
                 DateTime updated = DateTime.Now;
                 int updId = i;
-                ListaArhiva ti = new ListaArhiva(msgId, title, count, user, updated, updId);
+                MessageThread ti = new MessageThread(msgId, title, count, user, updated, updId);
                 topicList.Add(ti);
             }
 
@@ -159,9 +159,9 @@ namespace Svetosavlje.Services
 
 
 
-        public IList<ListaArhiva> GetTopicList(int page, int rows)
+        public IList<MessageThread> GetMessageThreads(int page, int rows)
         {
-            return GetTopicList(rows);
+            return GetMessageThreads(rows);
         }
 
         public int GetTotalTopics()

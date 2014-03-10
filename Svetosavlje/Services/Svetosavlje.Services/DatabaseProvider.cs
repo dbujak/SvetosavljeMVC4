@@ -13,9 +13,9 @@ namespace Svetosavlje.Services
         private IDataProvider _provider = new MySQLProvider();
         //private IDataProvider _provider = new DummyDatabaseProvider();
 
-        public IList<ListaArhiva> GetTopicList(int rows)
+        public IList<MessageThread> GetMessageThreads(int rows)
         {
-            return _provider.GetTopicList(rows);
+            return _provider.GetMessageThreads(rows);
         }
 
 
@@ -82,9 +82,9 @@ namespace Svetosavlje.Services
 
 
 
-        public IList<ListaArhiva> GetTopicList(int page, int rows)
+        public IList<MessageThread> GetMessageThreads(int page, int rows)
         {
-            return _provider.GetTopicList(page,rows);
+            return _provider.GetMessageThreads(page,rows);
         }
 
         public int GetTotalTopics()
@@ -94,7 +94,7 @@ namespace Svetosavlje.Services
 
         public IList<TopicMessage> GetTopicMessages(int topicID)
         {
-            throw new NotImplementedException();
+            return _provider.GetTopicMessages(topicID);
         }
     }
 }

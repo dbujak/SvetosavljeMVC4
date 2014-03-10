@@ -5,19 +5,19 @@
 @if (Model.boolList)
 {
     <ul>
-        @foreach (ListaArhiva t in Model.ListaTopics)
+        @foreach (MessageThread t in Model.ListaTopics)
         {
-            <li><a href="http://www.svetosavlje.org/listarhiva/Home.aspx/Topic?topicId=@t.id">@t.naziv</a> (@Html.Encode(t.count)) : <a href="http://www.svetosavlje.org/listarhiva/Home.aspx/UserMessages?userId=@t.updaterID">@t.updater</a>, @t.datum.ToString() </li>
+            <li> @Html.ActionLink(t.naziv, "Topic", "Lista", new { topicID = t.id, strTema = t.naziv }, null) (@Html.Encode(t.count)) : <a href="http://www.svetosavlje.org/listarhiva/Home.aspx/UserMessages?userId=@t.updaterID">@t.updater</a>, @t.datum.ToString() </li>
         }
     </ul>
 }
 else
 {
-    foreach (ListaArhiva topic in Model.ListaTopics)
+    foreach (MessageThread topic in Model.ListaTopics)
     {
         
         <div>
-            @topic.naziv;
+            @Html.ActionLink(topic.naziv, "Topic", "Lista", new { topicID = topic.id, strTema = topic.naziv }, null) »
         </div>
         <div class="underline">
             Писац: @topic.updater

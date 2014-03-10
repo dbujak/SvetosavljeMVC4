@@ -1,7 +1,95 @@
-﻿@model Svetosavlje.Models.ListaModel
+﻿@using System.Web.Configuration;
+@using Svetosavlje.Interfaces.Classes;
+@model Svetosavlje.Models.ListaModel
 
 @{
     ViewBag.Title = "Topic";
 }
+<style type="text/css">
+    .poruka {
+        margin: 20px 0 40px 0;
+        padding: 10px;
+        border: 1px solid #333;
+    }
 
-<h2>Topic</h2>
+    .bg0 {
+        background: #FFF9F3;
+    }
+
+    .bg1 {
+        background: #EFE3D6;
+    }
+
+    .poruka h4 {
+        margin: 0 0 0px 0;
+    }
+
+    .poruka em {
+        font-size: .8em;
+    }
+
+    .poruka p {
+        margin: 10px 0;
+    }
+
+    ul.porukaBottomNav {
+        background: #666;
+        list-style: none;
+        padding: 10px;
+    }
+
+        ul.porukaBottomNav li {
+            display: inline;
+            margin: 0 20px 0 0;
+        }
+
+            ul.porukaBottomNav li a {
+                color: #fff !important;
+                font-weight: bold;
+            }
+
+                ul.porukaBottomNav li a:hover {
+                    color: #fff;
+                    text-decoration: underline;
+                }
+
+            ul.porukaBottomNav li.povratakNaVrh {
+                margin: 0 0 0 250px;
+            }
+</style>
+
+
+<div class="row-fluid">
+    <div class="span12">
+        <ul class="breadcrumb">
+            <li>@Html.ActionLink("Светосавље.орг", "Index", "Home")<span class="divider">/</span></li>
+            <li>@Html.ActionLink("Архива Листе", "Index", "Lista")<span class="divider">/</span></li>
+            <li class="active">@ViewData["naslovTeme"]</li>
+        </ul>
+    </div>
+        <br /><br />
+        <div style="margin: 0 auto; text-align: center; width: 60%;">
+            <h1>@ViewData["naslovTeme"]</h1>
+            <span>Укупно @ViewData.Model.TopicMessages.Count порука</span>
+
+        </div>
+        <!-- /uvod, slike otaca-->
+
+
+    @{
+        int i = 0;
+        foreach (TopicMessage t in Model.TopicMessages)
+        {
+            string strBG = "poruka bg" + (i % 2);
+            i++;
+        <div class="@strBG">
+            <h4>@t.userName</h4>
+            <em>@t.messageDate.ToString()</em>
+            <p>
+                @Html.Raw(System.Web.HttpUtility.HtmlDecode(t.messageHtmlText))
+            </p>
+        </div>
+    
+        }
+    }
+</div>

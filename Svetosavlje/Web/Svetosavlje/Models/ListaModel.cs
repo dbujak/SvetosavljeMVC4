@@ -10,7 +10,8 @@ namespace Svetosavlje.Models
 {
     public class ListaModel
     {
-        public IList<ListaArhiva> ListaTopics;
+        public IList<MessageThread> ListaTopics;
+        public IList<TopicMessage> TopicMessages;
         public int CurrentPage;
         public int TotalPages;
         public bool boolList;

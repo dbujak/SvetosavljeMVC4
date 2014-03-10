@@ -25,7 +25,7 @@ namespace Svetosavlje.Controllers
 
             model.CurrentPage = page;
             model.TotalPages = data.GetTotalTopics() / topicsPerPage;
-            model.ListaTopics = data.GetTopicList(page, topicsPerPage);
+            model.ListaTopics = data.GetMessageThreads(page, topicsPerPage);
 
             return View(model);
         }
@@ -44,9 +44,20 @@ namespace Svetosavlje.Controllers
 
             model.CurrentPage = page;
             model.TotalPages = data.GetTotalTopics() / rows;
-            model.ListaTopics = data.GetTopicList(page, rows);
+            model.ListaTopics = data.GetMessageThreads(page, rows);
 
             return PartialView("_ListaTopics", model);
+        }
+
+        public ActionResult Topic(int topicID, string strTema)
+        {
+            ListaModel model = new ListaModel();
+
+            ListArhivaData data = new ListArhivaData();
+
+            model.TopicMessages = data.GetTopicMessages(topicID);
+            ViewData["naslovTeme"] = strTema;
+            return View(model);
         }
     }
 
@@ -54,21 +65,27 @@ namespace Svetosavlje.Controllers
     {
         private DatabaseProvider _provider = new DatabaseProvider();
 
-        public IList<ListaArhiva> GetTopicList(int rows)
+        public IList<MessageThread> GetMessageThreads(int rows)
         {
-            return _provider.GetTopicList(rows);
+            return _provider.GetMessageThreads(rows);
         }
 
 
 
-        public IList<ListaArhiva> GetTopicList(int page, int rows)
+        public IList<MessageThread> GetMessageThreads(int page, int rows)
         {
-            return _provider.GetTopicList(page, rows);
+            return _provider.GetMessageThreads(page, rows);
         }
 
         public int GetTotalTopics()
         {
             return _provider.GetTotalTopics();
+        }
+
+
+        public IList<TopicMessage> GetTopicMessages(int topicID)
+        {
+            return _provider.GetTopicMessages(topicID);
         }
     }
 }

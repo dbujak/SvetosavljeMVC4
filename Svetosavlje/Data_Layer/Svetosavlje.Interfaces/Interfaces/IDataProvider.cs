@@ -6,22 +6,19 @@ using Svetosavlje.Interfaces.Classes;
 
 namespace Svetosavlje.Interfaces.Interfaces
 {
-    public interface IDataProvider : IListaArhiva, IQuestionList, ISaintNamesList, ISaintNamesAndLivesList, IProlog, IQuote, IZachala, IFastingType, IPastirTopicsList, IPastirQuestion, ITopicMessages
+    public interface IDataProvider : IListaArhiva, IQuestionList, ISaintNamesList, ISaintNamesAndLivesList, IProlog, IQuote, IZachala, IFastingType, IPastirTopicsList, IPastirQuestion
     {
 
     }
 
     public interface IListaArhiva
     {
-        IList<ListaArhiva> GetTopicList(int rows);
-        IList<ListaArhiva> GetTopicList(int page, int rows);
+        IList<MessageThread> GetMessageThreads(int rows);
+        IList<MessageThread> GetMessageThreads(int page, int rows);
+        IList<TopicMessage> GetTopicMessages(int topicID);
         int GetTotalTopics();
     }
 
-    public interface ITopicMessages
-    {
-        IList<TopicMessage> GetTopicMessages(int topicID);
-    }
 
     public interface IPastirQuestion
     {

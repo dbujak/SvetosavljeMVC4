@@ -15,14 +15,14 @@ namespace Svetosavlje.Models
         public IList<WPBlogModel> Vijesti;
         public IList<WPBlogModel> Misija;
         public IList<WPBlogModel> Urednistvo;
-        public IList<ListaArhiva> Lista;
+        public IList<MessageThread> Lista;
         public IList<PitanjeInfo> Pastir;
         public IList<string> DnevniSveti;
         public string DailyQuote;
         public string DailyReading;
         public string DailyFasting;
 
-        public Main(IList<WPBlogModel> v, IList<WPBlogModel> m, IList<WPBlogModel> u, IList<ListaArhiva> l, IList<PitanjeInfo> p, IList<string> s, string q, string r, string f)
+        public Main(IList<WPBlogModel> v, IList<WPBlogModel> m, IList<WPBlogModel> u, IList<MessageThread> l, IList<PitanjeInfo> p, IList<string> s, string q, string r, string f)
         {
             Vijesti = v;
             Misija = m;

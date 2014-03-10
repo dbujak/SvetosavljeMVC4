@@ -36,7 +36,7 @@ namespace Svetosavlje.Controllers
             Svetosavlje.Models.Main M = new Main(blogs.GetNews(),     //blogs.GetNews(10)
                                                   blogs.GetMissionNews(),
                                                   blogs.GetEditorNews(),
-                                                  listArhiva.GetTopicList(10),
+                                                  listArhiva.GetMessageThreads(10),
                                                   pitanjaPastiru.GetQuestionList(0, 10),
                                                   svetiDana.GetSaintNamesList(today.Month, today.Day),
                                                   izDanaUDan.GetQuote(1, /*today.Month, today.Day*/Month, Day),

@@ -14,11 +14,11 @@ namespace Svetosavlje.Services
     {
         
 
-        public IList<ListaArhiva> GetTopicList(int rows)
+        public IList<MessageThread> GetMessageThreads(int rows)
         {
             ListaArhivaService list = new ListaArhivaService();
 
-            return list.GetTopicList(rows);
+            return list.GetMessageThreads(rows);
 
         }
 
@@ -97,11 +97,11 @@ namespace Svetosavlje.Services
 
 
 
-        public IList<ListaArhiva> GetTopicList(int page, int rows)
+        public IList<MessageThread> GetMessageThreads(int page, int rows)
         {
             ListaArhivaService list = new ListaArhivaService();
 
-            return list.GetTopicList(page, rows);
+            return list.GetMessageThreads(page, rows);
         }
 
         public int GetTotalTopics()
@@ -113,7 +113,9 @@ namespace Svetosavlje.Services
 
         public IList<TopicMessage> GetTopicMessages(int topicID)
         {
-            throw new NotImplementedException();
+            ListaArhivaService list = new ListaArhivaService();
+
+            return list.GetTopicMessages(topicID);
         }
     }
 }

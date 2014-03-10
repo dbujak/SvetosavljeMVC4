@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Svetosavlje.Interfaces.Classes
 {
-    public class ListaArhiva
+    public class MessageThread
     {
         public int id;
         public string naziv;
@@ -12,7 +12,7 @@ namespace Svetosavlje.Interfaces.Classes
         public int updaterID;
         public DateTime? datum;
 
-        public ListaArhiva(int i, string n, long c, string u, DateTime? d, int updId)
+        public MessageThread(int i, string n, long c, string u, DateTime? d, int updId)
         {
             id = i;
             naziv = n;
