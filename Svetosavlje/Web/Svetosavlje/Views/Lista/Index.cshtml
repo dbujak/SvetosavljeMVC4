@@ -9,7 +9,10 @@
 }
 
 <style>
-    .underline {border-bottom:solid 1px black; }
+    .underline {
+        border-bottom: 1px dotted #999;
+    }
+
 </style>
 
 <div class="row-fluid">
@@ -19,13 +22,45 @@
             <li class="active">Архива Листе</li>
         </ul>
         <div style="margin: 0 auto; text-align: center; width: 60%;">
-            <h1>Архива Листе</h1>
+            <h1>Теме</h1>
         </div>
         <!-- /uvod, slike otaca-->
     </div>
     <!-- /row fluid -->
 
-    <div>Paging goes here...</div>
-    
-    @Html.Action("ListaTopics","Lista", new {rows = Convert.ToInt32(WebConfigurationManager.AppSettings["ListaArhiva_TopicsPerPage"].ToString()), boolList = false})
+
+    <ul class="pager">
+        @{
+            // put 1st page
+            if (Model.CurrentPage - 10 > 10)
+            {
+                <li>@Html.ActionLink("First", "Index", "Lista", new { page = 0 }, null)</li>
+            }
+            // build 10 pages before current page
+            for (int i = Model.CurrentPage - 10; i < Model.CurrentPage; i++)
+            {
+                if (i > -1 && i < Model.TotalPages)
+                {
+            <li>@Html.ActionLink((i + 1).ToString(), "Index", "Lista", new { page = i }, null)</li>
+                }
+            }
+                // build current page
+            <li>@(Model.CurrentPage + 1)</li>
+            // build 10 next pages after current page
+            for (int i = Model.CurrentPage + 1; i < Model.CurrentPage + 10; i++)
+            {
+                if (i < Model.TotalPages)
+                {
+            <li>@Html.ActionLink((i + 1).ToString(), "Index", "Lista", new { page = i }, null)</li>
+                }
+            }
+            // put last page
+            if (Model.TotalPages - Model.CurrentPage > 10)
+            {
+                <li>@Html.ActionLink("Last", "Index", "Lista", new { page = Model.TotalPages }, null)</li>
+            }
+        }
+    </ul>
+
+    @Html.Action("ListaTopics", "Lista", new { rows = Convert.ToInt32(WebConfigurationManager.AppSettings["ListaArhiva_TopicsPerPage"].ToString()), boolList = false })
 </div>
