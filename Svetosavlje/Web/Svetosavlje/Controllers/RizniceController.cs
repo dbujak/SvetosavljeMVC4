@@ -168,6 +168,59 @@ namespace Svetosavlje.Controllers
         {
             return View();
 
+        }
+
+        public ActionResult Rukopisni1()
+        {
+            return View();
+
+        }
+
+        public ActionResult Rukopisni2()
+        {
+            return View();
+
+        }
+
+        public ActionResult Bordure()
+        {
+            return View();
+
+        }
+
+        public ActionResult Bordure2()
+        {
+            return View();
+
+        }
+
+        public ActionResult Ikonice()
+        {
+            return View();
+
+        }
+
+        public ActionResult Medaljoni()
+        {
+            return View();
+
+        }
+
+        public ActionResult Viz_slova()
+        {
+            return View();
+
+        }
+
+        public ActionResult Okviri()
+        {
+            return View();
+
+        }
+
+        public ActionResult Trake()
+        {
+            return View();
 
         }
     }
