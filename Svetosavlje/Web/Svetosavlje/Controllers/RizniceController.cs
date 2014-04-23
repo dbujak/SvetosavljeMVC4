@@ -223,5 +223,50 @@ namespace Svetosavlje.Controllers
             return View();
 
         }
+        public ActionResult Zastavice1()
+        {
+            return View();
+
+        }
+        public ActionResult Zastavice2()
+        {
+            return View();
+
+        }
+        public ActionResult Zastavice3()
+        {
+            return View();
+
+        }
+        public ActionResult Zastavice4()
+        {
+            return View();
+
+        }
+        public ActionResult Zastavice5()
+        {
+            return View();
+
+        }
+        public ActionResult Zastavice6()
+        {
+            return View();
+
+        }
+        public ActionResult Zastavice7()
+        {
+            return View();
+
+        }
+        public ActionResult Zastavice8()
+        {
+            return View();
+
+        }
+        public ActionResult Zastavice9()
+        {
+            return View();
+
+        }
     }
 }

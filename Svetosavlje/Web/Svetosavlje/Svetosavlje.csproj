@@ -15,7 +15,7 @@
     <AssemblyName>Svetosavlje</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -1293,6 +1293,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\images\Riznice\Krasnopis\Zastavice1\Thumbs\" />
+    <Folder Include="Content\images\Riznice\Krasnopis\Zastavice2\Thumbs\" />
+    <Folder Include="Content\images\Riznice\Krasnopis\Zastavice3\Thumbs\" />
+    <Folder Include="Content\images\Riznice\Krasnopis\Zastavice4\Thumbs\" />
+    <Folder Include="Content\images\Riznice\Krasnopis\Zastavice5\Thumbs\" />
+    <Folder Include="Content\images\Riznice\Krasnopis\Zastavice6\Thumbs\" />
+    <Folder Include="Content\images\Riznice\Krasnopis\Zastavice7\Thumbs\" />
+    <Folder Include="Content\images\Riznice\Krasnopis\Zastavice8\Thumbs\" />
+    <Folder Include="Content\images\Riznice\Krasnopis\Zastavice9\Thumbs\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
@@ -1482,6 +1491,15 @@
     <Content Include="Views\Riznice\Rukopisni2.cshtml" />
     <Content Include="Views\Riznice\Trake.cshtml" />
     <Content Include="Views\Riznice\Viz_slova.cshtml" />
+    <Content Include="Views\Riznice\Zastavice1.cshtml" />
+    <Content Include="Views\Riznice\Zastavice2.cshtml" />
+    <Content Include="Views\Riznice\Zastavice3.cshtml" />
+    <Content Include="Views\Riznice\Zastavice4.cshtml" />
+    <Content Include="Views\Riznice\Zastavice5.cshtml" />
+    <Content Include="Views\Riznice\Zastavice6.cshtml" />
+    <Content Include="Views\Riznice\Zastavice7.cshtml" />
+    <Content Include="Views\Riznice\Zastavice8.cshtml" />
+    <Content Include="Views\Riznice\Zastavice9.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -1501,8 +1519,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>1303</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
+          <IISUrl>http://localhost:1303/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
