@@ -39,6 +39,7 @@ namespace Svetosavlje.Controllers
             model.Datum = dtDate.Day.ToString() + "/" + dtDate.Month.ToString() + "/" + dtDate.Year.ToString();
             model.Dan = dtDate.Day.ToString() + ".";
             model.Mjesec = this.Mjesec(dtDate.Month);
+            model.ZitijaLink = dtDate.ToString("MMdd");
 
             return View(model);
         }

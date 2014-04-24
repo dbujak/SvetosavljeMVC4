@@ -44,7 +44,7 @@
     &nbsp;
 <div style="border-bottom: solid 1px black; border-top: solid 1px black; padding: 2px;
     margin: 2px; background-color: #F0F0F0; font-weight: bold; text-align: center">@Model.Dan
-    @Model.Mjesec</div>
+    @Model.Mjesec @Model.ZitijaLink</div>
     @{int i = 0;}
     @foreach (Prolog prolog in Model.Sveti)
     {
@@ -58,6 +58,10 @@
             @prolog.ZitijaSveca
         </p>
     }
+    <p>
+        @{string link = "http://svetosavlje.org/biblioteka/AvaJustin/ZitijaSvetih/ZitijaSvetih" + Model.ZitijaLink + ".htm";}
+        (<a href="@link">Житија Светих за данас</a>)
+    </p>
     <p>
         <br />
         @Html.Raw(Model.Pjesma)
