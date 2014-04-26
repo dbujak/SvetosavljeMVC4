@@ -44,6 +44,11 @@ namespace Svetosavlje.Controllers
             return View(model);
         }
 
+        public ActionResult Search(string search)
+        {
+
+            return View();
+        }
         private string Mjesec(int mjesec)
         {
             switch (mjesec)
@@ -103,6 +108,11 @@ namespace Svetosavlje.Controllers
             return _provider.GetProlog(Mjesec,Dan);
         }
 
-  
+
+
+        public IList<PrologSearchResults> GetPrologSearchResutls(string keyword)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

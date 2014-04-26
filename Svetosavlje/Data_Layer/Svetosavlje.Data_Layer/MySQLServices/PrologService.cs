@@ -10,7 +10,7 @@ using System.Data;
 
 namespace Svetosavlje.Data_Layer.MySQLServices
 {
-    public class PrologService : ISaintNamesList, ISaintNamesAndLivesList, IProlog
+    public class PrologService : IProlog
     {
         private dbConnection dbConn = new dbConnection();
 
@@ -64,9 +64,30 @@ namespace Svetosavlje.Data_Layer.MySQLServices
             prolog.Sozercanje = list.Rows[0]["sozercanje"].ToString();
             prolog.Besjeda = list.Rows[0]["besjeda"].ToString();
 
-
             return prolog;
         }
 
+
+        public IList<PrologSearchResults> GetPrologSearchResutls(string keyword)
+        {
+            string strSQL = @"SELECT datum, 'ime' as whereFound, ime as searchField FROM svetosavlje_org.prolog_zitija_utf8 Where ime like @keyword " +
+                "union Select datum, 'zitije' as whereFound, zitije as searchField from svetosavlje_org.prolog_zitija_utf8 Where zitije like @keyword " +
+                "union select datum, 'pjesma' as whereFound, pjesma as searchField from svetosavlje_org.prolog_utf8 Where pjesma like @keyword " +
+                "union select datum, 'rasudjivanje' as whereFound, rasudjivanje as searchField from svetosavlje_org.prolog_utf8 Where rasudjivanje like @keyword " +
+                "union select datum, 'sozercanje' as whereFound, sozercanje as searchField from svetosavlje_org.prolog_utf8 Where sozercanje like @keyword " +
+                "union select datum, 'besjeda' as whereFound, besjeda as searchField from svetosavlje_org.prolog_utf8 Where besjeda like @keyword";
+
+            IList<Parameter> parameters = new List<Parameter>();
+            parameters.Add(new Parameter("@keyword", "%" + keyword + "%"));
+            DataTable searchRes = dbConn.GetDataTable(strSQL, dbConnection.Connenction.PitanjaPastiru, parameters);
+
+            IList<PrologSearchResults> returnSearch = new List<PrologSearchResults>();
+            foreach (DataRow row in searchRes.Rows)
+            { 
+                PrologSearchResults searchResult = new PrologSearchResults(Convert.ToInt16(row["datum"]), row["whereFound"].ToString(), row["searchField"].ToString());
+                returnSearch.Add(searchResult);
+            }
+            return returnSearch;
+        }
     }
 }

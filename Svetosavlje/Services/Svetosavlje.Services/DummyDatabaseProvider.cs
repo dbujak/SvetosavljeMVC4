@@ -180,5 +180,10 @@ namespace Svetosavlje.Services
             }
             return topics;
         }
+
+        public IList<PrologSearchResults> GetPrologSearchResutls(string keyword)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

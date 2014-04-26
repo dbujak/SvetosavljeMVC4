@@ -45,9 +45,17 @@ namespace Svetosavlje.Interfaces.Interfaces
         IList<Prolog> GetSaintNamesAndLivesList(int Mjesec, int Dan);
     }
 
-    public interface IProlog
+    public interface IPrologOther
     {
         PrologOther GetProlog(int Mjesec, int Dan);
+    }
+
+    public interface IPrologSearch
+    {
+        IList<PrologSearchResults> GetPrologSearchResutls(string keyword);
+    }
+    public interface IProlog : ISaintNamesAndLivesList, IPrologOther, IPrologSearch, ISaintNamesList
+    {
     }
 
     public interface IQuote

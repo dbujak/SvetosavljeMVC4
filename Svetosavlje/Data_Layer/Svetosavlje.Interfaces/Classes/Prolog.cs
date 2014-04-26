@@ -23,4 +23,18 @@ namespace Svetosavlje.Interfaces.Classes
             ZitijaSveca = zitija;
         }
     }
+    public class PrologSearchResults
+    {
+        public int Datum { get; set; }
+        public string Naslov { get; set; }
+        public string Tekst { get; set; }
+        public bool OznaciPretragu { get; set; }
+
+        public PrologSearchResults(int datum, string naslov, string tekst)
+        {
+            Datum = datum;
+            Naslov = naslov;
+            Tekst = tekst;
+        }
+    }
 }

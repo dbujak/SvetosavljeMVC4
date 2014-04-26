@@ -96,5 +96,10 @@ namespace Svetosavlje.Services
         {
             return _provider.GetTopicMessages(topicID);
         }
+
+        public IList<PrologSearchResults> GetPrologSearchResutls(string keyword)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

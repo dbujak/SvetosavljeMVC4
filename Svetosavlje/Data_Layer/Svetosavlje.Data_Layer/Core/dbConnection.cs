@@ -82,6 +82,30 @@ namespace Svetosavlje.Data_Layer.Core
         
         }
 
+        public DataTable GetDataTable(string strSQL, Connenction connection, IList<Parameter> parameters)
+        {
+            DataTable dataSet = new DataTable();
+
+            using (MySqlConnection con = MySqlConn())
+            {
+                MySqlCommand comm = new MySqlCommand(strSQL, con);
+                foreach (Parameter par in parameters)
+                {
+                    MySqlParameter sqlPar = new MySqlParameter(par.Name, MySqlDbType.VarString);
+                    sqlPar.Value = par.Value;
+                    comm.Parameters.Add(sqlPar);
+                }
+                con.Open();
+
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(comm);
+                dataAdapter.Fill(dataSet);
+
+                con.Close();
+            }
+
+            return dataSet;
+        }
+
         public object GetScalar(string strSQL, Connenction connection)
         {
             this.Connection = connection;
@@ -127,6 +151,18 @@ namespace Svetosavlje.Data_Layer.Core
 
             MySqlConnection newconn = new MySqlConnection(settings.ConnectionString);
             return newconn;
+        }
+    }
+
+    public class Parameter
+    {
+        public string Name { get; set; }
+        public string Value { get; set; }
+
+        public Parameter(string name, string value)
+        {
+            Name = name;
+            Value = value;
         }
     }
 
