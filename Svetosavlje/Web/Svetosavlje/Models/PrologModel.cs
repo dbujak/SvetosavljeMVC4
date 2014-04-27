@@ -19,5 +19,6 @@ namespace Svetosavlje.Models
         public string Mjesec { get; set; }
         public string ZitijaLink { get; set; }
         public IList<PrologSearchResults> SearchResults { get; set; }
+        public string SearchKeyword { get; set; }
     }
 }

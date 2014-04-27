@@ -8,16 +8,16 @@
 
     DateTime today = DateTime.Today.AddDays(-13);     // Julian date
     CultureInfo sr = new CultureInfo(0x0C1A);         // Serbian Cyrillic
-    int dan = (today.DayOfWeek == DayOfWeek.Sunday) ? 6 : (int)today.DayOfWeek - 1; 
+    int dan = (today.DayOfWeek == DayOfWeek.Sunday) ? 6 : (int)today.DayOfWeek - 1;
     string Dan = sr.DateTimeFormat.DayNames[dan];
     string Mjes = sr.DateTimeFormat.MonthNames[(int)today.Month - 1];
 }
 <script type="text/javascript">
-    $('#home').addClass('active'); 
+    $('#home').addClass('active');
 </script>
 
 @section HeaderSection {
-   <!-- logo i slika oca Justina -->
+    <!-- logo i slika oca Justina -->
     <div class="row">
         <div class="span6">
             <img src="http://dummyimage.com/530x120/666/fff&text=slika+oca+justina+i+logo+svetosavlje+ide+ovde">
@@ -28,133 +28,138 @@
             <div class="fb-like" data-href="http://www.facebook.com/groups/46142913208" data-send="true" data-width="300" data-show-faces="true" data-action="recommend" data-font="arial"></div>
             <p>Данас је @Dan, @today.Day. @Mjes @today.Year. У нашој светој, саборној и апостолској Цркви слави се</p>
             <div class="row">
-              <div class="span4">
-                  <img src="http://placehold.it/160x120" width="80" height="120" style="float: left;margin:0 20px 20px 0;" />
-                  @foreach (string sv in Model.DnevniSveti)
-                  {
-                     @Html.ActionLink(sv, "Index", "Prolog")<br />
-                  }
-                  <a href="#">(Житија Светих за данас)</a>
-              </div>
-              <div class="span2">
-                  @Model.DailyFasting<br />
-                  <a href="#">Календар за @Mjes</a>
-              </div>
+                <div class="span4">
+                    <img src="http://placehold.it/160x120" width="80" height="120" style="float: left; margin: 0 20px 20px 0;" />
+                    @foreach (string sv in Model.DnevniSveti)
+                    {
+                        @Html.ActionLink(sv, "Index", "Prolog")<br />
+                    }
+                    @{string link = "http://svetosavlje.org/biblioteka/AvaJustin/ZitijaSvetih/ZitijaSvetih" + DateTime.Now.ToString("MMdd") + ".htm";}
+                    (<a href="@link">Житија Светих за данас</a>)
+
+                </div>
+                <div class="span2">
+                    @Model.DailyFasting<br />
+                    <a href="#">Календар за @Mjes</a>
+                </div>
             </div>
         </div>
-    </div><!-- row -->
+    </div>
+    <!-- row -->
 }
 
 
 
 
-    <!-- Dnevno citanje-->
-    <div class="row">
-        <div class="span8">
-            <h4>Са св. Јустином из дана у дан</h4>
-            <p>@Html.Raw(Model.DailyQuote.Substring(0, Math.Min(Model.DailyQuote.Length,350)))...</p>
-            <p><a href="">Читај даље</a> »</p>
-        </div>
-        <div class="span4">
-            <h4>Дневно читање из Светог Писма</h4>
-            <p>@Html.Raw(Model.DailyReading.Substring(0, Math.Min(Model.DailyReading.Length, 350)))...</p>
-            <p><a href="">Читај даље</a> »</p>
-        </div>
-    </div><!-- row -->
-    <hr />
+<!-- Dnevno citanje-->
+<div class="row">
+    <div class="span8">
+        <h4>Са св. Јустином из дана у дан</h4>
+        <p>@Html.Raw(Model.DailyQuote.Substring(0, Math.Min(Model.DailyQuote.Length, 350)))...</p>
+        <p><a href="">Читај даље</a> »</p>
+    </div>
+    <div class="span4">
+        <h4>Дневно читање из Светог Писма</h4>
+        <p>@Html.Raw(Model.DailyReading.Substring(0, Math.Min(Model.DailyReading.Length, 350)))...</p>
+        <p><a href="">Читај даље</a> »</p>
+    </div>
+</div>
+<!-- row -->
+<hr />
 
 
-    <div class="row">
-        <!-- Leva kolona -->
-        <div class="span8">
+<div class="row">
+    <!-- Leva kolona -->
+    <div class="span8">
 
-            <!-- Vesti -->
-            <div class="row">
-                <div class="span8">
-                    <h2> <a href="http://blogs.svetosavlje.org/vesti/">Вести</a> »</h2>
-                    <h3> <a href="@Model.Vijesti[0].Link"> @Model.Vijesti[0].Title </a> </h3>
-                    <p>@Model.Vijesti[0].Content [...]</p>
-                    <p><a href="@Model.Vijesti[0].Link">Читај даље</a> »</p>
-                    <ul>
+        <!-- Vesti -->
+        <div class="row">
+            <div class="span8">
+                <h2><a href="http://blogs.svetosavlje.org/vesti/">Вести</a> »</h2>
+                <h3><a href="@Model.Vijesti[0].Link">@Model.Vijesti[0].Title </a></h3>
+                <p>@Model.Vijesti[0].Content [...]</p>
+                <p><a href="@Model.Vijesti[0].Link">Читај даље</a> »</p>
+                <ul>
 
                     @for (int n = 1; n < Model.Vijesti.Count; ++n)
                     {
-                       <li><a href="@Model.Vijesti[n].Link"> @Model.Vijesti[n].Title </a> </li>
+                        <li><a href="@Model.Vijesti[n].Link">@Model.Vijesti[n].Title </a></li>
                     }
 
-                    </ul>
-                </div>
+                </ul>
             </div>
-                        
-            <hr />
+        </div>
 
-            <!-- Misija  -->
-            <div class="row">
-                <div class="span8">
-                    <h2> <a href="http://www.svedokverni.org/">Мисија</a> »</h2>
-                    <h3> <a href="@Model.Misija[0].Link"> @Model.Misija[0].Title </a> </h3>
-                    <p>@Model.Misija[0].Content</p>
-                    <p><a href="@Model.Misija[0].Link">Читај даље</a> »</p>
-                    <ul>
+        <hr />
+
+        <!-- Misija  -->
+        <div class="row">
+            <div class="span8">
+                <h2><a href="http://www.svedokverni.org/">Мисија</a> »</h2>
+                <h3><a href="@Model.Misija[0].Link">@Model.Misija[0].Title </a></h3>
+                <p>@Model.Misija[0].Content</p>
+                <p><a href="@Model.Misija[0].Link">Читај даље</a> »</p>
+                <ul>
 
                     @for (int n = 1; n < Model.Misija.Count; ++n)
                     {
-                       <li><a href="@Model.Misija[n].Link"> @Model.Misija[n].Title </a> </li>
+                        <li><a href="@Model.Misija[n].Link">@Model.Misija[n].Title </a></li>
                     }
 
-                    </ul>
-                </div>
+                </ul>
             </div>
-
-            <hr />
-
-            <!-- Lista -->
-            <div class="row">
-                <div class="span8">
-                    <h2> <a href="http://www.svetosavlje.org/listarhiva/Home.aspx">Листа</a> »</h2>
-                    @Html.Action("ListaTopics","Lista", new {rows = 10, boolList = true})
-                </div>
-            </div>
-
-            <hr />
-
-            <!-- Pastir -->
-            <div class="row">
-                <div class="span8">
-                    <h2> @Html.ActionLink("Питање пастиру", "Index", "Pastir") »</h2>
-
-                    @Html.Action("PastirQuestions", "Pastir", new { topicID = 0, rows = 10, orderedList = false })
-                </div>
-            </div>
-
-            <hr />
-
-
         </div>
 
-        <!-- Desna kolona -->
-        <div class="span4">
-            <h2><a href="http://blogs.svetosavlje.org/urednistvo/" data-toggle="tab">Из уредничког пера</a></h2>
-            <h3> <a href="@Model.Vijesti[0].Link"> @Model.Urednistvo[0].Title </a> </h3>
-            <p>@Model.Urednistvo[0].Content [...]</p>
-            <p><a href="@Model.Urednistvo[0].Link">Читај даље</a> »</p>
-            <ul>
+        <hr />
 
-              @for (int n = 1; n < Model.Urednistvo.Count; ++n)
-              {
-                 <li><a href="@Model.Urednistvo[n].Link"> @Model.Urednistvo[n].Title </a> </li>
-              }
+        <!-- Lista -->
+        <div class="row">
+            <div class="span8">
+                <h2><a href="http://www.svetosavlje.org/listarhiva/Home.aspx">Листа</a> »</h2>
+                @Html.Action("ListaTopics", "Lista", new { rows = 10, boolList = true })
+            </div>
+        </div>
 
-            </ul>
+        <hr />
 
-        </div><!-- span4 iz urednickog pera -->
+        <!-- Pastir -->
+        <div class="row">
+            <div class="span8">
+                <h2>@Html.ActionLink("Питање пастиру", "Index", "Pastir") »</h2>
+
+                @Html.Action("PastirQuestions", "Pastir", new { topicID = 0, rows = 10, orderedList = false })
+            </div>
+        </div>
+
+        <hr />
 
 
     </div>
 
+    <!-- Desna kolona -->
+    <div class="span4">
+        <h2><a href="http://blogs.svetosavlje.org/urednistvo/" data-toggle="tab">Из уредничког пера</a></h2>
+        <h3><a href="@Model.Vijesti[0].Link">@Model.Urednistvo[0].Title </a></h3>
+        <p>@Model.Urednistvo[0].Content [...]</p>
+        <p><a href="@Model.Urednistvo[0].Link">Читај даље</a> »</p>
+        <ul>
 
+            @for (int n = 1; n < Model.Urednistvo.Count; ++n)
+            {
+                <li><a href="@Model.Urednistvo[n].Link">@Model.Urednistvo[n].Title </a></li>
+            }
 
-    <!-- footer -->
-    <div class="footer">
-        footer ide ovde
+        </ul>
+
     </div>
+    <!-- span4 iz urednickog pera -->
+
+
+</div>
+
+
+
+<!-- footer -->
+<div class="footer">
+    footer ide ovde
+</div>

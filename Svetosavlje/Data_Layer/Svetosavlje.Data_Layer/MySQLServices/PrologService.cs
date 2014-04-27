@@ -83,9 +83,12 @@ namespace Svetosavlje.Data_Layer.MySQLServices
 
             IList<PrologSearchResults> returnSearch = new List<PrologSearchResults>();
             foreach (DataRow row in searchRes.Rows)
-            { 
-                PrologSearchResults searchResult = new PrologSearchResults(Convert.ToInt16(row["datum"]), row["whereFound"].ToString(), row["searchField"].ToString());
-                returnSearch.Add(searchResult);
+            {
+                if (row["datum"].ToString().Length == 5)
+                {
+                    PrologSearchResults searchResult = new PrologSearchResults(Convert.ToInt16(row["datum"]), row["whereFound"].ToString(), row["searchField"].ToString());
+                    returnSearch.Add(searchResult);
+                }
             }
             return returnSearch;
         }

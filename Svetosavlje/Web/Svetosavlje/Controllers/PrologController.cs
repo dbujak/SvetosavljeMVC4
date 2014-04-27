@@ -15,19 +15,15 @@ namespace Svetosavlje.Controllers
 {
     public class PrologController : Controller
     {
-        //
-        // GET: /PrologOther/
 
+
+        // implement caching http://stackoverflow.com/questions/19054455/how-to-use-outputcache-for-a-specific-argument-only
         public ActionResult Index(string dtProlog, string txtSearchKeyword)
         {
             PrologModel model = new PrologModel();
             SvetiDana data = new SvetiDana();
             DateTime dtDate;
 
-            if (txtSearchKeyword != null && txtSearchKeyword != "") // redirect to search
-            {
-                return RedirectToAction("SearchResults", "Prolog", new { search = txtSearchKeyword });
-            }
 
             if (!DateTime.TryParse(dtProlog, out dtDate))
             {
@@ -37,6 +33,20 @@ namespace Svetosavlje.Controllers
             model.Sveti = data.GetSaintNamesAndLivesList(dtDate.Month, dtDate.Day);
             PrologOther prolog = new PrologOther();
             prolog = data.GetProlog(dtDate.Month, dtDate.Day);
+
+            if (txtSearchKeyword != null && txtSearchKeyword != "")
+            {
+                foreach (Prolog p in model.Sveti)
+                {
+                    p.ImeSveca = highlightSearchText(p.ImeSveca, txtSearchKeyword);
+                    p.ZitijaSveca = highlightSearchText(p.ZitijaSveca, txtSearchKeyword);
+                }
+
+                prolog.Pjesma = highlightSearchText(prolog.Pjesma, txtSearchKeyword);
+                prolog.Rasudjivanje = highlightSearchText(prolog.Rasudjivanje, txtSearchKeyword);
+                prolog.Sozercanje = highlightSearchText(prolog.Sozercanje, txtSearchKeyword);
+                prolog.Besjeda = highlightSearchText(prolog.Besjeda, txtSearchKeyword);
+            }
 
             model.Pjesma = prolog.Pjesma;
             model.Rasudjivanje = prolog.Rasudjivanje;
@@ -50,44 +60,60 @@ namespace Svetosavlje.Controllers
             return View(model);
         }
 
-        public ActionResult SearchResults(string search)
+        public ActionResult SearchResults(string txtSearchKeyword)
         {
             PrologModel model = new PrologModel();
             SvetiDana data = new SvetiDana();
-            
-            model.SearchResults = data.GetPrologSearchResutls(search);
+
+            if (txtSearchKeyword.Length >= 3)
+            {
+                model.SearchResults = data.GetPrologSearchResutls(txtSearchKeyword);
+                model.SearchKeyword = txtSearchKeyword;
+            }
+            else
+            {
+                return View(model);
+            }
 
             foreach (PrologSearchResults res in model.SearchResults)
             {
                 res.DatumDisplay = res.Datum.Day.ToString() + ". " + Mjesec(res.Datum.Month);
 
-                CompareInfo ci = CultureInfo.CurrentCulture.CompareInfo;
-                IList<int> pozicije = new List<int>();
-                bool more = true;
-                int location = -1;
-
-                while (more)
-                {
-                    location++;
-                    location = ci.IndexOf(res.Tekst, search, location,  CompareOptions.IgnoreCase);
-                    if (location > -1)
-                    {
-                        pozicije.Add(location);
-                    }
-                    else
-                    {
-                        more = false;
-                    }
-                }
-
-                for (int i = pozicije.Count-1; i >= 0; i--)
-                {
-                    res.Tekst = res.Tekst.Insert(pozicije[i] + search.Length, "</span>");
-                    res.Tekst = res.Tekst.Insert(pozicije[i], "<span class='searchHiglight'>");
-                }
+                res.Tekst = highlightSearchText(res.Tekst, txtSearchKeyword);
             }
             return View(model);
         }
+
+        private string highlightSearchText(string text, string search)
+        {
+            CompareInfo ci = CultureInfo.CurrentCulture.CompareInfo;
+            IList<int> pozicije = new List<int>();
+            bool more = true;
+            int location = -1;
+
+            while (more)
+            {
+                location++;
+                location = ci.IndexOf(text, search, location, CompareOptions.IgnoreCase);
+                if (location > -1)
+                {
+                    pozicije.Add(location);
+                }
+                else
+                {
+                    more = false;
+                }
+            }
+
+            for (int i = pozicije.Count - 1; i >= 0; i--)
+            {
+                text = text.Insert(pozicije[i] + search.Length, "</span>");
+                text = text.Insert(pozicije[i], "<span class='searchHiglight'>");
+            }
+
+            return text;
+        }
+
         private string Mjesec(int mjesec)
         {
             switch (mjesec)

@@ -28,15 +28,21 @@
 
     <style>
         .searchHiglight {
-            background-color:yellow;
+            background-color: yellow;
         }
     </style>
-    @foreach (PrologSearchResults result in Model.SearchResults)
+    @if (Model.SearchResults != null && Model.SearchResults.Count > 0)
     {
-        <p>@result.DatumDisplay @result.Naslov
+        foreach (PrologSearchResults result in Model.SearchResults)
+        {
+        <p>@Html.ActionLink(result.DatumDisplay, "Index", "Prolog", new { dtProlog = result.Datum.ToShortDateString(), txtSearchKeyword = Model.SearchKeyword}, null)
             <br />
             @Html.Raw(@result.Tekst)
         </p>
+        }
     }
-
+    else
+    {
+        <p>Нисмо ништа нашли...</p>
+    }
 </div>
