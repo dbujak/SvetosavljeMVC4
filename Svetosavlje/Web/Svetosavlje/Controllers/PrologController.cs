@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Globalization;
 using System.Web;
 using System.Web.Mvc;
 using System.Net;
@@ -17,11 +18,16 @@ namespace Svetosavlje.Controllers
         //
         // GET: /PrologOther/
 
-        public ActionResult Index(string dtProlog)
+        public ActionResult Index(string dtProlog, string txtSearchKeyword)
         {
             PrologModel model = new PrologModel();
             SvetiDana data = new SvetiDana();
             DateTime dtDate;
+
+            if (txtSearchKeyword != null && txtSearchKeyword != "") // redirect to search
+            {
+                return RedirectToAction("SearchResults", "Prolog", new { search = txtSearchKeyword });
+            }
 
             if (!DateTime.TryParse(dtProlog, out dtDate))
             {
@@ -44,10 +50,43 @@ namespace Svetosavlje.Controllers
             return View(model);
         }
 
-        public ActionResult Search(string search)
+        public ActionResult SearchResults(string search)
         {
+            PrologModel model = new PrologModel();
+            SvetiDana data = new SvetiDana();
+            
+            model.SearchResults = data.GetPrologSearchResutls(search);
 
-            return View();
+            foreach (PrologSearchResults res in model.SearchResults)
+            {
+                res.DatumDisplay = res.Datum.Day.ToString() + ". " + Mjesec(res.Datum.Month);
+
+                CompareInfo ci = CultureInfo.CurrentCulture.CompareInfo;
+                IList<int> pozicije = new List<int>();
+                bool more = true;
+                int location = -1;
+
+                while (more)
+                {
+                    location++;
+                    location = ci.IndexOf(res.Tekst, search, location,  CompareOptions.IgnoreCase);
+                    if (location > -1)
+                    {
+                        pozicije.Add(location);
+                    }
+                    else
+                    {
+                        more = false;
+                    }
+                }
+
+                for (int i = pozicije.Count-1; i >= 0; i--)
+                {
+                    res.Tekst = res.Tekst.Insert(pozicije[i] + search.Length, "</span>");
+                    res.Tekst = res.Tekst.Insert(pozicije[i], "<span class='searchHiglight'>");
+                }
+            }
+            return View(model);
         }
         private string Mjesec(int mjesec)
         {
@@ -95,7 +134,7 @@ namespace Svetosavlje.Controllers
 
 
 
-      
+
 
         public IList<Prolog> GetSaintNamesAndLivesList(int Mjesec, int Dan)
         {
@@ -105,14 +144,14 @@ namespace Svetosavlje.Controllers
 
         public PrologOther GetProlog(int Mjesec, int Dan)
         {
-            return _provider.GetProlog(Mjesec,Dan);
+            return _provider.GetProlog(Mjesec, Dan);
         }
 
 
 
         public IList<PrologSearchResults> GetPrologSearchResutls(string keyword)
         {
-            throw new NotImplementedException();
+            return _provider.GetPrologSearchResutls(keyword);
         }
     }
 }

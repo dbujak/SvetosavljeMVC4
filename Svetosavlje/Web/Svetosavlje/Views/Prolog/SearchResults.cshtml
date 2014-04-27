@@ -1,0 +1,42 @@
+﻿@using System.Globalization;
+@using Svetosavlje.Models;
+@using Svetosavlje.Interfaces.Classes;
+@model Svetosavlje.Models.PrologModel
+@{
+    ViewBag.Title = "Пролог - резултати претраге";
+}
+
+<div class="row-fluid">
+    <div class="span12">
+        <ul class="breadcrumb">
+            <li>@Html.ActionLink("Светосавље.орг", "Index", "Home")<span class="divider">/</span></li>
+            <li>@Html.ActionLink("Пролог", "Index", "Prolog")<span class="divider">/</span></li>
+            <li class="active">Резултати претраге</li>
+        </ul>
+        <div style="margin: 0 auto; text-align: center;">
+            <h1>Резултати претраге</h1>
+            @using (Html.BeginForm("Index", "Prolog"))
+            {
+                <div style="border-bottom-width: 1px; border-bottom-style: solid; margin: 10px; width: 500px; display: inline-block;">
+                    <span>Нађи: </span>@Html.TextBox("txtSearchKeyword")
+                    <input type="submit" value="Тражи" />
+                </div>
+                
+            }
+        </div>
+    </div>
+
+    <style>
+        .searchHiglight {
+            background-color:yellow;
+        }
+    </style>
+    @foreach (PrologSearchResults result in Model.SearchResults)
+    {
+        <p>@result.DatumDisplay @result.Naslov
+            <br />
+            @Html.Raw(@result.Tekst)
+        </p>
+    }
+
+</div>

@@ -99,7 +99,7 @@ namespace Svetosavlje.Services
 
         public IList<PrologSearchResults> GetPrologSearchResutls(string keyword)
         {
-            throw new NotImplementedException();
+            return _provider.GetPrologSearchResutls(keyword);
         }
     }
 }

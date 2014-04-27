@@ -120,7 +120,9 @@ namespace Svetosavlje.Services
 
         public IList<PrologSearchResults> GetPrologSearchResutls(string keyword)
         {
-            throw new NotImplementedException();
+            PrologService service = new PrologService();
+
+            return service.GetPrologSearchResutls(keyword);
         }
     }
 }

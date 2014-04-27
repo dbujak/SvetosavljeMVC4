@@ -1676,6 +1676,7 @@
     <Content Include="Views\Riznice\Zastavice7.cshtml" />
     <Content Include="Views\Riznice\Zastavice8.cshtml" />
     <Content Include="Views\Riznice\Zastavice9.cshtml" />
+    <Content Include="Views\Prolog\SearchResults.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -25,14 +25,18 @@ namespace Svetosavlje.Interfaces.Classes
     }
     public class PrologSearchResults
     {
-        public int Datum { get; set; }
+        public string DatumDisplay { get; set; }
+        public DateTime Datum { get; set; }
         public string Naslov { get; set; }
         public string Tekst { get; set; }
         public bool OznaciPretragu { get; set; }
 
         public PrologSearchResults(int datum, string naslov, string tekst)
         {
-            Datum = datum;
+            string d = datum.ToString();
+            string day = d.Substring(3, 2);
+            string month = d.Substring(1, 2);
+            Datum = Convert.ToDateTime(month + "/" + day + "/" + DateTime.Now.Year.ToString()); // format datum as mm/dd/yyyy
             Naslov = naslov;
             Tekst = tekst;
         }

@@ -9,7 +9,10 @@
 <link rel="stylesheet" type="text/css" href="~/Scripts/julian/jquery.calendars.picker.css">
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <style>
-    .underline {border-bottom:solid 1px black; font-weight:bold}
+    .underline {
+        border-bottom: solid 1px black;
+        font-weight: bold;
+    }
 </style>
 @Scripts.Render("~/bundles/julianCalendar")
 
@@ -32,19 +35,30 @@
             <li>@Html.ActionLink("Светосавље.орг", "Index", "Home")<span class="divider">/</span></li>
             <li class="active">Пролог</li>
         </ul>
-        <div style="margin: 0 auto; text-align: center; width: 60%;">
+        <div style="margin: 0 auto; text-align: center; ">
             <h1>Пролог</h1>
             @using (Html.BeginForm("Index", "Prolog"))
             {
-                <div id="inlineDatepicker"></div>
+                <div style="border-bottom-width:1px; border-bottom-style:solid; margin:10px;width:500px;display: inline-block;">
+                    <span>Нађи: </span>@Html.TextBox("txtSearchKeyword") 
+                <input type="submit" value="Тражи" />
+                </div>
+                
+                <div id="datepicker-container" style="text-align: center;">
+                    <div id="datepicker-center" style="display: inline-block; margin: 0 auto;">
+                        <div id="inlineDatepicker"></div>
+                    </div>
+                </div>
+
                 <input type="hidden" id="dtProlog" name="dtProlog" />
             }
         </div>
     </div>
+
     &nbsp;
-<div style="border-bottom: solid 1px black; border-top: solid 1px black; padding: 2px;
-    margin: 2px; background-color: #F0F0F0; font-weight: bold; text-align: center">@Model.Dan
-    @Model.Mjesec @Model.ZitijaLink</div>
+    <div style="border-bottom: solid 1px black; border-top: solid 1px black; padding: 2px; margin: 2px; background-color: #F0F0F0; font-weight: bold; text-align: center">@Model.Dan
+        @Model.Mjesec @Model.ZitijaLink
+    </div>
     @{int i = 0;}
     @foreach (Prolog prolog in Model.Sveti)
     {
