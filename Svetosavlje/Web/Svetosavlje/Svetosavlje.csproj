@@ -173,6 +173,7 @@
     <Compile Include="Controllers\PastirController.cs" />
     <Compile Include="Controllers\PrologController.cs" />
     <Compile Include="Controllers\RizniceController.cs" />
+    <Compile Include="Controllers\SvetinjeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1398,6 +1399,10 @@
     <Content Include="Content\images\Riznice\Utvari\Thumbnails\tamnjanika.gif" />
     <Content Include="Content\images\Riznice\Utvari\Thumbnails\tanjiric protat.gif" />
     <Content Include="Content\images\Riznice\Utvari\Thumbnails\zvono pechka.gif" />
+    <Content Include="Content\images\Svetinje\crkve.swf" />
+    <Content Include="Content\images\Svetinje\hodocasca.swf" />
+    <Content Include="Content\images\Svetinje\manastiri.swf" />
+    <Content Include="Content\images\Svetinje\mosti.swf" />
     <Content Include="Content\responsive.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -1519,7 +1524,7 @@
     <Content Include="Views\Home\Pojanje.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Svetinje.cshtml" />
+    <Content Include="Views\Svetinje\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Data_Layer\Svetosavlje.Interfaces\Svetosavlje.Interfaces.csproj">
