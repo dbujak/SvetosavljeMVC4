@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Блажен муж..";
+}
+
+<div class="row-fluid">
+
+    <div class="span12">
+        <ul class="breadcrumb">
+            <li>@Html.ActionLink("Светосавље.орг", "Index", "Home")<span class="divider">/</span></li>
+            <li>@Html.ActionLink("Црквенословенски језик", "Index", "Crkvenoslovenski")<span class="divider">/</span></li>
+            <li class="active">Блажен муж..</li>
+        </ul>
+        <!-- /uvod, slike otaca-->
+    </div>
+    <h1>Блажен муж..</h1>
+    <br />
+    <div class="row-fluid">
+        <div class="span4">
+            <img src="~/Content/images/Crkvenoslovenski/10.gif">
+        </div>
+        <div class="span4">
+            <p class="pesme">
+                Блажен човек 
+                    који не одлази на савет нечастивих, алилуја;<br>
+                И пут нечастивих пропашће, алилуја;<br>
+                Служите Господу са страхом и радујте Му се са трепетом, алилуја;<br>
+                Блажени сви који се уздају у Њега, алилуја;<br>
+                Васкрсни, Господе, спаси ме, Боже мој, алилуја;<br>
+                И на народу Твоме је благослов Твој, алилуја;<br>
+                Слава Оцу и Сину и Светоме Духу, алилуја,<br>
+                И сада и увек и у векове векова. Амин.<br>
+                Алилуја, алилуја, алилуја, слава Теби, Боже. (трипут)<br>
+            </p>
+        </div>
+    </div>
+
+    <hr><div class="btn-toolbar">@Html.Action("PesmeNavigacija", "Crkvenoslovenski", new { pesma = 10 })
+    </div>
+
+</div>

@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "О Тебје радујетсја: глас осми";
+}
+
+<div class="row-fluid">
+
+    <div class="span12">
+        <ul class="breadcrumb">
+            <li>@Html.ActionLink("Светосавље.орг", "Index", "Home")<span class="divider">/</span></li>
+            <li>@Html.ActionLink("Црквенословенски језик", "Index", "Crkvenoslovenski")<span class="divider">/</span></li>
+            <li class="active">О Тебје радујетсја: глас осми</li>
+        </ul>
+        <!-- /uvod, slike otaca-->
+    </div>
+    <h1>О Тебје радујетсја: глас осми</h1>
+    <br />
+    <div class="row-fluid">
+        <div class="span4">
+            <img src="~/Content/images/Crkvenoslovenski/03.gif">
+        </div>
+        <div class="span4">
+            <p class="pesme">
+                Теби се радује, 
+                    Благодатна, свако створење, анђелски збор и људски род, освештани 
+                    храме и рају словесни, девствена похвало, из које се Бог оваплоти 
+                    и дете поста, предвечни будући Бог наш; јер материцу Твоју 
+                    престолом начини и утробу Твоју пространијом од небеса направи; 
+                    Теби се радује, Благодатна, свако створење, слава Теби.<br>
+            </p>
+        </div>
+    </div>
+    <hr><div class="btn-toolbar">@Html.Action("PesmeNavigacija", "Crkvenoslovenski", new { pesma = 3 })
+    </div>
+
+</div>

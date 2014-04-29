@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Догматик гл. пети: В Чермњем мори";
+}
+
+<div class="row-fluid">
+
+    <div class="span12">
+        <ul class="breadcrumb">
+            <li>@Html.ActionLink("Светосавље.орг", "Index", "Home")<span class="divider">/</span></li>
+            <li>@Html.ActionLink("Црквенословенски језик", "Index", "Crkvenoslovenski")<span class="divider">/</span></li>
+            <li class="active">Догматик гл. пети: В Чермњем мори</li>
+        </ul>
+        <!-- /uvod, slike otaca-->
+    </div>
+    <h1>Догматик гл. пети: В Чермњем мори</h1>
+    <br />
+    <div class="row-fluid">
+        <div class="span4">
+            <img src="~/Content/images/Crkvenoslovenski/12.gif">
+        </div>
+        <div class="span4">
+            <p class="pesme">
+                Слава Оцу и 
+                    Сину и Светоме Духу, и сада и увек и у векове векова. Амин.<br>
+                У Црвеном мору образ неудате невесте наслика се негда: тамо 
+                    Мојсеј би разделитељ воде, а овде Гаврил служитељ чуда; тада 
+                    пучину пређе неоквашено Израил, а сада Христа роди бесемено 
+                    Дјева; море по проласку Израиловом оста непроходно, Непорочна 
+                    по рођењу Емануиловом оста неискварена. Ти који јеси и који 
+                    пре беше и јави се као човек, Боже, помилуј нас.<br>
+            </p>
+        </div>
+    </div>
+
+    <hr><div class="btn-toolbar">@Html.Action("PesmeNavigacija", "Crkvenoslovenski", new { pesma = 12 })
+    </div>
+
+</div>

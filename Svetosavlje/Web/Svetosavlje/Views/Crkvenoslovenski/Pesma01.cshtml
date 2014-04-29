@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "Тропар први из полуноћнице, глас осми";
+}
+
+<div class="row-fluid">
+
+    <div class="span12">
+        <ul class="breadcrumb">
+            <li>@Html.ActionLink("Светосавље.орг", "Index", "Home")<span class="divider">/</span></li>
+            <li>@Html.ActionLink("Црквенословенски језик", "Index", "Crkvenoslovenski")<span class="divider">/</span></li>
+            <li class="active">Тропар први из полуноћнице, глас осми</li>
+        </ul>
+        <!-- /uvod, slike otaca-->
+    </div>
+    <h1>Тропар први из полуноћнице, глас осми</h1>
+    <br />
+    <div class="row-fluid">
+        <div class="span4">
+            <img src="~/Content/images/Crkvenoslovenski/01.gif" width="390" height="245">
+        </div>
+        <div class="span4">
+            <p class="pesme">
+                Ево, женик иде 
+                    у поноћ, и блажен је слуга којег нађе како бдије, а недостојан 
+                    је којег нађе немарног. Пази дакле, душо моја, не отежај сном, 
+                    да не будеш смрти предана, и изван царства затворена, но прени 
+                    се кличући: свет, свет, свет си Боже, помилуј нас Богородицом.<br>
+            </p>
+        </div>
+
+    </div>
+    <hr><div class="btn-toolbar">@Html.Action("PesmeNavigacija", "Crkvenoslovenski", new { pesma = 1 })
+    </div>
+</div>

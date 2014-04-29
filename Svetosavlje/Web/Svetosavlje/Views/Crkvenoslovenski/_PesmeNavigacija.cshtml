@@ -1,0 +1,26 @@
+﻿@model Dictionary<string, string>
+
+<ul>
+    @for (int i = 1; i < Model.Count + 1; i++)
+    {
+        <li>
+            @if (i != ViewBag.Page)
+            {
+                string page = "0" + i.ToString();
+                page = "Pesma" + page.Substring(page.Length - 2);
+            
+                <a href="@Url.Action(page, "Crkvenoslovenski")">@Model[i.ToString()]</a>
+            }
+            else
+            {
+                @Model[i.ToString()]
+            }
+        </li>
+    }
+</ul>
+@if (ViewBag.Page != 0)
+{
+    <hr />
+    <img src="~/Content/images/print.gif" alt="Верзија за штампање" width="101" height="26" hspace="0" vspace="0" border="0" align="left"><span>[</span><a href="~/Content/docs/Crkvenoslovenski/CrkvenePesme.doc">DOC 71kb</a><span>]</span><br>
+            <span>[</span><a href="~/Content/docs/Crkvenoslovenski/pesme.zip">ZIP 19kb</a><span>]</span>
+}

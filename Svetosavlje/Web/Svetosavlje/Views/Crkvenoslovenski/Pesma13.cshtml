@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Свјете тихиј..";
+}
+
+<div class="row-fluid">
+
+    <div class="span12">
+        <ul class="breadcrumb">
+            <li>@Html.ActionLink("Светосавље.орг", "Index", "Home")<span class="divider">/</span></li>
+            <li>@Html.ActionLink("Црквенословенски језик", "Index", "Crkvenoslovenski")<span class="divider">/</span></li>
+            <li class="active">Свјете тихиј..</li>
+        </ul>
+        <!-- /uvod, slike otaca-->
+    </div>
+    <h1>Свјете тихиј..</h1>
+    <br />
+    <div class="row-fluid">
+        <div class="span4">
+            <img src="~/Content/images/Crkvenoslovenski/13.gif">
+        </div>
+        <div class="span4">
+            <p class="pesme">
+                Светлости тиха 
+                    свете славе, бесмртног Оца небеског, светог Блаженог, Исусе 
+                    Христе; дошавши на запад сунца, видевши светлост вечерњу, 
+                    певамо Оца и Сина и Светога Духа - Бога. Достојан си у сва 
+                    времена певати се гласовима преподобним, Сине Божији, живота 
+                    даваоче; зато те свет слави.<br>
+            </p>
+        </div>
+    </div>
+
+    <hr><div class="btn-toolbar">@Html.Action("PesmeNavigacija", "Crkvenoslovenski", new { pesma = 13 })
+    </div>
+
+</div>

@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Из вечерње: Да исправитсја..";
+}
+
+<div class="row-fluid">
+
+    <div class="span12">
+        <ul class="breadcrumb">
+            <li>@Html.ActionLink("Светосавље.орг", "Index", "Home")<span class="divider">/</span></li>
+            <li>@Html.ActionLink("Црквенословенски језик", "Index", "Crkvenoslovenski")<span class="divider">/</span></li>
+            <li class="active">Из вечерње: Да исправитсја..</li>
+        </ul>
+        <!-- /uvod, slike otaca-->
+    </div>
+    <h1>Из вечерње: Да исправитсја..</h1>
+    <br />
+    <div class="row-fluid">
+        <div class="span4">
+            <img src="~/Content/images/Crkvenoslovenski/06.gif">
+        </div>
+        <div class="span4">
+            <p class="pesme">
+                Да се исправи 
+                    молитва моја као кадило пред Тобом, уздизање руку мојих, жртва 
+                    вечерња.
+                <br>
+                (ПРИПЕВ)<br>
+                Господе, повиках Теби, услиши ме, пази на глас мољења мога 
+                    када вичем к теби.<br>
+                Постави, Господе, штитник устима мојим, и двер ограде на уста 
+                    моја.<br>
+                Не управи срце моје у речи зла - да смишљам разлоге за грехе.<br>
+            </p>
+        </div>
+
+    </div>
+
+    <hr><div class="btn-toolbar">@Html.Action("PesmeNavigacija", "Crkvenoslovenski", new { pesma = 6 })
+    </div>
+
+</div>

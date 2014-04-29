@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Покајни тропари";
+}
+
+<div class="row-fluid">
+
+    <div class="span12">
+        <ul class="breadcrumb">
+            <li>@Html.ActionLink("Светосавље.орг", "Index", "Home")<span class="divider">/</span></li>
+            <li>@Html.ActionLink("Црквенословенски језик", "Index", "Crkvenoslovenski")<span class="divider">/</span></li>
+            <li class="active">Покајни тропари</li>
+        </ul>
+        <!-- /uvod, slike otaca-->
+    </div>
+    <h1>Покајни тропари</h1>
+    <br />
+    <div class="row-fluid">
+        <div class="span4">
+            <img src="~/Content/images/Crkvenoslovenski/02.gif">
+        </div>
+        <div class="span4">
+            <p class="pesme">
+                Помилуј нас, Господе, помилуј нас, јер не налазећи никаквог оправдања, ову Ти молитву као владару, грешни приносимо: помилуј нас.
+Слава Оцу и Сину И Светоме Духу:
+Господе, помилуј нас, јер се у Тебе уздасмо, не гневи се на нас много, нити се сећај безакоња наших, но погледај и сада као благонаклон, и избави нас од непријатеља наших; јер Ти си Бог наш, и ми народ Твој, сви смо дела руку Твојих и име Твоје призивамо.
+
+И сада и увек и у векове векова. Амин.
+
+Милосрђа двери, отвори нам, благословена Богородице, да ми који се у Тебе уздамо не погинемо, но да се Тобом избавимо од беда, јер Ти си спасење рода хришћанскога.
+        </div>
+    </div>
+
+    <hr><div class="btn-toolbar">@Html.Action("PesmeNavigacija", "Crkvenoslovenski", new { pesma = 2 })
+    </div>
+</div>

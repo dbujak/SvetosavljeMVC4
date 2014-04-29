@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Иже Херувими..";
+}
+
+<div class="row-fluid">
+
+    <div class="span12">
+        <ul class="breadcrumb">
+            <li>@Html.ActionLink("Светосавље.орг", "Index", "Home")<span class="divider">/</span></li>
+            <li>@Html.ActionLink("Црквенословенски језик", "Index", "Crkvenoslovenski")<span class="divider">/</span></li>
+            <li class="active">Иже Херувими..</li>
+        </ul>
+        <!-- /uvod, slike otaca-->
+    </div>
+    <h1>Иже Херувими..</h1>
+    <br />
+    <div class="row-fluid">
+        <div class="span4">
+            <img src="~/Content/images/Crkvenoslovenski/18.gif">
+        </div>
+        <div class="span4">
+            <p class="pesme">
+                Ми који херувиме 
+                    тајно изображавамо, и животворној Тројици трисвету песму препевамо, 
+                    сваку сада животну одложимо бригу.<br>
+                Зато да Цара свих прихватимо, Кога анђелски невидљиво на копљима 
+                    носе чинови. Алилуја, алилуја, алилуја.<br>
+            </p>
+        </div>
+    </div>
+
+    <hr><div class="btn-toolbar">@Html.Action("PesmeNavigacija", "Crkvenoslovenski", new { pesma = 18 })
+    </div>
+
+</div>

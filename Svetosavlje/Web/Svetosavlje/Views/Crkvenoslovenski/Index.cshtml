@@ -2,20 +2,220 @@
     ViewBag.Title = "Црквенословенски језик";
 }
 
-    <div class="row">
-        <!-- Leva kolona -->
-        <div class="span8">
+<div class="row-fluid">
 
-            <h2>Црквенословенски језик</h2>
-
+    <div class="span12">
+    <img src="~/Content/images/Crkvenoslovenski/slovenski.jpg" />
+        <ul class="breadcrumb">
+            <li>@Html.ActionLink("Светосавље.орг", "Index", "Home")<span class="divider">/</span></li>
+            <li class="active">Црквенословенски језик</li>
+        </ul>
+        <div style="margin: 0 auto; text-align: center; width: 60%;">
+            <h1>Црквенословенски језик</h1>
         </div>
-
-        <!-- Desna kolona -->
-        <div class="span4">
-
-            Desna kolona, span4
-
-        </div>
-
+        <!-- /uvod, slike otaca-->
     </div>
+
+    <table border="1">
+        <tr>
+            <td valign="top">
+                <p align="right">&nbsp;</p>
+                <p align="right">
+                    "<em>..Ми говоримо о лепоти древних језика. Шта подразумевамо 
+       под тим? Ми мислимо, да је то неко тајно сазвучје ритмова срца са ритмовима 
+       древних језика и ту хармонију доживљавамо као посебну лепоту језика. Пажљиво 
+       прочитајмо наглас псалме на новом и на древном језику. Какву ћемо разлику 
+       видети у свом унутрашњем стању? Нови језик подобан је води која може утолити 
+       жеђ, но оставити душу хладном, а древни језик је вино које весели и радује 
+       срце човјека..</em>"
+                </p>
+                <ul class="ulbmp">
+                    <li class="listbmp"><a href="@Url.Action("crkvenijezik", "Crkvenoslovenski")">О ЦРКВЕНОМ ЈЕЗИКУ</a><br>
+                        архимандрит Рафаил (Карелин)
+                        <br>
+                        (<em>из књиге "Хришћанство и модернизам"</em>) </li>
+                </ul>
+                <p>&nbsp;</p>
+                <p align="right">
+                    <a name="doc"></a>
+                    <img src="~/Content/images/Crkvenoslovenski/oktoih.gif" alt="Октоих првогласник, Цетиње 1494.г." width="218" height="325" align="right">
+                </p>
+                <p align="left" class="sitno">
+                    <strong>DOC</strong> = Верзија у MS-Word 
+       формату, откуцана у црквенословенском фонту <strong>Слово </strong><a href="~/Content/docs/Crkvenoslovenski/Slovo.ttf">Slovo.ttf 
+       (68kb)</a><br>
+                    [<em>Препоручујемо програм за само-инсталирање фонта:<br>
+                        <a href="~/Content/docs/Crkvenoslovenski/Slovo.exe">Slovo.exe (100kb)</a> - аутор Милета Раденовић</em>]
+                </p>
+                <p align="left" class="sitno">
+                    <strong>PDF1</strong> = Верзија у PDF формату<br>
+                    <strong>PDF2</strong> = Дволисна PDF верзија, предвиђена за штампање и 
+       састављање у књижицу.
+                </p>
+                <hr align="left" width="200" color="black" size="1" noshade="">
+                <ul class="ulbmp">
+                    <li class="listbmp"><strong>ЈУТАРЊА СЛУЖБА<br>
+                    </strong>[<a href="~/Content/docs/Crkvenoslovenski/jutrenje.zip">DOC</a> 79kb], [<a href="~/Content/pdfs/Crkvenoslovenski/jutrenje.zip">PDF1</a>
+                        212kb], [<a href="~/Content/pdfs/Crkvenoslovenski/s_jutrenje.zip">PDF2</a> 319kb]</li>
+                    <li class="listbmp"><strong>ВЕЧЕРЊА СЛУЖБА</strong> <span class="sitno">(Мала, 
+        Свакидашња, кад се пева Алилуја, Недељна и Празнична)</span><br>
+                        [<a href="~/Content/docs/Crkvenoslovenski/vecernja.zip">DOC</a> 96kb], [<a href="~/Content/pdfs/Crkvenoslovenski/vecernja.zip">PDF1</a>
+                        188kb], [<a href="~/Content/pdfs/Crkvenoslovenski/s_vecernja.zip">PDF2</a> 292kb]</li>
+                    <li class="listbmp"><strong>КАТАВАСИЈЕ</strong> <span class="sitno">(минејске, 
+        триодске, пентикостаријске)</span><br>
+                        [<a href="~/Content/docs/Crkvenoslovenski/Katavasije.zip">DOC</a> 111kb], [<a href="~/Content/pdfs/Crkvenoslovenski/Katavasije.zip">PDF1</a>
+                        230kb], [<a href="~/Content/pdfs/Crkvenoslovenski/s_Katavasije.zip">PDF2</a> 318kb]</li>
+                    <li class="listbmp"><strong>ВАСКРШЊИ КАНОН<br>
+                    </strong>[<a href="~/Content/docs/Crkvenoslovenski/kanonvaskrsnji.zip">DOC</a> 57kb], [<a href="~/Content/pdfs/Crkvenoslovenski/kanonvaskrsnji.zip">PDF1</a>
+                        124kb], [<a href="~/Content/pdfs/Crkvenoslovenski/s_kanonvaskrsnji.zip">PDF2</a> 174kb]</li>
+                    <li class="listbmp"><strong>КАНОН ИСУСУ СЛАДЧАЈШЕМУ </strong><em>(са акатистом)</em><br>
+                        [<a href="~/Content/docs/Crkvenoslovenski/kanonhristu.zip">DOC</a> 63kb], [<a href="~/Content/pdfs/Crkvenoslovenski/kanonhristu.zip">PDF1</a>
+                        116kb], [<a href="~/Content/pdfs/Crkvenoslovenski/s_kanonhristu.zip">PDF2</a> 154kb]</li>
+                    <li class="listbmp"><strong>КАНОН БЛАГОДАРНИ ПРЕСВЕТОЈ БОГОРОДИЦИ</strong>
+                        <em>(са акатистом)</em><br>
+                        [<a href="~/Content/docs/Crkvenoslovenski/kanonbogorodici.zip">DOC</a> 83kb], [<a href="~/Content/pdfs/Crkvenoslovenski/kanonbogorodici.zip">PDF1</a>
+                        143kb], [<a href="~/Content/pdfs/Crkvenoslovenski/s_kanonbogorodici.zip">PDF2</a> 183kb]</li>
+                    <li class="listbmp"><strong>МОЛЕБАН БОГОРОДИЦИ</strong><br>
+                        [<a href="~/Content/docs/Crkvenoslovenski/moleban01.zip">DOC</a> 42kb], [<a href="~/Content/pdfs/Crkvenoslovenski/moleban01.zip">PDF1</a>
+                        93kb], [<a href="~/Content/pdfs/Crkvenoslovenski/s_moleban01.zip">PDF2</a> 131kb]</li>
+                    <li class="listbmp"><strong>АКАТИСТ БОГОРОДИЦИ СА КАНОНОМ</strong><br>
+                        [<a href="~/Content/docs/Crkvenoslovenski/akatistbogorodici.zip">DOC</a> 83kb], [<a href="~/Content/pdfs/Crkvenoslovenski/akatistbogorodici.zip">PDF1</a> 126kb]</li>
+                    <li class="listbmp"><strong>ПРИПЕВИ КАНОНА</strong><br>
+                        [<a href="~/Content/docs/Crkvenoslovenski/pripevikanona.zip">DOC</a> 5kb], [<a href="~/Content/pdfs/Crkvenoslovenski/pripevikanona.zip">PDF1</a>
+                        93kb] 
+        <p class="sitno">
+            Канони су богослужбене песме сачињене из тропара по узору 
+         на девет библијских песама. Тако сваки канон било светом/светима, Христу, 
+         Богородици, Пресветој Тројици, сачињава девет песама. Друга покајничка 
+         песма се користи само у време часног поста, а иначе се испушта. Свака 
+         песма канона је сачињена од <strong>ирмоса</strong>, који се као стих 
+         по својој тематици разликује од осталих тропара те исте песме, и који 
+         својом темом повезује старозаветни текст библијске песме и остале <strong>тропаре</strong>
+            или <strong>стихове</strong> који му следе. Задњи тропар сваке песме 
+         је по правилу посвећен Богородици. Често има испред назив Богородичан, 
+         или КрстоБогородичан.
+            <br>
+            Између стихова (тропара) се читају припеви, који се називају <strong>припеви 
+         канона</strong>. Као што се разликују канони у односу на прослављаног, 
+         тако се и припеви различито читају. Сваки канон има свој припев.
+        </p>
+                    </li>
+                    <li style="list-style-type: none">
+                        <table width="350" border="1" cellpadding="10" cellspacing="0" bordercolor="#CCCCCC" bgcolor="#fce5ce">
+                            <tbody>
+                                <tr>
+                                    <td bordercolor="#FFFFFF"><strong>СВИ ТРОПАРИ</strong> у једном документу:<br>
+                                        [<a href="~/Content/docs/Crkvenoslovenski/tropari.zip">DOC</a> 206kb], [<a href="~/Content/pdfs/Crkvenoslovenski/tropari.zip">PDF1</a>
+                                        265kb], <strong>[<a href="~/Content/pdfs/Crkvenoslovenski/s_tropari.zip">PDF2</a> 310kb]</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                    <li class="listbmp"><strong>ТРОПАРИ ОТПУСТИТЕЉНИ ВАСКРСНИ СА БОГОРОДИЧНИМ 
+        ТРОПАРИМА И ИПАКОЈИМА НА ОСАМ ГЛАСОВА</strong><br>
+                        [<a href="~/Content/docs/Crkvenoslovenski/tropari01.zip">DOC</a> 52kb], [<a href="~/Content/pdfs/Crkvenoslovenski/tropari01.zip">PDF1</a>
+                        88kb] 
+        <p class="sitno">
+            Васкрсни и Богородични тропари се певају на суботњем 
+         вечерњу. Сваке седмице пада један од осам гласова, који се онда понављају. 
+         Васкрсни тропар се опет користи на недељном јутрењу и на недељној литургији, 
+         док ипакој долази на недељном (васкршњем) јутрењу, као и после канона 
+         за недељну полуноћницу, тачније после Оченаша.
+        </p>
+                    </li>
+                    <li class="listbmp"><strong>ТРОПАРИ БОГОРОДИЧНИ ОТПУСТИТЕЉНИ НА ОСАМ ГЛАСОВА</strong><br>
+                        [<a href="~/Content/docs/Crkvenoslovenski/tropari02.zip">DOC</a> 29kb], [<a href="~/Content/pdfs/Crkvenoslovenski/tropari02.zip">PDF1</a>
+                        75kb] 
+        <p class="sitno">
+            Певају се преко целе године на јутарњој и вечерњој служби. 
+         На јутрењу се певају после "Бог Господ.." и опет на крају службе. 
+         Сваки глас иде од недељне вечерње до суботног јутрења (јер на суботном 
+         вечерњем иду Отпуститељни Васкрсни и Богородични тропари)
+        </p>
+                    </li>
+                    <li class="listbmp"><strong>ТРОПАРИ ОТПУСТИТЕЉНИ ПРЕКО ЦЕЛЕ СЕДМИЦЕ</strong><br>
+                        [<a href="~/Content/pdfs/Crkvenoslovenski/tropari03.zip">PDF1</a> 76kb], [<a href="~/Content/docs/Crkvenoslovenski/tropari03.zip">DOC</a>
+                        45kb]</li>
+                    <li class="listbmp"><strong>ТРОПАРИ БОГОРОДИЧНИ ВАСКРСНИ НА ОСАМ ГЛАСОВА</strong><br>
+                        [<a href="~/Content/docs/Crkvenoslovenski/tropari04.zip">DOC</a> 35kb], [<a href="~/Content/pdfs/Crkvenoslovenski/tropari04.zip">PDF1</a>
+                        70kb] 
+        <p class="sitno">
+            Певају се на суботњем вечерњу. Први се певају после стихира, 
+         тачније после "Слава.." и "Ниње..", а други на стиховње.
+        </p>
+                    </li>
+                    <li class="listbmp"><strong>ТРОПАРИ БОГОРОДИЧНИ НА ОСАМ ГЛАСОВА<br>
+                    </strong>[<a href="~/Content/docs/Crkvenoslovenski/tropari05.zip">DOC</a> 36kb], [<a href="~/Content/pdfs/Crkvenoslovenski/tropari05.zip">PDF1</a>
+                        81kb] 
+        <p class="sitno">
+            За разлику од претходних, ови се певају преко целе седмице 
+         на вечерњу (и на јутрењу) на стихирама после "Слава..", светог, 
+         и "Ниње..", по гласу светог.
+        </p>
+                    </li>
+                    <li class="listbmp"><strong>ТРОПАР СВЕТОМ ВАСИЛИЈУ ОСТРОШКОМ</strong><br>
+                        [<a href="~/Content/docs/Crkvenoslovenski/tropari06.zip">DOC</a> 4kb]</li>
+                    <li class="listbmp"><strong>БОЖИЋНИ ТРОПАР И КОНДАК</strong><br>
+                        [<a href="~/Content/docs/Crkvenoslovenski/tropari07.zip">DOC</a> 3kb]</li>
+                </ul>
+                <p><a name="bukvar"></a></p>
+                <p>&nbsp;</p>
+                <p>
+                    <table border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p>
+                                        <a href="http://svetosavlje.org/slovenski/bukvar/index.htm">
+                                            <img src="~/Content/images/Crkvenoslovenski//vbukvar.jpg" width="287" height="80" vspace="5" border="0"><br>
+                                        ЦРКВЕНОСЛОВЕНСКИ БУКВАР</a><br>
+                                        <span class="sitno">Издање синода СПЦ, Београд 1970.</span>
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </p>
+                <p>&nbsp;</p>
+                <ul class="ulbmp">
+                    <li class="listbmp"><strong>ГРАМАТИКА ЦРКВЕНО-СЛОВЕНСКОГ ЈЕЗИКА</strong><br>
+                        (превод са руског: Биљана Вићентић)<br>
+                        [<a href="~/Content/docs/Crkvenoslovenski/gramatika.zip">DOC</a> 361kb], [<a href="~/Content/pdfs/Crkvenoslovenski/gramatika.zip">PDF1</a>
+                        391kb]</li>
+                </ul>
+                <p>&nbsp;</p>
+                <ul class="ulbmp">
+                    <li class="listbmp"><strong>РЕЧНИК ЦРКВЕНО-СЛОВЕНСКОГ ЈЕЗИКА</strong><br>
+                        (Израдио прота Сава Петковић, Сремски Карловци 1935)<br>
+                        [<a href="~/Content/pdfs/Crkvenoslovenski/Recnik_CSL_A4.zip">PDF A4</a> 13,8 MB], [<a href="~/Content/pdfs/Crkvenoslovenski/Recnik_CSL_Letter.zip">PDF Letter</a>
+                        13,8 MB]</li>
+                </ul>
+                <p>&nbsp;</p>
+                <p><strong>ЦРКВЕНЕ ПЕСМЕ<a name="pesme"></a></strong></p>
+                @Html.Action("PesmeNavigacija", "Crkvenoslovenski", new { pesma = 0 })
+                <p>&nbsp;</p>
+                <p>
+                    <table border="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p align="center">
+                                        <a href="http://www.rastko.rs/projekti/elisaveta/" target="_blank">
+                                            <img src="~/Content/images/Crkvenoslovenski/jelisaveta.gif" width="400" height="80" border="0"></a><br>
+                                        <span class="sitno">(www.rastko.rs)</span>
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </p>
+                <p>&nbsp; </p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+            </td>
+        </tr>
+
+    </table>
+</div>
+
 

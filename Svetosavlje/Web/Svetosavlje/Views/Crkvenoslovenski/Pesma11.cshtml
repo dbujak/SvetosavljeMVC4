@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Стихира на Господи возвах светом Сергију и Герману, глас осми";
+}
+
+<div class="row-fluid">
+
+    <div class="span12">
+        <ul class="breadcrumb">
+            <li>@Html.ActionLink("Светосавље.орг", "Index", "Home")<span class="divider">/</span></li>
+            <li>@Html.ActionLink("Црквенословенски језик", "Index", "Crkvenoslovenski")<span class="divider">/</span></li>
+            <li class="active">Стихира на Господи возвах светом Сергију и Герману, глас осми</li>
+        </ul>
+        <!-- /uvod, slike otaca-->
+    </div>
+    <h1>Стихира на Господи возвах светом Сергију и Герману, глас осми</h1>
+    <br />
+    <div class="row-fluid">
+        <div class="span4">
+            <img src="~/Content/images/Crkvenoslovenski/11.gif">
+        </div>
+        <div class="span4">
+            <p class="pesme">
+                О преславнога 
+                    чуда: света житељи Сергије и Герман, према Христу љубављу 
+                    распаливши се, свет и светодршца (ђавола) заједно срчано побеђују 
+                    и врлина лествицом се ка савршенству живота еванђелског пењу, 
+                    које као светила велика пустињи овој Христос Бог дарова, светлошћу 
+                    дела њихових озаравајући душе наше.<br>
+            </p>
+        </div>
+    </div>
+
+    <hr><div class="btn-toolbar">@Html.Action("PesmeNavigacija", "Crkvenoslovenski", new { pesma = 11 })
+    </div>
+
+</div>

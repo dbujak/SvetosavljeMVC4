@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "По причешћу: Воскресеније Христово видјеше..";
+}
+
+<div class="row-fluid">
+
+    <div class="span12">
+        <ul class="breadcrumb">
+            <li>@Html.ActionLink("Светосавље.орг", "Index", "Home")<span class="divider">/</span></li>
+            <li>@Html.ActionLink("Црквенословенски језик", "Index", "Crkvenoslovenski")<span class="divider">/</span></li>
+            <li class="active">По причешћу: Воскресеније Христово видјеше..</li>
+        </ul>
+        <!-- /uvod, slike otaca-->
+    </div>
+    <h1>По причешћу: Воскресеније Христово видјеше..</h1>
+    <br />
+    <div class="row-fluid">
+        <div class="span4">
+            <img src="~/Content/images/Crkvenoslovenski/14.gif">
+        </div>
+        <div class="span4">
+            <p class="pesme">
+                Васкрсење Христово 
+                    видевши, поклонимо се светоме Господу Исусу, јединоме безгрешном. 
+                    Крсту се Твоме поклањамо, Христе, и свето васкрсење Твоје 
+                    певамо и славимо; јер Ти си Бог наш, осим Тебе другога не 
+                    знамо, име Твоје именујемо. Дођите, сви верни, поклонимо се 
+                    светоме Христовом васкрсењу; јер ево дође крстом радост свему 
+                    свету. Свагда благосиљајући Господа, певамо васкрсење Његово, 
+                    јер распеће претрпевши, смрћу смрт уништи.<br>
+            </p>
+        </div>
+    </div>
+
+    <hr><div class="btn-toolbar">@Html.Action("PesmeNavigacija", "Crkvenoslovenski", new { pesma = 14 })
+    </div>
+
+</div>
