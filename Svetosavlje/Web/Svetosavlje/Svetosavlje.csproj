@@ -167,6 +167,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CrkvenoslovenskiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ListaController.cs" />
     <Compile Include="Controllers\PastirController.cs" />
@@ -1480,7 +1481,7 @@
     <Content Include="Views\Home\Biblioteka.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Crkvenoslovenski.cshtml" />
+    <Content Include="Views\Crkvenoslovenski\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />

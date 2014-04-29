@@ -24,7 +24,6 @@ namespace Svetosavlje.Controllers
         [OutputCache(VaryByParam = "none", Duration = 60)]
         public ActionResult Index()
         {
-            ViewBag.Message = "Welcome to ASP.NET MVC!";
 
             DateTime today = DateTime.Today.AddDays(-13);     // Julian date
 
