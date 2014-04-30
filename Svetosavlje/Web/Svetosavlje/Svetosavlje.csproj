@@ -171,6 +171,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ListaController.cs" />
     <Compile Include="Controllers\PastirController.cs" />
+    <Compile Include="Controllers\PojanjeController.cs" />
     <Compile Include="Controllers\PrologController.cs" />
     <Compile Include="Controllers\RizniceController.cs" />
     <Compile Include="Controllers\SvetinjeController.cs" />
@@ -1651,7 +1652,7 @@
     <Content Include="Views\Home\Molitve.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Pojanje.cshtml" />
+    <Content Include="Views\Pojanje\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Svetinje\Index.cshtml" />
