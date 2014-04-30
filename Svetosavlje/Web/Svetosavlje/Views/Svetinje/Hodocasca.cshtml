@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Ходочашћа";
+}
+
+<div class="row-fluid">
+
+    <div class="span12">
+        <ul class="breadcrumb">
+            <li>@Html.ActionLink("Светосавље.орг", "Index", "Home")<span class="divider">/</span></li>
+            <li>@Html.ActionLink("Светиње", "Index", "Svetinje")<span class="divider">/</span></li>
+            <li class="active">Ходочашћа</li>
+        </ul>
+        <!-- /uvod, slike otaca-->
+    </div>
+    <h1>Ходочашћа</h1>
+    <br />
+
+
+       <table width="574">
+        <tbody><tr>
+          <td width="179">		  <p><a href="@Url.Action("SvKatarinaSinaj", "Svetinje")"><img src="~/Content/images/Svetinje/Hodocasca/ManastirMINI.jpg" width="166" height="80" border="0"></a></p></td>
+          <td width="383">Љиљана Синђелић Николић, Угљеша и Звездана<a href="@Url.Action("SvKatarinaSinaj", "Svetinje")"><br>
+  МАНАСТИР СВ. КАТАРИНЕ НА СИНАЈУ</a></td>
+        </tr>
+      </tbody></table>
+       <table width="570">
+        <tbody><tr>
+          <td width="104">		  <p><a href="@Url.Action("Kosovo1", "Svetinje")"><img src="~/Content/images/Svetinje/Hodocasca/GracanicaMINI.jpg" width="100" height="66" border="0"></a></p></td>
+          <td width="454">Драша<br>
+            <a href="@Url.Action("Kosovo1", "Svetinje")">ПУТОПИС СА КОСОВА</a></td>
+        </tr>
+      </tbody></table>
+      <table width="567">
+        <tbody><tr>
+          <td width="106">		  <p><a href="@Url.Action("Jerusalim1", "Svetinje")"><img src="~/Content/images/Svetinje/Hodocasca/JerusalimMINI.jpg" width="100" height="86" border="0"></a></p></td>
+          <td width="449">Ирина<br>
+            <a href="@Url.Action("Jerusalim1", "Svetinje")">ПУТОВАЊЕ У ЈЕРУСАЛИМ</a></td>
+        </tr>
+      </tbody></table>
+      <p>Угљеша<br>
+       <a href="@Url.Action("RenoviranjeSinajskeBiblioteke", "Svetinje")">РЕНОВИРАЊЕ  СИНАЈСКЕ БИБЛИОТЕКЕ</a></p>
+      <p>Миомир Пешић<br>
+       <a href="@Url.Action("PutovanjeUSvetuGoru", "Svetinje")">ПУТОВАЊЕ У СВЕТУ ГОРУ 2002. ГОДИНЕ</a> </p>
+        <p>Душан Михалек<br>
+       <a href="@Url.Action("Plac", "Svetinje")">ПЛАЧ ИКОНЕ СВ. САВЕ ОСВЕЋЕНОГ У ЦРКВИ СВЕТОГ АРХАНЂЕЛА У ЈЕРУСАЛИМУ</a> </p>
+      <p>&nbsp;</p>
+    <p>Аутор насловне фотографије: <a href="http://www.orthphoto.net/user.php?id=1778&amp;id_jezyk=1">Драган Воргић</a> </p>
+
+    </div>

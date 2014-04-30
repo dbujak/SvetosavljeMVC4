@@ -1,0 +1,20 @@
+﻿@model Dictionary<string, string>
+
+<ul class="pager">
+    @for (int i = 1; i < Model.Count + 1; i++)
+    {
+        <li>
+            @if (i != ViewBag.Strana)
+            {
+                string page = "Jerusalim" + i.ToString();
+            
+                <a href="@Url.Action(page, "Svetinje")">@Model[i.ToString()]</a>
+            }
+            else
+            {
+                @Model[i.ToString()]
+            }
+        </li>
+    }
+</ul>
+<a href="@Url.Action("JerusalimFotografije", "Svetinje")">Фотографије</a>
