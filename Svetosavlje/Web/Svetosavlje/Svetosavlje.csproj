@@ -234,6 +234,9 @@
     <Content Include="Content\images\Pastir\o_rade2.jpg" />
     <Content Include="Content\images\Pastir\o_srboljub.jpg" />
     <Content Include="Content\images\Pastir\o_srboljub2.jpg" />
+    <Content Include="Content\images\Pojanje\pojanje.jpg" />
+    <Content Include="Content\images\Pojanje\zbornik.jpg" />
+    <Content Include="Content\images\Pojanje\zvono.gif" />
     <Content Include="Content\images\print.gif" />
     <Content Include="Content\images\Riznice\doc\icxc.gif" />
     <Content Include="Content\images\Riznice\doc\InokGrigorije.jpg" />
@@ -1870,6 +1873,10 @@
     <Content Include="Content\pdfs\Crkvenoslovenski\vecernja.zip" />
     <Content Include="Content\docs\Crkvenoslovenski\CrkvenePesme.doc" />
     <Content Include="Content\docs\Crkvenoslovenski\pesme.zip" />
+    <Content Include="Content\pdfs\Pojanje\byz_font2.zip" />
+    <Content Include="Content\pdfs\Pojanje\vizant01.zip" />
+    <Content Include="Content\pdfs\Pojanje\vizant02.zip" />
+    <Content Include="Content\pdfs\Pojanje\vizant03.zip" />
     <None Include="Properties\PublishProfiles\Svetosavlje net4.pubxml" />
     <Content Include="Views\Riznice\Bordure.cshtml" />
     <Content Include="Views\Riznice\Bordure2.cshtml" />
