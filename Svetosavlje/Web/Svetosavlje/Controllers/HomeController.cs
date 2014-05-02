@@ -38,17 +38,29 @@ namespace Svetosavlje.Controllers
                                                   listArhiva.GetMessageThreads(10),
                                                   pitanjaPastiru.GetQuestionList(0, 10),
                                                   svetiDana.GetSaintNamesList(today.Month, today.Day),
-                                                  izDanaUDan.GetQuote(1, /*today.Month, today.Day*/Month, Day),
-                                                  izDanaUDan.GetZachala(today.Month, today.Day, today.Year),
+                                                  izDanaUDan.GetQuote(1, Month, Day),
+                                                  izDanaUDan.GetDnevnoCitanje(today.Month, today.Day, today.Year),
                                                   izDanaUDan.GetFastingType(today.Month, today.Day));
 
             return View(M);
         }
 
 
-        public ActionResult About()
+        public ActionResult DnevnoCitanje(string strDate)
         {
-            return View();
+            DateTime dtDate = DateTime.Now.AddDays(-13);
+
+            if (strDate != null && strDate != "")
+            {
+                dtDate = Convert.ToDateTime(strDate);
+            }
+
+            DnevnoCitanjeModel model = new DnevnoCitanjeModel();
+
+            model.Citanje = izDanaUDan.GetDnevnoCitanje(dtDate.Month, dtDate.Day, dtDate.Year);
+
+            model.Date = dtDate;
+            return View(model);
         }
 
 
@@ -63,20 +75,6 @@ namespace Svetosavlje.Controllers
             return View();
         }
 
-        public ActionResult Pojanje()
-        {
-            return View();
-        }
-
-        public ActionResult Svetinje()
-        {
-            return View();
-        }
-
-        public ActionResult Crkvenoslovenski()
-        {
-            return View();
-        }
     }
 
 
@@ -120,9 +118,9 @@ namespace Svetosavlje.Controllers
             return _provider.GetFastingType(Mjesec, Dan);
         }
 
-        public string GetZachala(int Mjesec, int Dan, int Godina)
+        public DnevnoCitanje GetDnevnoCitanje(int Mjesec, int Dan, int Godina)
         {
-            return _provider.GetZachala(Mjesec, Dan, Godina);
+            return _provider.GetDnevnoCitanje(Mjesec, Dan, Godina);
         }
 
     }

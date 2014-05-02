@@ -1,0 +1,38 @@
+﻿@using System.Globalization;
+@using Svetosavlje.Models;
+@using Svetosavlje.Interfaces.Classes;
+@model Svetosavlje.Models.DnevnoCitanjeModel
+
+@{
+    ViewBag.Title = "Дневно читање из Светог Писма";
+}
+
+<div class="row-fluid">
+
+    <div class="span12">
+        <ul class="breadcrumb">
+            <li>@Html.ActionLink("Светосавље.орг", "Index", "Home")<span class="divider">/</span></li>
+            <li class="active">Дневно читање из Светог Писма</li>
+        </ul>
+        <!-- /uvod, slike otaca-->
+    </div>
+    <h1>Дневно читање из Светог Писма</h1>
+    <br />
+
+    <h3>На вечерњи:</h3>
+    @Html.Raw(Model.Citanje.Vecernje)
+
+
+    <h3>На јутрењу:</h3>
+    @Html.Raw(Model.Citanje.Jutrenje)
+
+
+    <h3>На Св. Литургији, Еванђеље:</h3>
+    @Html.Raw(Model.Citanje.LiturgijaJevandjelje)
+
+    <h3>На Св. Литургији, Апостол:</h3>
+    @Html.Raw(Model.Citanje.LiturgijaApostoli)
+
+
+
+    </div>

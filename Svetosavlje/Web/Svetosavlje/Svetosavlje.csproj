@@ -178,6 +178,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DnevnoCitanjeModel.cs" />
     <Compile Include="Models\ListaModel.cs" />
     <Compile Include="Models\PastirModel.cs" />
     <Compile Include="Models\PrologModel.cs" />
@@ -1952,6 +1953,7 @@
     <Content Include="Views\Pojanje\DPetrovic.cshtml" />
     <Content Include="Views\Pojanje\Razvitak.cshtml" />
     <Content Include="Views\Pojanje\XXVek.cshtml" />
+    <Content Include="Views\Home\DnevnoCitanje.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

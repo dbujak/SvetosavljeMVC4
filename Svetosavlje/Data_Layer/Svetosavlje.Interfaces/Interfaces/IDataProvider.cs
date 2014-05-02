@@ -65,7 +65,7 @@ namespace Svetosavlje.Interfaces.Interfaces
 
     public interface IZachala
     {
-        string GetZachala(int Mjesec, int Dan, int Godina);
+        DnevnoCitanje GetDnevnoCitanje(int Mjesec, int Dan, int Godina);
     }
 
     public interface IFastingType

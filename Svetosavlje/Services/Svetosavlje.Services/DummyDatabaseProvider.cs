@@ -81,16 +81,16 @@ namespace Svetosavlje.Services
 
 
 
-        public string GetZachala(int Mjesec, int Dan, int Godina)
+        public DnevnoCitanje GetDnevnoCitanje(int Mjesec, int Dan, int Godina)
         {
-            string ctenije = "";
+            DnevnoCitanje citanje = new DnevnoCitanje();
 
-            ctenije += "На вечерњи:<br />" + "Вечерње читање";
-            ctenije += "На јутрењу:<br />" + "Јутарње читање";
-            ctenije += "На Св. Литургији, Еванђеље:<br />" + "Јеванђељско читање";
-            ctenije += "На Св. Литургији, Апостол:<br />" + "Апостолско читање";
+            citanje.Vecernje = "На вечерњи:<br />" + "Вечерње читање";
+            citanje.Jutrenje = "На јутрењу:<br />" + "Јутарње читање";
+            citanje.LiturgijaJevandjelje = "На Св. Литургији, Еванђеље:<br />" + "Јеванђељско читање";
+            citanje.LiturgijaApostoli = "На Св. Литургији, Апостол:<br />" + "Апостолско читање";
 
-            return ctenije;
+            return citanje;
         }
 
 

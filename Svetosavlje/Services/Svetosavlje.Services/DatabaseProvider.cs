@@ -49,9 +49,9 @@ namespace Svetosavlje.Services
 
 
 
-        public string GetZachala(int Mjesec, int Dan, int Godina)
+        public DnevnoCitanje GetDnevnoCitanje(int Mjesec, int Dan, int Godina)
         {
-            return _provider.GetZachala(Mjesec, Dan, Godina);
+            return _provider.GetDnevnoCitanje(Mjesec, Dan, Godina);
         }
 
 

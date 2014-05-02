@@ -52,11 +52,11 @@ namespace Svetosavlje.Services
 
         }
 
-        public string GetZachala(int Mjesec, int Dan, int Godina)
+        public DnevnoCitanje GetDnevnoCitanje(int Mjesec, int Dan, int Godina)
         {
             CitanjaList list = new CitanjaList();
 
-            return list.GetZachala(Mjesec, Dan, Godina);
+            return list.GetDnevnoCitanje(Mjesec, Dan, Godina);
 
         }
 
