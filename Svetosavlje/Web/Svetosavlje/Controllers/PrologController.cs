@@ -54,7 +54,8 @@ namespace Svetosavlje.Controllers
             model.Besjeda = prolog.Besjeda;
             model.Datum = dtDate.Day.ToString() + "/" + dtDate.Month.ToString() + "/" + dtDate.Year.ToString();
             model.Dan = dtDate.Day.ToString() + ".";
-            model.Mjesec = this.Mjesec(dtDate.Month);
+            SvastaraProvider svastara;
+            model.Mjesec = svastara.Mjesec(dtDate.Month);
             model.ZitijaLink = dtDate.ToString("MMdd");
 
             return View(model);
@@ -75,9 +76,11 @@ namespace Svetosavlje.Controllers
                 return View(model);
             }
 
+            SvastaraProvider svastara;
+
             foreach (PrologSearchResults res in model.SearchResults)
             {
-                res.DatumDisplay = res.Datum.Day.ToString() + ". " + Mjesec(res.Datum.Month);
+                res.DatumDisplay = res.Datum.Day.ToString() + ". " + svastara.Mjesec(res.Datum.Month);
 
                 res.Tekst = highlightSearchText(res.Tekst, txtSearchKeyword);
             }
@@ -114,39 +117,6 @@ namespace Svetosavlje.Controllers
             return text;
         }
 
-        private string Mjesec(int mjesec)
-        {
-            switch (mjesec)
-            {
-                case 1:
-                    return "јануар";
-                case 2:
-                    return "фебруар";
-                case 3:
-                    return "март";
-                case 4:
-                    return "април";
-                case 5:
-                    return "мај";
-                case 6:
-                    return "јуни";
-                case 7:
-                    return "јули";
-                case 8:
-                    return "август";
-                case 9:
-                    return "септембар";
-                case 10:
-                    return "октобар";
-                case 11:
-                    return "новембар";
-                case 12:
-                    return "децембар";
-                default:
-                    break;
-            }
-            return "";
-        }
     }
 
     public class SvetiDana : ISaintNamesList, ISaintNamesAndLivesList, IProlog

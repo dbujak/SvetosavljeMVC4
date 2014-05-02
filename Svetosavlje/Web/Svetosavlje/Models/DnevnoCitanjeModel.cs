@@ -11,6 +11,7 @@ namespace Svetosavlje.Models
     public class DnevnoCitanjeModel
     {
         public DnevnoCitanje Citanje; 
-        public DateTime Date;
+        public string DatumKalendar;
+        public string DatumCitanja;
     }
 }

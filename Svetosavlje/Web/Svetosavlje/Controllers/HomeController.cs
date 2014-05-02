@@ -59,7 +59,9 @@ namespace Svetosavlje.Controllers
 
             model.Citanje = izDanaUDan.GetDnevnoCitanje(dtDate.Month, dtDate.Day, dtDate.Year);
 
-            model.Date = dtDate;
+            SvastaraProvider svastara;
+            model.DatumCitanja = dtDate.Day.ToString() + ". " + svastara.Mjesec(dtDate.Month) + " " + dtDate.Year.ToString();
+            model.DatumKalendar = dtDate.Day + "/" + dtDate.Month + "/" + dtDate.Year;
             return View(model);
         }
 

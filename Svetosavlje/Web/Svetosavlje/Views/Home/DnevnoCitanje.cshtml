@@ -7,6 +7,26 @@
     ViewBag.Title = "Дневно читање из Светог Писма";
 }
 
+
+<link rel="stylesheet" type="text/css" href="~/Scripts/julian/jquery.calendars.picker.css">
+@Scripts.Render("~/bundles/julianCalendar")
+
+<script>
+    $(function () {
+        $('#inlineDatepicker').calendarsPicker({ calendar: $.calendars.instance('julian', 'sr'), onSelect: showDate, changeMonth: false, monthsToShow: 3, defaultDate: '@Model.DatumKalendar' });
+    });
+
+
+    function showDate(date) {
+        $("#strDate").val(date);
+        $('form').submit();
+    }
+
+
+</script>
+
+
+
 <div class="row-fluid">
 
     <div class="span12">
@@ -16,23 +36,52 @@
         </ul>
         <!-- /uvod, slike otaca-->
     </div>
-    <h1>Дневно читање из Светог Писма</h1>
+    <h1>Дневно читање из Светог Писма за @Model.DatumCitanja</h1>
+    <br /><br />
+    @using (Html.BeginForm("DnevnoCitanje", "Home"))
+    {
+                
+        <div id="datepicker-container" style="text-align: center;">
+            <div id="datepicker-center" style="display: inline-block; margin: 0 auto;">
+                <div id="inlineDatepicker"></div>
+            </div>
+        </div>
+
+        <input type="hidden" id="strDate" name="strDate" />
+    }
+
     <br />
 
-    <h3>На вечерњи:</h3>
-    @Html.Raw(Model.Citanje.Vecernje)
+    @if (Model.Citanje.Vecernje != null && Model.Citanje.Vecernje != "")
+    {
+        <h3>На вечерњи:</h3>
+        @Html.Raw(Model.Citanje.Vecernje)
+        <br />
+        <br />
+    }
 
 
-    <h3>На јутрењу:</h3>
-    @Html.Raw(Model.Citanje.Jutrenje)
+    @if (Model.Citanje.Jutrenje != null && Model.Citanje.Jutrenje != "")
+    {
+        <h3>На јутрењу:</h3>
+        @Html.Raw(Model.Citanje.Jutrenje)
+        <br />
+        <br />
+    }
+
+    @if (Model.Citanje.LiturgijaJevandjelje != null && Model.Citanje.LiturgijaJevandjelje != "")
+    {
+        <h3>На Св. Литургији, Еванђеље:</h3>
+        @Html.Raw(Model.Citanje.LiturgijaJevandjelje)
+        <br />
+        <br />
+    }
+
+    @if (Model.Citanje.LiturgijaApostoli != null && Model.Citanje.LiturgijaApostoli != "")
+    {
+        <h3>На Св. Литургији, Апостол:</h3>
+        @Html.Raw(Model.Citanje.LiturgijaApostoli)
+    }
 
 
-    <h3>На Св. Литургији, Еванђеље:</h3>
-    @Html.Raw(Model.Citanje.LiturgijaJevandjelje)
-
-    <h3>На Св. Литургији, Апостол:</h3>
-    @Html.Raw(Model.Citanje.LiturgijaApostoli)
-
-
-
-    </div>
+</div>
