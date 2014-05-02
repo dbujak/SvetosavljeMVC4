@@ -8,13 +8,32 @@ namespace Svetosavlje.Controllers
 {
     public class PojanjeController : Controller
     {
-        //
-        // GET: /Pojanje/
 
         public ActionResult Index()
         {
             return View();
         }
 
+        public ActionResult DStefanovic()
+        {
+            return View();
+        }
+
+        public ActionResult DPetrovic()
+        {
+            return View();
+        }
+
+        public ActionResult Razvitak()
+        {
+            return View();
+        }
+
+        public ActionResult XXVek()
+        {
+            return View();
+        }
+
+    
     }
 }

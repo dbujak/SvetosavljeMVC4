@@ -1941,6 +1941,10 @@
     <Content Include="Views\Svetinje\RenoviranjeSinajskeBiblioteke.cshtml" />
     <Content Include="Views\Svetinje\PutovanjeUSvetuGoru.cshtml" />
     <Content Include="Views\Svetinje\Plac.cshtml" />
+    <Content Include="Views\Pojanje\DStefanovic.cshtml" />
+    <Content Include="Views\Pojanje\DPetrovic.cshtml" />
+    <Content Include="Views\Pojanje\Razvitak.cshtml" />
+    <Content Include="Views\Pojanje\XXVek.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
