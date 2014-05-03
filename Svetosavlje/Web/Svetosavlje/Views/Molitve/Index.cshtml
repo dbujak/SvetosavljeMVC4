@@ -1,0 +1,194 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row-fluid">
+
+    <div class="span12">
+        <img src="~/Content/images/Molitve/molitve.gif" />
+
+        <ul class="breadcrumb">
+            <li>@Html.ActionLink("Светосавље.орг", "Index", "Home")<span class="divider">/</span></li>
+            <li class="active">Молитве и богослужења</li>
+        </ul>
+    </div>
+    <h1>Молитве и богослужења</h1>
+    <br />
+
+    <!-- Uvodni blok za Molitve -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tbody>
+	
+	<tr><td bgcolor="#ECDDCF" align="center"><strong>О МОЛИТВИ</strong></td></tr>
+
+	
+	<tr><td>
+	<p align="center"><i>Молитва је - вода жива, којом душа гаси жеђ.</i></p>
+	<center>
+    <p align="left">
+	Сви људи имају потребу за молитвом, више него што дрвеће има потребу за водом. Зато што нити дрвеће може да даје плодове уколико не упија воду
+	кроз корење, нити ћемо ми моћи да доносимо скупоцене плодове побожности уколико се не напајамо молитвом.
+	Зато треба и када устанемо из постеље да предухитримо сунце службом Богу;
+	и када седимо за столом ради обеда и када се спремамо за починак.
+	Или боље речено - сваког часа треба да узносимо молитву Богу, прелазећи тако помоћу молитве један пут који је једнак дужини дана.
+	</p>
+	<p align="right">СВ. ЈОВАН ЗЛАТОУСТ</p>
+    <p align="left">
+	Ако су демони преклињали Господа да их не пошаље у бездан и молба им беше испуњена, колико ли ће пре бити услишене молитве нас који смо се обукли у Христа, 
+	када се молимо да се избавимо од умне (духовне) смрти? Посветимо се стога, молитви, јер је велика њена сила.
+	</p>
+	<p align="right">Антиох Пандект</p>
+	<table border="0" cellpadding="0" cellspacing="1" width="90%">
+	<tbody><tr>
+	
+	<td class="naslovi_o_molitvi">&nbsp;<a href="http://www.svetosavlje.org/biblioteka/Bogoslovlje/IsusovaMolitva.htm" class="naslovi_o_molitvi">МОЛИТВА</a> - Св. ЈОВАН Кронштатски</td>
+	</tr>
+	<tr>
+	
+	<td>&nbsp;<a href="http://www.svetosavlje.org/biblioteka/Bogoslovlje/IsusovaMolitva.htm" class="naslovi_o_molitvi">УЧЕЊЕ СТАРЦА ВАСИЛИЈА О ИСУСОВОЈ МОЛИТВИ</a></td>
+	</tr>
+	<tr>
+	
+	<td>&nbsp;<a href="http://www.svetosavlje.org/biblioteka/Besede/Hrabrost.htm" class="naslovi_o_molitvi">ХРАБРОСТ ЗА МОЛИТВУ</a></td>
+	</tr>
+	</tbody></table>
+	</center>
+	</td>
+        <p>&nbsp;</p>
+        </tr>
+
+	</tbody></table>
+
+    <!-- Tabela grupa-kategorija molitava, iz baze (TODO) -->
+
+    <table border="0" cellpadding="0" cellspacing="0" width="80%">
+        <tbody>
+            <tr bgcolor="#ECDDCF" id="kt_red_1" style="background-color: rgb(236, 221, 207);">
+            <p>&nbsp;</p>
+            <p>Врсте молитви</p>
+                <td align="left" class="naslovi_kt_molitava">
+                    <a id="kt_a_1" class="naslovi_kt_molitava_lnk" href="#kt8" onmouseover="hlRow(kt_red_1, kt_a_1)"
+                        onmouseout="unHlRow(kt_red_1, kt_a_1)" style="background-color: rgb(236, 221, 207);
+                        text-decoration: none;"><strong>СВАКОДНЕВНЕ МОЛИТВЕ</strong></a>
+                </td>
+            </tr>
+            <tr bgcolor="#ECDDCF" id="kt_red_2" style="background-color: rgb(236, 221, 207);">
+                <td align="left" class="naslovi_kt_molitava">
+                    <a id="kt_a_2" class="naslovi_kt_molitava_lnk" href="#kt1" onmouseover="hlRow(kt_red_2, kt_a_2)"
+                        onmouseout="unHlRow(kt_red_2, kt_a_2)" style="background-color: rgb(236, 221, 207);
+                        text-decoration: none;"><strong>ОПШТЕ МОЛИТВЕ</strong></a>
+                </td>
+            </tr>
+            <tr bgcolor="#ECDDCF" id="kt_red_3" style="background-color: rgb(236, 221, 207);">
+                <td align="left" class="naslovi_kt_molitava">
+                    <a id="kt_a_3" class="naslovi_kt_molitava_lnk" href="#kt2" onmouseover="hlRow(kt_red_3, kt_a_3)"
+                        onmouseout="unHlRow(kt_red_3, kt_a_3)" style="background-color: rgb(236, 221, 207);
+                        text-decoration: none;"><strong>НАМЕНСКЕ МОЛИТВЕ</strong></a>
+                </td>
+            </tr>
+            <tr bgcolor="#ECDDCF" id="kt_red_4">
+                <td align="left" class="naslovi_kt_molitava">
+                    <a id="kt_a_4" class="naslovi_kt_molitava_lnk" href="#kt9" onmouseover="hlRow(kt_red_4, kt_a_4)"
+                        onmouseout="unHlRow(kt_red_4, kt_a_4)"><strong>ПОКАЈНЕ МОЛИТВЕ</strong></a>
+                </td>
+            </tr>
+            <tr bgcolor="#ECDDCF" id="kt_red_5" style="background-color: rgb(236, 221, 207);">
+                <td align="left" class="naslovi_kt_molitava">
+                    <a id="kt_a_5" class="naslovi_kt_molitava_lnk" href="#kt3" onmouseover="hlRow(kt_red_5, kt_a_5)"
+                        onmouseout="unHlRow(kt_red_5, kt_a_5)" style="background-color: rgb(236, 221, 207);
+                        text-decoration: none;"><strong>МОЛИТВЕ СЛАВЕ И ХВАЛЕ</strong></a>
+                </td>
+            </tr>
+            <tr bgcolor="#ECDDCF" id="kt_red_6">
+                <td align="left" class="naslovi_kt_molitava">
+                    <a id="kt_a_6" class="naslovi_kt_molitava_lnk" href="#kt4" onmouseover="hlRow(kt_red_6, kt_a_6)"
+                        onmouseout="unHlRow(kt_red_6, kt_a_6)"><strong>МОЛИТВЕ У ОЧАЈАЊУ И ПОТИШТЕНОСТИ</strong></a>
+                </td>
+            </tr>
+            <tr bgcolor="#ECDDCF" id="kt_red_7" style="background-color: rgb(236, 221, 207);">
+                <td align="left" class="naslovi_kt_molitava">
+                    <a id="kt_a_7" class="naslovi_kt_molitava_lnk" href="#kt6" onmouseover="hlRow(kt_red_7, kt_a_7)"
+                        onmouseout="unHlRow(kt_red_7, kt_a_7)" style="background-color: rgb(236, 221, 207);
+                        text-decoration: none;"><strong>АКАТИСТИ</strong></a>
+                </td>
+            </tr>
+            <tr bgcolor="#ECDDCF" id="kt_red_8">
+                <td align="left" class="naslovi_kt_molitava">
+                    <a id="kt_a_8" class="naslovi_kt_molitava_lnk" href="#kt5" onmouseover="hlRow(kt_red_8, kt_a_8)"
+                        onmouseout="unHlRow(kt_red_8, kt_a_8)"><strong>КАНОНИ</strong></a>
+                </td>
+            </tr>
+            <tr bgcolor="#ECDDCF" id="kt_red_9">
+                <td align="left" class="naslovi_kt_molitava">
+                    <a id="kt_a_9" class="naslovi_kt_molitava_lnk" href="#kt7" onmouseover="hlRow(kt_red_9, kt_a_9)"
+                        onmouseout="unHlRow(kt_red_9, kt_a_9)"><strong>БОГОСЛУЖБЕНИ ТЕКСТОВИ</strong></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- / Kraj tabele grupa-kategorija molitava -->
+
+    <!-- Slijedi niz tabela sa molitvama za svaku kategoriju, prikaz je samo za СВАКОДНЕВНЕ МОЛИТВЕ, iz baze (TODO) -->
+
+   <table border="0" cellpadding="0" cellspacing="0" width="80%">
+        <tbody>
+            <tr>
+            <p>&nbsp;</p>
+             <p>СВАКОДНЕВНЕ МОЛИТВЕ</p>
+                <td>
+                    <strong><a href="@Url.Action("PrikazMolitve", "Molitve")">ЧЕТИРИ СВАКОДНЕВНЕ МОЛИТВЕ</a></strong>
+                </td>
+            </tr>
+               
+            <tr>
+                <td>
+                    <a href="#">МОЛИТВЕ ЈУТАРЊЕ</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="#">МОЛИТВЕНО ПРАВИЛО О
+                        УСКРСУ (од Ускрса до Томине недеље)</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="#">МОЛИТВА У СВАКО ДОБА</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="#">МОЛИТВЕ ПРЕ И ПОСЛЕ
+                        РУЧКА</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="#">МОЛИТВА ПРЕ И ПОСЛЕ
+                        ВЕЧЕРЕ</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="#">МОЛИТВЕ ПРЕ И ПОСЛЕ
+                        ДОРУЧКА</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="#">МОЛИТВЕ ВЕЧЕРЊЕ</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="#">МОЛИТВЕ ПРЕ ПОЧЕТКА
+                        И ПО СВРШЕТКУ РАДА</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+
+</div>

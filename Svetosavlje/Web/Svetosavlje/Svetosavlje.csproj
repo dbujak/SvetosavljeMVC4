@@ -170,6 +170,7 @@
     <Compile Include="Controllers\CrkvenoslovenskiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ListaController.cs" />
+    <Compile Include="Controllers\MolitveController.cs" />
     <Compile Include="Controllers\PastirController.cs" />
     <Compile Include="Controllers\PojanjeController.cs" />
     <Compile Include="Controllers\PrologController.cs" />
@@ -225,6 +226,7 @@
     <Content Include="Content\images\Crkvenoslovenski\oktoih.gif" />
     <Content Include="Content\images\Crkvenoslovenski\slovenski.jpg" />
     <Content Include="Content\images\Crkvenoslovenski\vbukvar.jpg" />
+    <Content Include="Content\images\Molitve\molitve.gif" />
     <Content Include="Content\images\Pastir\o_dusan.jpg" />
     <Content Include="Content\images\Pastir\o_dusan2.jpg" />
     <Content Include="Content\images\Pastir\o_ivan.jpg" />
@@ -1878,6 +1880,7 @@
     <Content Include="Content\pdfs\Pojanje\vizant01.zip" />
     <Content Include="Content\pdfs\Pojanje\vizant02.zip" />
     <Content Include="Content\pdfs\Pojanje\vizant03.zip" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\PublishProfiles\Svetosavlje net4.pubxml" />
     <Content Include="Views\Riznice\Bordure.cshtml" />
     <Content Include="Views\Riznice\Bordure2.cshtml" />
@@ -1954,6 +1957,8 @@
     <Content Include="Views\Pojanje\Razvitak.cshtml" />
     <Content Include="Views\Pojanje\XXVek.cshtml" />
     <Content Include="Views\Home\DnevnoCitanje.cshtml" />
+    <Content Include="Views\Molitve\Index.cshtml" />
+    <Content Include="Views\Molitve\PrikazMolitve.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
