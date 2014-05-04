@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Svetosavlje.Models;
+using Svetosavlje.Services;
+using Svetosavlje.Interfaces.Interfaces;
+using Svetosavlje.Interfaces.Classes;
 
 namespace Svetosavlje.Controllers
 {
@@ -13,7 +17,10 @@ namespace Svetosavlje.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            MolitveModel model = new MolitveModel();
+
+
+            return View(model);
         }
 
         public ActionResult PrikazMolitve()

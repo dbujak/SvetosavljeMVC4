@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Classes\DnevnoCitanje.cs" />
     <Compile Include="Classes\ListaArhiva.cs" />
+    <Compile Include="Classes\Molitve.cs" />
     <Compile Include="Classes\PitanjeInfo.cs" />
     <Compile Include="Classes\Prolog.cs" />
     <Compile Include="Classes\WPBlogModel.cs" />

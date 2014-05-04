@@ -73,4 +73,16 @@ namespace Svetosavlje.Interfaces.Interfaces
         string GetFastingType(int Mjesec, int Dan);
     }
 
+    public interface IMolitveKategList
+    {
+        IList<MolitveKateg> GetMolitveKategList();
+    }
+    public interface IMolitveList
+    {
+        IList<Molitve> GetMolitveList();
+    }
+    public interface IMolitve : IMolitveKategList, IMolitveList
+    {
+    }
+
 }

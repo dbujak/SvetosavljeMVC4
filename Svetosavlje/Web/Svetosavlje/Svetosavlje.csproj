@@ -181,6 +181,7 @@
     </Compile>
     <Compile Include="Models\DnevnoCitanjeModel.cs" />
     <Compile Include="Models\ListaModel.cs" />
+    <Compile Include="Models\MolitveModel.cs" />
     <Compile Include="Models\PastirModel.cs" />
     <Compile Include="Models\PrologModel.cs" />
     <Compile Include="Models\SvetoModels.cs" />
@@ -1638,7 +1639,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
@@ -1880,7 +1880,6 @@
     <Content Include="Content\pdfs\Pojanje\vizant01.zip" />
     <Content Include="Content\pdfs\Pojanje\vizant02.zip" />
     <Content Include="Content\pdfs\Pojanje\vizant03.zip" />
-    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\PublishProfiles\Svetosavlje net4.pubxml" />
     <Content Include="Views\Riznice\Bordure.cshtml" />
     <Content Include="Views\Riznice\Bordure2.cshtml" />

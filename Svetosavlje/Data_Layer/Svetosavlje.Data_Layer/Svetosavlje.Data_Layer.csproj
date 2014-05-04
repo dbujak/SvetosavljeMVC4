@@ -52,6 +52,7 @@
     <Compile Include="BlogServices\NewsList.cs" />
     <Compile Include="Core\blogConnection.cs" />
     <Compile Include="Core\dbConnection.cs" />
+    <Compile Include="MySQLServices\MolitveService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MySQLServices\CitanjaList.cs" />
     <Compile Include="MySQLServices\FastingType.cs" />
