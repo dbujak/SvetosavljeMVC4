@@ -36,13 +36,15 @@ namespace Svetosavlje.Interfaces.Classes
             string d = datum.ToString();
             string day = d.Substring(3, 2);
             string month = d.Substring(1, 2);
+            System.Globalization.CultureInfo helpCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US");
+          
             if (day == "29")
             {
-                Datum = Convert.ToDateTime(month + "/" + day + "/2012"); // format datum as mm/dd/yyyy, 2012 was leap year
+                Datum = Convert.ToDateTime(month + "/" + day + "/2012", helpCulture); // format datum as mm/dd/yyyy, 2012 was leap year
             }
             else
             {
-                Datum = Convert.ToDateTime(month + "/" + day + "/" + DateTime.Now.Year.ToString()); // format datum as mm/dd/yyyy, 2012 was leap year
+                Datum = Convert.ToDateTime(month + "/" + day + "/" + DateTime.Now.Year.ToString(), helpCulture); // format datum as mm/dd/yyyy, 2012 was leap year
             }
             
             Naslov = naslov;

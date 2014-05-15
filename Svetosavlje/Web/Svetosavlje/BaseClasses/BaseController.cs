@@ -14,9 +14,12 @@ namespace Svetosavlje.BaseClasses
         protected override void OnException(ExceptionContext filterContext)
         {
             // log error message
-            logger.Error(filterContext.Exception.Message);
-            logger.Error("Inner Exception: {0}", filterContext.Exception.InnerException.Message);
-            logger.Error("Stack Trace: {0}", filterContext.Exception.StackTrace);
+            if (filterContext != null)
+            {
+                //logger.Error(filterContext.Exception.Message);
+                //logger.Error("Inner Exception: {0}", filterContext.Exception.InnerException.Message);
+                //logger.Error("Stack Trace: {0}", filterContext.Exception.StackTrace);
+            }
             //if (filterContext.ExceptionHandled)
             //{
             //    return;
