@@ -42,6 +42,9 @@
     <Reference Include="Microsoft.CSharp">
       <Private>True</Private>
     </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\..\_Lib\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <Private>True</Private>
     </Reference>
@@ -167,6 +170,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="BaseClasses\BaseController.cs" />
     <Compile Include="Controllers\CrkvenoslovenskiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ListaController.cs" />
@@ -1880,6 +1884,9 @@
     <Content Include="Content\pdfs\Pojanje\vizant01.zip" />
     <Content Include="Content\pdfs\Pojanje\vizant02.zip" />
     <Content Include="Content\pdfs\Pojanje\vizant03.zip" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Properties\PublishProfiles\Svetosavlje net4.pubxml" />
     <Content Include="Views\Riznice\Bordure.cshtml" />
     <Content Include="Views\Riznice\Bordure2.cshtml" />
@@ -1958,6 +1965,9 @@
     <Content Include="Views\Home\DnevnoCitanje.cshtml" />
     <Content Include="Views\Molitve\Index.cshtml" />
     <Content Include="Views\Molitve\PrikazMolitve.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

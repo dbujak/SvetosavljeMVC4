@@ -10,10 +10,11 @@ using Svetosavlje.Models;
 using Svetosavlje.Services;
 using Svetosavlje.Interfaces.Interfaces;
 using Svetosavlje.Interfaces.Classes;
+using Svetosavlje.BaseClasses;
 
 namespace Svetosavlje.Controllers
 {
-    public class PrologController : Controller
+    public class PrologController : BaseController
     {
 
 
