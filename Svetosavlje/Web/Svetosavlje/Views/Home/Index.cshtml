@@ -34,7 +34,7 @@
                     {
                         @Html.ActionLink(sv, "Index", "Prolog")<br />
                     }
-                    @{string link = "http://svetosavlje.org/biblioteka/AvaJustin/ZitijaSvetih/ZitijaSvetih" + DateTime.Now.ToString("MMdd") + ".htm";}
+                    @{string link = "http://svetosavlje.org/biblioteka/AvaJustin/ZitijaSvetih/ZitijaSvetih" + DateTime.Now.AddDays(-13).ToString("MMdd") + ".htm";}
                     (<a href="@link">Житија Светих за данас</a>)
 
                 </div>
