@@ -11,7 +11,17 @@ namespace Svetosavlje.Services
 {
     public class BlogProvider : IBlogProvider
     {
-        private IBlogProvider _provider = new AtomBlogProvider();
+        private IBlogProvider _provider;
+
+        public BlogProvider()
+        {
+#if DEBUG
+            _provider = new DummyBlogProvider();
+#else
+            _provider = new AtomBlogProvider();
+#endif
+        }
+
 
 
         public IList<WPBlogModel> GetNews()

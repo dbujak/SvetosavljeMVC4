@@ -15,7 +15,19 @@ namespace Svetosavlje.Services
 
         public IList<WPBlogModel> GetNews()
         {
-            throw new NotImplementedException();
+            return GetBlogList();
+
+        }
+
+        private static IList<WPBlogModel> GetBlogList()
+        {
+            IList<WPBlogModel> list = new List<WPBlogModel>();
+
+            for (int i = 0; i < 10; i++)
+            {
+                list.Add(new WPBlogModel(new HtmlString("This is some TOPIC " + i.ToString()), new HtmlString("This is some text or CONTENT " + i.ToString()), "L " + i.ToString()));
+            }
+            return list;
         }
 
         #endregion
@@ -24,7 +36,7 @@ namespace Svetosavlje.Services
 
         public IList<WPBlogModel> GetEditorNews()
         {
-            throw new NotImplementedException();
+            return GetBlogList();
         }
 
         #endregion
@@ -33,7 +45,7 @@ namespace Svetosavlje.Services
 
         public IList<WPBlogModel> GetMissionNews()
         {
-            throw new NotImplementedException();
+            return GetBlogList();
         }
 
         #endregion
