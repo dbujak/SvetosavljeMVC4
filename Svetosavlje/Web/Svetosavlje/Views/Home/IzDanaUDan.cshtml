@@ -1,0 +1,57 @@
+﻿@using System.Globalization;
+@using Svetosavlje.Models;
+@using Svetosavlje.Interfaces.Classes;
+@model string
+
+@{
+    ViewBag.Title = "Са св. Јустином из дана у дан";
+}
+
+
+<link rel="stylesheet" type="text/css" href="~/Scripts/julian/jquery.calendars.picker.css">
+@Scripts.Render("~/bundles/julianCalendar")
+
+<script>
+    $(function () {
+        $('#inlineDatepicker').calendarsPicker({ calendar: $.calendars.instance('julian', 'sr'), onSelect: showDate, changeMonth: false, monthsToShow: 3, defaultDate: '@ViewBag.DatumKalendar' });
+    });
+
+
+    function showDate(date) {
+        $("#strDate").val(date);
+        $('form').submit();
+    }
+
+
+</script>
+
+
+
+<div class="row-fluid">
+
+    <div class="span12">
+        <ul class="breadcrumb">
+            <li>@Html.ActionLink("Светосавље.орг", "Index", "Home")<span class="divider">/</span></li>
+            <li class="active">Са св. Јустином из дана у дан</li>
+        </ul>
+        <!-- /uvod, slike otaca-->
+    </div>
+    <h1>Са св. Јустином из дана у дан за @ViewBag.DatumCitanja</h1>
+    <br /><br />
+    @using (Html.BeginForm("IzDanaUDan", "Home"))
+    {
+                
+        <div id="datepicker-container" style="text-align: center;">
+            <div id="datepicker-center" style="display: inline-block; margin: 0 auto;">
+                <div id="inlineDatepicker"></div>
+            </div>
+        </div>
+
+        <input type="hidden" id="strDate" name="strDate" />
+    }
+
+    <br />
+
+@ViewBag.Citanje
+
+</div>

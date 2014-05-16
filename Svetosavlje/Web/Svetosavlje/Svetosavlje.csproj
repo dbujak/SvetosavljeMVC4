@@ -1965,6 +1965,7 @@
     <Content Include="Views\Home\DnevnoCitanje.cshtml" />
     <Content Include="Views\Molitve\Index.cshtml" />
     <Content Include="Views\Molitve\PrikazMolitve.cshtml" />
+    <Content Include="Views\Home\IzDanaUDan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

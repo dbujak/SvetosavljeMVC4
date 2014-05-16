@@ -56,7 +56,7 @@
     <div class="span8">
         <h4>Са св. Јустином из дана у дан</h4>
         <p>@Html.Raw(Model.DailyQuote.Substring(0, Math.Min(Model.DailyQuote.Length, 350)))...</p>
-        <p><a href="">Читај даље</a> »</p>
+        <p><a href="@Url.Action("IzDanaUDan","Home")">Читај даље</a> »</p>
     </div>
     <div class="span4">
         <h4>Дневно читање из Светог Писма</h4>

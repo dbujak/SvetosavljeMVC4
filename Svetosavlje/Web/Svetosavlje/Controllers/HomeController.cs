@@ -38,7 +38,7 @@ namespace Svetosavlje.Controllers
                                                   listArhiva.GetMessageThreads(10),
                                                   pitanjaPastiru.GetQuestionList(0, 10),
                                                   svetiDana.GetSaintNamesList(today.Month, today.Day),
-                                                  izDanaUDan.GetQuote(1, Month, Day),
+                                                  izDanaUDan.GetQuote(1, today.Month, today.Day),
                                                   izDanaUDan.GetDnevnoCitanje(today.Month, today.Day, today.Year),
                                                   izDanaUDan.GetFastingType(today.Month, today.Day));
 
@@ -65,6 +65,22 @@ namespace Svetosavlje.Controllers
             return View(model);
         }
 
+        public ActionResult IzDanaUDan(string strDate)
+        {
+            DateTime dtDate = DateTime.Now.AddDays(-13);
+
+            if (strDate != null && strDate != "")
+            {
+                dtDate = Convert.ToDateTime(strDate);
+            }
+
+            ViewBag.Citanje = izDanaUDan.GetQuote(1, dtDate.Month, dtDate.Day);
+
+            SvastaraProvider svastara;
+            ViewBag.DatumCitanja = dtDate.Day.ToString() + ". " + svastara.Mjesec(dtDate.Month) + " " + dtDate.Year.ToString();
+            ViewBag.DatumKalendar = dtDate.Day + "/" + dtDate.Month + "/" + dtDate.Year;
+            return View();
+        }
 
         public ActionResult Molitve()
         {
