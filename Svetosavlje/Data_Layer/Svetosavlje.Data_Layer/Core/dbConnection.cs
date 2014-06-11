@@ -57,7 +57,8 @@ namespace Svetosavlje.Data_Layer.Core
             Blogs,
             PitanjaPastiru,
             SvetiDana,
-            IzDanaUDan
+            IzDanaUDan,
+            Molitve
         }
 
         public DataTable GetDataTable(string strSQL, Connenction connection)

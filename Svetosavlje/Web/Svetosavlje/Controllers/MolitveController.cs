@@ -17,10 +17,10 @@ namespace Svetosavlje.Controllers
 
         public ActionResult Index()
         {
-            MolitveModel model = new MolitveModel();
+            MolitveModel Mmodel = new MolitveModel();
 
 
-            return View(model);
+            return View(Mmodel);
         }
 
         public ActionResult PrikazMolitve()

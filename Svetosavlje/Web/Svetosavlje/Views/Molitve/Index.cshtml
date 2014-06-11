@@ -1,4 +1,8 @@
-﻿@{
+﻿@using System.Globalization;
+@using Svetosavlje.Models;
+@using Svetosavlje.Interfaces.Classes;
+@model Svetosavlje.Models.MolitveModel;
+@{
     ViewBag.Title = "Index";
 }
 
@@ -60,6 +64,20 @@
 	</tbody></table>
 
     <!-- Tabela grupa-kategorija molitava, iz baze (TODO) -->
+
+    @{int i = 0;}
+    @foreach (MolitveKateg mKateg in Model.KategorijeMolitvi)
+    {
+        i = i + 1;
+        <p>
+            <b>
+                @i
+                .&nbsp;&nbsp;
+                @Html.Raw(mKateg.nkategMolitvi)
+            </b>
+            @Html.Raw(mKateg.sKategMolitvi)
+        </p>
+    }
 
     <table border="0" cellpadding="0" cellspacing="0" width="80%">
         <tbody>
@@ -129,6 +147,20 @@
     <!-- / Kraj tabele grupa-kategorija molitava -->
 
     <!-- Slijedi niz tabela sa molitvama za svaku kategoriju, prikaz je samo za СВАКОДНЕВНЕ МОЛИТВЕ, iz baze (TODO) -->
+    @{int j = 0;}
+    @foreach (Molitve molitve in Model.Molitve)
+    {
+        j = i + j;
+        <p>
+            <b>
+                @j
+                .&nbsp;&nbsp;
+                @Html.Raw(molitve.sNaslovMolitve)
+            </b>
+            @Html.Raw(molitve.sMolitve)
+            @Html.Raw(molitve.sURLuBiblioteci)
+        </p>
+    }
 
    <table border="0" cellpadding="0" cellspacing="0" width="80%">
         <tbody>

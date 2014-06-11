@@ -7,6 +7,7 @@ namespace Svetosavlje.Interfaces.Classes
 {
     public class MolitveKateg
     {
+        public int nkategMolitvi { get; set; }
         public string sKategMolitvi { get; set; }
         public int nRedKategMolitvi { get; set; }
 
@@ -14,10 +15,11 @@ namespace Svetosavlje.Interfaces.Classes
         {
         }
 
-        public MolitveKateg(string kategMolitvi, int redKategMolitvi)
+        public MolitveKateg(int IDkategMolitvi, string kategMolitvi, int redKategMolitvi)
         {
             sKategMolitvi = kategMolitvi;
             nRedKategMolitvi = redKategMolitvi;
+            nkategMolitvi = IDkategMolitvi;
         }
 
     }

@@ -19,13 +19,13 @@ namespace Svetosavlje.Data_Layer.MySQLServices
             List<MolitveKateg> returnList = new List<MolitveKateg>();
 
             //TODO: TESTIRAJ / izvuci iz baze listu kategorija molitvi
-            string strSQL = @"SELECT naziv, redosled FROM molitve_kategorije_utf8 ORDER BY redosled";
+            string strSQL = @"SELECT ID, naziv, redosled FROM molitve_kategorije_utf8 ORDER BY redosled";
 
-            DataTable list = dbConn.GetDataTable(strSQL, dbConnection.Connenction.PitanjaPastiru);
+            DataTable list = dbConn.GetDataTable(strSQL, dbConnection.Connenction.Molitve);
 
             foreach (DataRow row in list.Rows)
             {
-                MolitveKateg oMolitveKateg = new MolitveKateg(row["naziv"].ToString(), Convert.ToInt16(row["redosled"].ToString()));
+                MolitveKateg oMolitveKateg = new MolitveKateg(Convert.ToInt16(row["ID"].ToString()), row["naziv"].ToString(), Convert.ToInt16(row["redosled"].ToString()));
                 returnList.Add(oMolitveKateg);
             }
 
@@ -38,9 +38,9 @@ namespace Svetosavlje.Data_Layer.MySQLServices
 
             //TODO:  TESTIRAJ / izvuci iz baze listu molitvi
 
-            string strSQL = @"SELECT naslov, molitva, kategorija, url_ka_molitvi FROM molitve_kategorije_utf8 ORDER BY kategorija";
+            string strSQL = @"SELECT naslov, molitva, kategorija, url_ka_molitvi FROM molitve_kategorije_utf8 ORDER BY kategorija, ID;";
 
-            DataTable list = dbConn.GetDataTable(strSQL, dbConnection.Connenction.PitanjaPastiru);
+            DataTable list = dbConn.GetDataTable(strSQL, dbConnection.Connenction.Molitve);
 
             foreach (DataRow row in list.Rows)
             {
