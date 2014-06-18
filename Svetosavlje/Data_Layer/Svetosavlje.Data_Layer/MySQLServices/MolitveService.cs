@@ -21,7 +21,7 @@ namespace Svetosavlje.Data_Layer.MySQLServices
             //TODO: TESTIRAJ / izvuci iz baze listu kategorija molitvi
             string strSQL = @"SELECT ID, naziv, redosled FROM molitve_kategorije_utf8 ORDER BY redosled";
 
-            DataTable list = dbConn.GetDataTable(strSQL, dbConnection.Connenction.Molitve);
+            DataTable list = dbConn.GetDataTable(strSQL, dbConnection.Connenction.PitanjaPastiru);
 
             foreach (DataRow row in list.Rows)
             {
@@ -38,9 +38,9 @@ namespace Svetosavlje.Data_Layer.MySQLServices
 
             //TODO:  TESTIRAJ / izvuci iz baze listu molitvi
 
-            string strSQL = @"SELECT naslov, molitva, kategorija, url_ka_molitvi FROM molitve_kategorije_utf8 ORDER BY kategorija, ID;";
+            string strSQL = @"SELECT naslov, molitva, kategorija, url_ka_molitvi FROM molitve_utf8 ORDER BY kategorija, ID;";
 
-            DataTable list = dbConn.GetDataTable(strSQL, dbConnection.Connenction.Molitve);
+            DataTable list = dbConn.GetDataTable(strSQL, dbConnection.Connenction.PitanjaPastiru);
 
             foreach (DataRow row in list.Rows)
             {

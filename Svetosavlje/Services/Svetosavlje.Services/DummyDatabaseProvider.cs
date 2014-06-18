@@ -185,5 +185,16 @@ namespace Svetosavlje.Services
         {
             throw new NotImplementedException();
         }
+
+
+        public IList<Molitve> GetMolitveList()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IList<MolitveKateg> GetMolitveKategList()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

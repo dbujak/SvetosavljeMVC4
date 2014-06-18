@@ -1,7 +1,7 @@
 ﻿@using System.Globalization;
 @using Svetosavlje.Models;
 @using Svetosavlje.Interfaces.Classes;
-@model Svetosavlje.Models.MolitveModel;
+@model Svetosavlje.Models.MolitveModel
 @{
     ViewBag.Title = "Index";
 }
@@ -64,105 +64,59 @@
 	</tbody></table>
 
     <!-- Tabela grupa-kategorija molitava, iz baze (TODO) -->
-
+    &nbsp;&nbsp;
+    <table border="0" cellpadding="0" cellspacing="0" width="80%">
+        <tbody>
+            <tr id="kt_red_1" style="background-color: rgb(236, 221, 207);">
+                <td style="color: blue; font:bolder;">
+                    <strong>
+                        <p>Врсте молитви</p>
+                    </strong>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    &nbsp;
     @{int i = 0;}
     @foreach (MolitveKateg mKateg in Model.KategorijeMolitvi)
     {
         i = i + 1;
         <p>
+            @i
+            .&nbsp;&nbsp;
             <b>
-                @i
-                .&nbsp;&nbsp;
-                @Html.Raw(mKateg.nkategMolitvi)
+                @Html.Raw(mKateg.sKategMolitvi) &nbsp;&nbsp;
             </b>
-            @Html.Raw(mKateg.sKategMolitvi)
+            (кат:@Html.Raw(mKateg.nkategMolitvi)) &nbsp;&nbsp;
         </p>
     }
 
-    <table border="0" cellpadding="0" cellspacing="0" width="80%">
-        <tbody>
-            <tr bgcolor="#ECDDCF" id="kt_red_1" style="background-color: rgb(236, 221, 207);">
-            <p>&nbsp;</p>
-            <p>Врсте молитви</p>
-                <td align="left" class="naslovi_kt_molitava">
-                    <a id="kt_a_1" class="naslovi_kt_molitava_lnk" href="#kt8" onmouseover="hlRow(kt_red_1, kt_a_1)"
-                        onmouseout="unHlRow(kt_red_1, kt_a_1)" style="background-color: rgb(236, 221, 207);
-                        text-decoration: none;"><strong>СВАКОДНЕВНЕ МОЛИТВЕ</strong></a>
-                </td>
-            </tr>
-            <tr bgcolor="#ECDDCF" id="kt_red_2" style="background-color: rgb(236, 221, 207);">
-                <td align="left" class="naslovi_kt_molitava">
-                    <a id="kt_a_2" class="naslovi_kt_molitava_lnk" href="#kt1" onmouseover="hlRow(kt_red_2, kt_a_2)"
-                        onmouseout="unHlRow(kt_red_2, kt_a_2)" style="background-color: rgb(236, 221, 207);
-                        text-decoration: none;"><strong>ОПШТЕ МОЛИТВЕ</strong></a>
-                </td>
-            </tr>
-            <tr bgcolor="#ECDDCF" id="kt_red_3" style="background-color: rgb(236, 221, 207);">
-                <td align="left" class="naslovi_kt_molitava">
-                    <a id="kt_a_3" class="naslovi_kt_molitava_lnk" href="#kt2" onmouseover="hlRow(kt_red_3, kt_a_3)"
-                        onmouseout="unHlRow(kt_red_3, kt_a_3)" style="background-color: rgb(236, 221, 207);
-                        text-decoration: none;"><strong>НАМЕНСКЕ МОЛИТВЕ</strong></a>
-                </td>
-            </tr>
-            <tr bgcolor="#ECDDCF" id="kt_red_4">
-                <td align="left" class="naslovi_kt_molitava">
-                    <a id="kt_a_4" class="naslovi_kt_molitava_lnk" href="#kt9" onmouseover="hlRow(kt_red_4, kt_a_4)"
-                        onmouseout="unHlRow(kt_red_4, kt_a_4)"><strong>ПОКАЈНЕ МОЛИТВЕ</strong></a>
-                </td>
-            </tr>
-            <tr bgcolor="#ECDDCF" id="kt_red_5" style="background-color: rgb(236, 221, 207);">
-                <td align="left" class="naslovi_kt_molitava">
-                    <a id="kt_a_5" class="naslovi_kt_molitava_lnk" href="#kt3" onmouseover="hlRow(kt_red_5, kt_a_5)"
-                        onmouseout="unHlRow(kt_red_5, kt_a_5)" style="background-color: rgb(236, 221, 207);
-                        text-decoration: none;"><strong>МОЛИТВЕ СЛАВЕ И ХВАЛЕ</strong></a>
-                </td>
-            </tr>
-            <tr bgcolor="#ECDDCF" id="kt_red_6">
-                <td align="left" class="naslovi_kt_molitava">
-                    <a id="kt_a_6" class="naslovi_kt_molitava_lnk" href="#kt4" onmouseover="hlRow(kt_red_6, kt_a_6)"
-                        onmouseout="unHlRow(kt_red_6, kt_a_6)"><strong>МОЛИТВЕ У ОЧАЈАЊУ И ПОТИШТЕНОСТИ</strong></a>
-                </td>
-            </tr>
-            <tr bgcolor="#ECDDCF" id="kt_red_7" style="background-color: rgb(236, 221, 207);">
-                <td align="left" class="naslovi_kt_molitava">
-                    <a id="kt_a_7" class="naslovi_kt_molitava_lnk" href="#kt6" onmouseover="hlRow(kt_red_7, kt_a_7)"
-                        onmouseout="unHlRow(kt_red_7, kt_a_7)" style="background-color: rgb(236, 221, 207);
-                        text-decoration: none;"><strong>АКАТИСТИ</strong></a>
-                </td>
-            </tr>
-            <tr bgcolor="#ECDDCF" id="kt_red_8">
-                <td align="left" class="naslovi_kt_molitava">
-                    <a id="kt_a_8" class="naslovi_kt_molitava_lnk" href="#kt5" onmouseover="hlRow(kt_red_8, kt_a_8)"
-                        onmouseout="unHlRow(kt_red_8, kt_a_8)"><strong>КАНОНИ</strong></a>
-                </td>
-            </tr>
-            <tr bgcolor="#ECDDCF" id="kt_red_9">
-                <td align="left" class="naslovi_kt_molitava">
-                    <a id="kt_a_9" class="naslovi_kt_molitava_lnk" href="#kt7" onmouseover="hlRow(kt_red_9, kt_a_9)"
-                        onmouseout="unHlRow(kt_red_9, kt_a_9)"><strong>БОГОСЛУЖБЕНИ ТЕКСТОВИ</strong></a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    
     <!-- / Kraj tabele grupa-kategorija molitava -->
 
     <!-- Slijedi niz tabela sa molitvama za svaku kategoriju, prikaz je samo za СВАКОДНЕВНЕ МОЛИТВЕ, iz baze (TODO) -->
     @{int j = 0;}
     @foreach (Molitve molitve in Model.Molitve)
     {
-        j = i + j;
+        j = j + 1;
         <p>
-            <b>
+            <p>
                 @j
                 .&nbsp;&nbsp;
-                @Html.Raw(molitve.sNaslovMolitve)
-            </b>
+                (@Html.Raw(Model.KategorijeMolitvi[molitve.nKategMolitvi - 1].sKategMolitvi))&nbsp;
+                    <b>
+                        @Html.Raw(molitve.sNaslovMolitve)
+                    </b>
+            </p>
             @Html.Raw(molitve.sMolitve)
-            @Html.Raw(molitve.sURLuBiblioteci)
+            @if(molitve.sURLuBiblioteci.Length > 0)
+            { 
+            <a href="@Html.Raw(molitve.sURLuBiblioteci)" target="_blank">@Html.Raw(molitve.sNaslovMolitve)</a>
+            }
         </p>
     }
 
-   <table border="0" cellpadding="0" cellspacing="0" width="80%">
+    <table border="0" cellpadding="0" cellspacing="0" width="80%">
         <tbody>
             <tr>
             <p>&nbsp;</p>

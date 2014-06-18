@@ -101,5 +101,15 @@ namespace Svetosavlje.Services
         {
             return _provider.GetPrologSearchResutls(keyword);
         }
+
+        public IList<MolitveKateg> GetMolitveKategList()
+        {
+            return _provider.GetMolitveKategList();
+        }
+
+        public IList<Molitve> GetMolitveList()
+        {
+            return _provider.GetMolitveList();
+        }
     }
 }

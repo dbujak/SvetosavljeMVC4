@@ -124,5 +124,19 @@ namespace Svetosavlje.Services
 
             return service.GetPrologSearchResutls(keyword);
         }
+
+        public IList<MolitveKateg> GetMolitveKategList()
+        {
+            MolitveService list = new MolitveService();
+
+            return list.GetMolitveKategList();
+        }
+
+        public IList<Molitve> GetMolitveList()
+        {
+            MolitveService list = new MolitveService();
+
+            return list.GetMolitveList();
+        }
     }
 }

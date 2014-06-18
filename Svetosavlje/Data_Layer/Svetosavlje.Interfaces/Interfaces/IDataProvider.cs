@@ -6,7 +6,7 @@ using Svetosavlje.Interfaces.Classes;
 
 namespace Svetosavlje.Interfaces.Interfaces
 {
-    public interface IDataProvider : IListaArhiva, IQuestionList, ISaintNamesList, ISaintNamesAndLivesList, IProlog, IQuote, IZachala, IFastingType, IPastirTopicsList, IPastirQuestion
+    public interface IDataProvider : IListaArhiva, IQuestionList, ISaintNamesList, ISaintNamesAndLivesList, IProlog, IQuote, IZachala, IFastingType, IPastirTopicsList, IPastirQuestion, IMolitveKategList, IMolitveList
     {
 
     }
