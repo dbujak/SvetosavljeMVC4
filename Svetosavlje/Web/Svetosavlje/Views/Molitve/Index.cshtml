@@ -108,7 +108,7 @@
                         @Html.Raw(molitve.sNaslovMolitve)
                     </b>
             </p>
-            @Html.Raw(molitve.sMolitve)
+            @Html.Raw(molitve.sMolitve.Replace("\n","<br />").Replace("<br /><br />", "<br />"))
             @if(molitve.sURLuBiblioteci.Length > 0)
             { 
             <a href="@Html.Raw(molitve.sURLuBiblioteci)" target="_blank">@Html.Raw(molitve.sNaslovMolitve)</a>
