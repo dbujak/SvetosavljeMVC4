@@ -28,10 +28,8 @@ namespace Svetosavlje.Data_Layer.MySQLServices
             {
                 int rdType = Convert.ToInt32(row["RdType"]);
                 string quote = row["Tekst"].ToString();
-                if ((rdType == 1) && !string.IsNullOrEmpty(quote)) citanje.Vecernje = quote;
-                else if ((rdType == 2) && !string.IsNullOrEmpty(quote)) citanje.Jutrenje = quote;
-                else if ((rdType == 3) && !string.IsNullOrEmpty(quote)) citanje.LiturgijaJevandjelje = quote;
-                else if ((rdType == 4) && !string.IsNullOrEmpty(quote)) citanje.LiturgijaApostoli = quote;
+                if ((rdType == 3) && !string.IsNullOrEmpty(quote)) citanje.CompactVersion = quote;
+                else if ((rdType == 4) && !string.IsNullOrEmpty(quote)) citanje.FullVersion = quote;
             }
 
             return citanje;

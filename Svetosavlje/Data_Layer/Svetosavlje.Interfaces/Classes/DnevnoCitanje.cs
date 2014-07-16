@@ -7,19 +7,15 @@ namespace Svetosavlje.Interfaces.Classes
 {
     public class DnevnoCitanje
     {
-        public string Vecernje { get; set; }
-        public string Jutrenje { get; set; }
-        public string LiturgijaJevandjelje { get; set; }
-        public string LiturgijaApostoli { get; set; }
+        public string CompactVersion { get; set; }
+        public string FullVersion { get; set; }
 
         public DnevnoCitanje()
         { }
-        public DnevnoCitanje(string vecernje, string jutrenje, string liturgijaJevandjelje, string liturgijaApostoli)
+        public DnevnoCitanje(string compactVersion, string fullVersion)
         {
-            Vecernje = vecernje;
-            Jutrenje = jutrenje;
-            LiturgijaJevandjelje = liturgijaJevandjelje;
-            LiturgijaApostoli = liturgijaApostoli;
+            CompactVersion = compactVersion;
+            FullVersion = fullVersion;
         }
     }
 }

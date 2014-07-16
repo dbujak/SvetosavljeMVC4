@@ -52,36 +52,9 @@
 
     <br />
 
-    @if (Model.Citanje.Vecernje != null && Model.Citanje.Vecernje != "")
+    @if (Model.Citanje.FullVersion != null && Model.Citanje.FullVersion!= "")
     {
-        <h3>На вечерњи:</h3>
-        @Html.Raw(Model.Citanje.Vecernje)
-        <br />
-        <br />
+        @Html.Raw(Model.Citanje.FullVersion)
     }
-
-
-    @if (Model.Citanje.Jutrenje != null && Model.Citanje.Jutrenje != "")
-    {
-        <h3>На јутрењу:</h3>
-        @Html.Raw(Model.Citanje.Jutrenje)
-        <br />
-        <br />
-    }
-
-    @if (Model.Citanje.LiturgijaJevandjelje != null && Model.Citanje.LiturgijaJevandjelje != "")
-    {
-        <h3>На Св. Литургији, Еванђеље:</h3>
-        @Html.Raw(Model.Citanje.LiturgijaJevandjelje)
-        <br />
-        <br />
-    }
-
-    @if (Model.Citanje.LiturgijaApostoli != null && Model.Citanje.LiturgijaApostoli != "")
-    {
-        <h3>На Св. Литургији, Апостол:</h3>
-        @Html.Raw(Model.Citanje.LiturgijaApostoli)
-    }
-
 
 </div>

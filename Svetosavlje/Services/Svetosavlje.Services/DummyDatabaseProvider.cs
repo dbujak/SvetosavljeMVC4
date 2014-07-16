@@ -85,10 +85,8 @@ namespace Svetosavlje.Services
         {
             DnevnoCitanje citanje = new DnevnoCitanje();
 
-            citanje.Vecernje = "На вечерњи:<br />" + "Вечерње читање";
-            citanje.Jutrenje = "На јутрењу:<br />" + "Јутарње читање";
-            citanje.LiturgijaJevandjelje = "На Св. Литургији, Еванђеље:<br />" + "Јеванђељско читање";
-            citanje.LiturgijaApostoli = "На Св. Литургији, Апостол:<br />" + "Апостолско читање";
+            citanje.CompactVersion = "Сажета верзија за главну страницу";
+            citanje.FullVersion = "Пуна верзија за страницу Дневно читање";
 
             return citanje;
         }

@@ -21,11 +21,16 @@ namespace Svetosavlje.Controllers
         private IzDanaUDan izDanaUDan = new IzDanaUDan();
 
 
-        [OutputCache(VaryByParam = "none", Duration = 60)]
-        public ActionResult Index()
+        [OutputCache(VaryByParam = "strDate", Duration = 60)]
+        public ActionResult Index(string strDate)
         {
 
-            DateTime today = DateTime.Today.AddDays(-13);     // Julian date
+            DateTime today = DateTime.Now.AddDays(-13);
+
+            if (strDate != null && strDate != "")
+            {
+                today = Convert.ToDateTime(strDate);
+            }
 
             Random random = new Random();
             int Month = random.Next(1, 4);

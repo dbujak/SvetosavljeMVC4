@@ -60,9 +60,9 @@
     </div>
     <div class="span4">
         <h4>Дневно читање из Светог Писма</h4>
-        @if (Model.DailyReading.LiturgijaJevandjelje != null)
+        @if (Model.DailyReading.CompactVersion != null)
         {
-            <p>@Html.Raw(Model.DailyReading.LiturgijaJevandjelje.Substring(0, Math.Min(Model.DailyReading.LiturgijaJevandjelje.Length, 350)))...</p>
+            <p>@Html.Raw(Model.DailyReading.CompactVersion)</p>
             <p><a href="@Url.Action("DnevnoCitanje", "Home")">Читај даље</a> »</p>
         }
     </div>
