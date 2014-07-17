@@ -62,7 +62,9 @@
         <h4>Дневно читање из Светог Писма</h4>
         @if (Model.DailyReading.CompactVersion != null)
         {
-            <p>@Html.Raw(Model.DailyReading.CompactVersion)</p>
+            <div style="height: 150px; overflow: auto">
+                <p>@Html.Raw(Model.DailyReading.CompactVersion)</p>
+            </div>
             <p><a href="@Url.Action("DnevnoCitanje", "Home")">Читај даље</a> »</p>
         }
     </div>

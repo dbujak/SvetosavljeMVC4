@@ -16,19 +16,25 @@ namespace Svetosavlje.BaseClasses
             // log error message
             if (filterContext != null)
             {
-                //logger.Error(filterContext.Exception.Message);
-                //logger.Error("Inner Exception: {0}", filterContext.Exception.InnerException.Message);
-                //logger.Error("Stack Trace: {0}", filterContext.Exception.StackTrace);
+                logger.Error("Exception Message {0}", filterContext.Exception.Message);
+
+                Exception innerEx = filterContext.Exception.InnerException;
+                while (innerEx != null)
+                {
+                    logger.Error("Inner Exception: {0}", innerEx.Message);
+                    innerEx = innerEx.InnerException;
+                }
+                logger.Error("Stack Trace: {0}", filterContext.Exception.StackTrace);
             }
-            //if (filterContext.ExceptionHandled)
-            //{
-            //    return;
-            //}
-            //filterContext.Result = new ViewResult
-            //{
-            //    ViewName = "~/Views/Shared/Error.aspx"
-            //};
-            //filterContext.ExceptionHandled = true;
+            if (filterContext.ExceptionHandled)
+            {
+                return;
+            }
+            filterContext.Result = new ViewResult
+            {
+                ViewName = "~/Views/Shared/Error.cshtml"
+            };
+            filterContext.ExceptionHandled = true;
         }
     }
 }

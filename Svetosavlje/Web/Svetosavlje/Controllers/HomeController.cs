@@ -12,7 +12,7 @@ using Svetosavlje.Interfaces.Classes;
 
 namespace Svetosavlje.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseClasses.BaseController
     {
         private Blogs blogs = new Blogs();
         private ListArhivaData listArhiva = new ListArhivaData();
