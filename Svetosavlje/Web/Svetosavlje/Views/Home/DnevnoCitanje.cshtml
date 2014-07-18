@@ -54,7 +54,7 @@
 
     @if (Model.Citanje.FullVersion != null && Model.Citanje.FullVersion!= "")
     {
-        @Html.Raw(Model.Citanje.FullVersion)
+        @Html.Raw(Server.HtmlDecode(Model.Citanje.FullVersion))
     }
 
 </div>

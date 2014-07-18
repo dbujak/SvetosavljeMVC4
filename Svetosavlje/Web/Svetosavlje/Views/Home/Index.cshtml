@@ -63,7 +63,7 @@
         @if (Model.DailyReading.CompactVersion != null)
         {
             <div style="height: 150px; overflow: auto">
-                <p>@Html.Raw(Model.DailyReading.CompactVersion)</p>
+                <p>@Html.Raw(Server.HtmlDecode(Model.DailyReading.CompactVersion))</p>
             </div>
             <p><a href="@Url.Action("DnevnoCitanje", "Home")">Читај даље</a> »</p>
         }
