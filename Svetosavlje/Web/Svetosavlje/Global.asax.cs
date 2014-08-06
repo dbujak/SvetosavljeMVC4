@@ -6,6 +6,8 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Web.Security;
+using System.Security.Principal;
 
 namespace Svetosavlje
 {
@@ -22,6 +24,21 @@ namespace Svetosavlje
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            AuthConfig.RegisterAuth();
+
+        }
+
+        protected void Application_AuthenticateRequest(object sender, EventArgs e)
+        {
+            HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
+            if (authCookie != null)
+            {
+                FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(authCookie.Value);
+                GenericIdentity identity = new GenericIdentity(ticket.Name);
+                string[] roles = new string[0]; // maybe add roles later
+                GenericPrincipal principal = new GenericPrincipal(identity, roles);
+                HttpContext.Current.User = principal;
+            }
         }
     }
 }

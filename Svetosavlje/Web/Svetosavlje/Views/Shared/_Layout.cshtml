@@ -129,6 +129,14 @@
         @RenderBody()
     </div>
     <div id="fb-root">
+        @if (System.Threading.Thread.CurrentPrincipal.Identity.IsAuthenticated)
+        {
+            <i>Улоговани као:</i><b> @System.Threading.Thread.CurrentPrincipal.Identity.Name</b>  @Html.ActionLink("Излогујте се", "Logout", "Account", new {returnUrl=@Request.Url.AbsoluteUri}, null)
+        }
+        else
+        {
+            @Html.ActionLink("Улогујте се", "Login", "Account", new {returnUrl=@Request.Url.AbsoluteUri}, null)
+        }
     </div>
 
 
