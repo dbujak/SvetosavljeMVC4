@@ -42,24 +42,14 @@ namespace Svetosavlje.Controllers
                 return Redirect(returnUrl);
             }
 
-            // check config file and see if user is admin
-            XmlDocument xmlDoc = new XmlDocument(); //* create an xml document object.
-            xmlDoc.Load(System.Web.Hosting.HostingEnvironment.MapPath("/admins.config"));
+            IPrincipal principal = Factory.GetAccountProvider().GetUser(result.UserName);
+            System.Threading.Thread.CurrentPrincipal = principal;
 
-            foreach (XmlNode node in xmlDoc.ChildNodes)
+            if (principal != null)
             {
-                if (result.UserName.ToLower() == node.InnerText.ToLower())  // user is administrator
-                {
-                    string[] roles = new string[0]; // maybe add roles later
-                    var identity = new GenericIdentity(result.UserName);
-                    var principal = new GenericPrincipal(identity, roles);
-                    System.Threading.Thread.CurrentPrincipal = principal;
-                    FormsAuthentication.SetAuthCookie(result.UserName, false);
-                }
+                FormsAuthentication.SetAuthCookie(result.UserName, false);
             }
 
-            
-            // didn't find user as administrator go back
             return Redirect(returnUrl);
         }
 

@@ -34,9 +34,7 @@ namespace Svetosavlje
             if (authCookie != null)
             {
                 FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(authCookie.Value);
-                GenericIdentity identity = new GenericIdentity(ticket.Name);
-                string[] roles = new string[0]; // maybe add roles later
-                GenericPrincipal principal = new GenericPrincipal(identity, roles);
+                IPrincipal principal = Factory.GetAccountProvider().GetUser(ticket.Name);
                 HttpContext.Current.User = principal;
             }
         }

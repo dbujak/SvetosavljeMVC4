@@ -63,7 +63,7 @@ namespace Svetosavlje.Controllers
 
     public class ListArhivaData : IListaArhiva
     {
-        private DatabaseProvider _provider = new DatabaseProvider();
+        private IDataProvider _provider = Factory.GetDatabaseProvider();
 
         public IList<MessageThread> GetMessageThreads(int rows)
         {

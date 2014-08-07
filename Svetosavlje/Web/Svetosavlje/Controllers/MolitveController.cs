@@ -17,7 +17,7 @@ namespace Svetosavlje.Controllers
     public class MolitveController : BaseController
     {
         //
-        private DatabaseProvider _provider = new DatabaseProvider();
+        private IDataProvider _provider = Factory.GetDatabaseProvider();
 
         public ActionResult Index()
         {

@@ -85,7 +85,7 @@ namespace Svetosavlje.Controllers
 
     public class PitanjaPastiru : IQuestionList, IPastirTopicsList, IPastirQuestion
     {
-        private DatabaseProvider _provider = new DatabaseProvider();
+        private IDataProvider _provider = Factory.GetDatabaseProvider();
 
         public IList<PitanjeInfo> GetQuestionList(int topicID, int rows)
         {

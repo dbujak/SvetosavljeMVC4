@@ -103,7 +103,7 @@ namespace Svetosavlje.Controllers
 
     public class Blogs : IBlogProvider
     {
-        private BlogProvider _provider = new BlogProvider();
+        private IBlogProvider _provider = Factory.GetBlogProvider();
 
 
         public IList<WPBlogModel> GetNews()
@@ -129,7 +129,7 @@ namespace Svetosavlje.Controllers
     public class IzDanaUDan : IQuote, IFastingType, IZachala
     {
 
-        private DatabaseProvider _provider = new DatabaseProvider();
+        private IDataProvider _provider = Factory.GetDatabaseProvider();
 
         public string GetQuote(int Autor, int Mjesec, int Dan)
         {

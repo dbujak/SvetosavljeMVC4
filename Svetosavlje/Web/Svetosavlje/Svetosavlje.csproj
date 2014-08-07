@@ -195,6 +195,7 @@
     <Compile Include="Controllers\PrologController.cs" />
     <Compile Include="Controllers\RizniceController.cs" />
     <Compile Include="Controllers\SvetinjeController.cs" />
+    <Compile Include="Factory\SvetosavljeFactory.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

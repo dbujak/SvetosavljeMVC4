@@ -122,7 +122,7 @@ namespace Svetosavlje.Controllers
 
     public class SvetiDana : ISaintNamesList, ISaintNamesAndLivesList, IProlog
     {
-        private DatabaseProvider _provider = new DatabaseProvider();
+        private IDataProvider _provider = Factory.GetDatabaseProvider();
 
         public IList<string> GetSaintNamesList(int Mjesec, int Dan)
         {

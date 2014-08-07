@@ -47,6 +47,7 @@
     <Compile Include="Classes\PitanjeInfo.cs" />
     <Compile Include="Classes\Prolog.cs" />
     <Compile Include="Classes\WPBlogModel.cs" />
+    <Compile Include="Interfaces\IAccountProvider.cs" />
     <Compile Include="Interfaces\IBlogProvider.cs" />
     <Compile Include="Interfaces\IDataProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
