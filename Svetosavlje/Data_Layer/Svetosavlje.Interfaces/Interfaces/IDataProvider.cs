@@ -6,7 +6,8 @@ using Svetosavlje.Interfaces.Classes;
 
 namespace Svetosavlje.Interfaces.Interfaces
 {
-    public interface IDataProvider : IListaArhiva, IQuestionList, ISaintNamesList, ISaintNamesAndLivesList, IProlog, IQuote, IZachala, IFastingType, IPastirTopicsList, IPastirQuestion, IMolitveKategList, IMolitveList
+    public interface IDataProvider : IListaArhiva, IQuestionList, ISaintNamesList, ISaintNamesAndLivesList, IProlog, IQuote, IZachala, IFastingType, IPastirTopicsList, IPastirQuestion,
+                     IMolitveKategList, IMolitveList
     {
 
     }
@@ -79,8 +80,10 @@ namespace Svetosavlje.Interfaces.Interfaces
     }
     public interface IMolitveList
     {
-        IList<Molitve> GetMolitveList();
+        IList<Molitva> GetMolitveList();
+        IList<Molitva> GetMolitveList(int nKateg);
     }
+ 
     public interface IMolitve : IMolitveKategList, IMolitveList
     {
     }

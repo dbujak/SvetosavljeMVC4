@@ -132,11 +132,18 @@ namespace Svetosavlje.Services
             return list.GetMolitveKategList();
         }
 
-        public IList<Molitve> GetMolitveList()
+        public IList<Molitva> GetMolitveList()
         {
             MolitveService list = new MolitveService();
 
             return list.GetMolitveList();
+        }
+
+        public IList<Molitva> GetMolitveList(int nKateg)
+        {
+            MolitveService list = new MolitveService();
+
+            return list.GetMolitveList(nKateg);
         }
     }
 }

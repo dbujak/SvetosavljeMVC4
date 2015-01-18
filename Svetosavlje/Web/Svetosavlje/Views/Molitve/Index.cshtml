@@ -90,28 +90,84 @@
             (кат:@Html.Raw(mKateg.nkategMolitvi)) &nbsp;&nbsp;
         </p>
     }
+     &nbsp;&nbsp;
+    <table border="0" cellpadding="0" cellspacing="0" width="80%">
+        <tbody>
+            @{int k = 0;}
+            @{int m = 0;}
+            @{int n = 0;}
+        @while (m < Model.Molitve.Count)
+        {
+            <tr>
+                <td height="1" bgcolor="#000000">
+                    <img src="../bmp/spacer.gif" width="1" height="1"></td>
+            </tr>
+            <tr>
+                <td height="3" bgcolor="#FFFFFF">
+                    <img src="../bmp/spacer.gif" width="1" height="3"></td>
+            </tr>
+            <tr bgcolor="#ECDDCF">
+                <td align="left"><strong>@Html.Raw(Model.KategorijeMolitvi[k].sKategMolitvi)</strong></td>
+            </tr>
+            <tr>
+                <td height="3" bgcolor="#FFFFFF">
+                    <img src="../bmp/spacer.gif" width="1" height="3"></td>
+            </tr>
+            <tr>
+                <td height="1" bgcolor="#000000">
+                    <img src="../bmp/spacer.gif" width="1" height="1"></td>
+            </tr>
+            <tr>
+                <td height="6" bgcolor="#FFFFFF">
+                    <img src="../bmp/spacer.gif" width="1" height="3"></td>
+            </tr>
+            <tr>
+                <td>
+                    <table border="0" cellpadding="0" cellspacing="0" width="80%">
+                        <tbody>
+                            @{n = m + Model.KategorijeMolitvi[k].nBrojMolitvi; }
+                            @while (m < n)
+                            {
+                                <tr>
+                                    <td width="20" align="right">
+                                    <td width="10">&nbsp;</td>
+                                    <td><a href="http://www.svetosavlje.org/molitve/index.php?mlId=&amp;akcija=prikazi&amp;kt=">@Html.Raw(Model.Molitve[m].sNaslovMolitve)</a></td>
+                                </tr>
+                                m = m + 1;
+                            }
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+                            k = k + 1;
+        }
+        </tbody>
+    </table>
 
-    
     <!-- / Kraj tabele grupa-kategorija molitava -->
 
     <!-- Slijedi niz tabela sa molitvama za svaku kategoriju, prikaz je samo za СВАКОДНЕВНЕ МОЛИТВЕ, iz baze (TODO) -->
     @{int j = 0;}
-    @foreach (Molitve molitve in Model.Molitve)
+    @foreach (Molitva molitva in Model.Molitve)
     {
         j = j + 1;
         <p>
             <p>
                 @j
                 .&nbsp;&nbsp;
-                (@Html.Raw(Model.KategorijeMolitvi[molitve.nKategMolitvi - 1].sKategMolitvi))&nbsp;
+                (@Html.Raw(Model.KategorijeMolitvi[molitva.nKategMolitve - 1].sKategMolitvi))&nbsp;
                     <b>
-                        @Html.Raw(molitve.sNaslovMolitve)
+                        @Html.Raw(molitva.sNaslovMolitve)
                     </b>
             </p>
-            @Html.Raw(molitve.sMolitve.Replace("\n","<br />").Replace("<br /><br />", "<br />"))
-            @if(molitve.sURLuBiblioteci.Length > 0)
+           @Html.Raw(molitva.sMolitva.Replace("\n","<br />").Replace("<br /><br />", "<br />")) 
+           <!--  @Html.Raw(System.Web.HttpUtility.HtmlDecode(molitva.sMolitva)) -->
+            @if(molitva.sURLuBiblioteci.Length > 0)
             { 
-            <a href="@Html.Raw(molitve.sURLuBiblioteci)" target="_blank">@Html.Raw(molitve.sNaslovMolitve)</a>
+            <a href="@Html.Raw(molitva.sURLuBiblioteci)" target="_blank">@Html.Raw(molitva.sNaslovMolitve)</a>
             }
         </p>
     }
@@ -177,4 +233,5 @@
     <p>&nbsp;</p>
     <p>&nbsp;</p>
 
+    
 </div>

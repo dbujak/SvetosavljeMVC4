@@ -107,9 +107,14 @@ namespace Svetosavlje.Services
             return _provider.GetMolitveKategList();
         }
 
-        public IList<Molitve> GetMolitveList()
+        public IList<Molitva> GetMolitveList()
         {
             return _provider.GetMolitveList();
+        }
+
+        public IList<Molitva> GetMolitveList(int nKateg)
+        {
+            return _provider.GetMolitveList(nKateg);
         }
     }
 }

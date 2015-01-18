@@ -10,29 +10,33 @@ namespace Svetosavlje.Interfaces.Classes
         public int nkategMolitvi { get; set; }
         public string sKategMolitvi { get; set; }
         public int nRedKategMolitvi { get; set; }
+        public int nBrojMolitvi { get; set; }
 
-       public MolitveKateg(int IDkategMolitvi, string kategMolitvi, int redKategMolitvi)
+       public MolitveKateg(int IDkategMolitvi, string kategMolitvi, int redKategMolitvi, int nrMolitvi)
         {
             sKategMolitvi = kategMolitvi;
             nRedKategMolitvi = redKategMolitvi;
             nkategMolitvi = IDkategMolitvi;
+            nBrojMolitvi = nrMolitvi;
         }
 
     }
 
-    public class Molitve
+    public class Molitva
     {
+        public int nIdMolitva { get; set; }
         public string sNaslovMolitve { get; set; }
-        public string sMolitve { get; set; }
-        public int nKategMolitvi { get; set; }
+        public string sMolitva { get; set; }
+        public int nKategMolitve { get; set; }
         //public readonly MolitveKateg oKategMolitvi;
         public string sURLuBiblioteci { get; set; }
 
-        public Molitve(string naslovMolitve, string molitve, int idKategMolitvi, string URLuBiblioteci)
+        public Molitva(int IdMolitva, string naslovMolitve, string molitve, int idKategMolitve, string URLuBiblioteci)
         {
+            nIdMolitva = IdMolitva;
             sNaslovMolitve = naslovMolitve;
-            sMolitve = molitve;
-            nKategMolitvi = idKategMolitvi;
+            sMolitva = molitve;
+            nKategMolitve = idKategMolitve;
             //sKategMolitvi = kategMolitvi;
             //oKategMolitvi = new MolitveKateg(kategMolitvi, redKategMolitvi);
             sURLuBiblioteci = URLuBiblioteci;
