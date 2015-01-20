@@ -20,7 +20,9 @@ namespace Svetosavlje.Data_Layer.MySQLServices
 
             //TODO: TESTIRAJ / izvuci iz baze listu kategorija molitvi
             //string strSQL = @"SELECT ID, naziv, redosled FROM molitve_kategorije_utf8 ORDER BY redosled";
-            string strSQL = @"SELECT mk.ID, mk.naziv, mk.redosled, count(m.ID) as nrMolitvi FROM molitve_kategorije_utf8 mk, molitve_utf8 m where mk.ID = m.kategorija group by mk.ID, mk.naziv, mk.redosled order by mk.redosled;";
+            string strSQL = @"SELECT mk.ID, mk.naziv, mk.redosled, count(m.ID) as nrMolitvi 
+                                    FROM molitve_kategorije_utf8 mk, molitve_utf8 m 
+                                where mk.ID = m.kategorija group by mk.ID, mk.naziv, mk.redosled order by mk.redosled;";
 
             DataTable list = dbConn.GetDataTable(strSQL, dbConnection.Connenction.PitanjaPastiru);
 
@@ -59,7 +61,9 @@ namespace Svetosavlje.Data_Layer.MySQLServices
 
             //TODO:  TESTIRAJ / izvuci iz baze listu molitvi
 
-            string strSQL = @"SELECT m.ID, m.naslov, m.molitva, m.kategorija, m.url_ka_molitvi FROM molitve_utf8 m, molitve_kategorije_utf8 mk where m.kategorija = mk.ID ORDER BY mk.redosled, m.ID;";
+            string strSQL = @"SELECT m.ID, m.naslov, m.molitva, m.kategorija, m.url_ka_molitvi 
+                                     FROM molitve_utf8 m, molitve_kategorije_utf8 mk 
+                                where m.kategorija = "+ nKateg +" ORDER BY mk.redosled, m.ID;";
 
             DataTable list = dbConn.GetDataTable(strSQL, dbConnection.Connenction.PitanjaPastiru);
 
@@ -70,6 +74,17 @@ namespace Svetosavlje.Data_Layer.MySQLServices
             }
 
             return returnList;
+        }
+
+        public Molitva GetMolitva(int nMolitvaId)
+        {
+            string strSQL = @"SELECT m.ID, m.naslov, m.molitva, m.kategorija, m.url_ka_molitvi 
+                                     FROM molitve_utf8 m
+                                where m.ID = "+ nMolitvaId +" ;";
+            DataTable list = dbConn.GetDataTable(strSQL, dbConnection.Connenction.PitanjaPastiru);
+            DataRow row = list.Rows[0];
+            Molitva oMolitva = new Molitva(Convert.ToInt32(row["ID"].ToString()), row["naslov"].ToString(), row["molitva"].ToString(), Convert.ToInt16(row["kategorija"].ToString()), row["url_ka_molitvi"].ToString());
+            return oMolitva;
         }
     }
 }

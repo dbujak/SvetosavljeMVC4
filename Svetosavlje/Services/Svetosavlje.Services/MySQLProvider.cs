@@ -59,18 +59,13 @@ namespace Svetosavlje.Services
             return list.GetDnevnoCitanje(Mjesec, Dan, Godina);
 
         }
-
-
-
-
+        
         public IList<PastirTopic> GetPastirTopicList()
         {
             PitanjePastiruService list = new PitanjePastiruService();
 
             return list.GetPastirTopicList();
         }
-
-
 
         public PitanjeInfo GetPastirQuestion(int questionID)
         {
@@ -79,14 +74,11 @@ namespace Svetosavlje.Services
             return question.GetPastirQuestion(questionID);
         }
 
-
-
         public IList<Prolog> GetSaintNamesAndLivesList(int Mjesec, int Dan)
         {
             PrologService prolog = new PrologService();
             return prolog.GetSaintNamesAndLivesList(Mjesec, Dan);
         }
-
 
         public PrologOther GetProlog(int Mjesec, int Dan)
         {
@@ -94,9 +86,7 @@ namespace Svetosavlje.Services
 
             return prolog.GetProlog(Mjesec, Dan);
         }
-
-
-
+        
         public IList<MessageThread> GetMessageThreads(int page, int rows)
         {
             ListaArhivaService list = new ListaArhivaService();
@@ -144,6 +134,12 @@ namespace Svetosavlje.Services
             MolitveService list = new MolitveService();
 
             return list.GetMolitveList(nKateg);
+        }
+
+        public Molitva GetMolitva(int nMolitvaId)
+        {
+            MolitveService svc = new MolitveService();
+            return svc.GetMolitva(nMolitvaId);
         }
     }
 }

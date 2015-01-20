@@ -31,6 +31,8 @@ namespace Svetosavlje.Interfaces.Classes
         //public readonly MolitveKateg oKategMolitvi;
         public string sURLuBiblioteci { get; set; }
 
+
+
         public Molitva(int IdMolitva, string naslovMolitve, string molitve, int idKategMolitve, string URLuBiblioteci)
         {
             nIdMolitva = IdMolitva;

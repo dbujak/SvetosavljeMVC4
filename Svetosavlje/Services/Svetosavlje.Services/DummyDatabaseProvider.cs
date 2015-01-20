@@ -199,5 +199,10 @@ namespace Svetosavlje.Services
         {
             throw new NotImplementedException();
         }
+
+        public Molitva GetMolitva(int nMolitvaId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

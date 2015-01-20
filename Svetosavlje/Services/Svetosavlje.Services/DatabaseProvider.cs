@@ -116,5 +116,10 @@ namespace Svetosavlje.Services
         {
             return _provider.GetMolitveList(nKateg);
         }
+
+        public Molitva GetMolitva(int nMolitvaId)
+        {
+            return _provider.GetMolitva(nMolitvaId);
+        }
     }
 }

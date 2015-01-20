@@ -13,4 +13,9 @@ namespace Svetosavlje.Models
         public IList<MolitveKateg> KategorijeMolitvi { get; set; }
         public IList<Molitva> Molitve { get; set; }
     }
+
+    //public class MolitvaModel
+    //{
+    //    public Molitva objMolitva { get; set; }
+    //}
 }
