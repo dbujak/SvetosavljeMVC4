@@ -1,0 +1,77 @@
+@charset "utf-8";html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,table,th,td,embed,object{padding:0;margin:0;}
+table{border-collapse:collapse;border-spacing:0;}fieldset,img,abbr,acronym{border:0;}
+caption,th{text-align:left;}q:before,q:after{content:'';}address,caption,cite,code,dfn,h1,h2,h3,h4,h5,h6,th,var{font-weight:normal;font-style:normal;}
+ul,ol{list-style:none;}h1,h2,h3,h4,h5,h6,pre,code,p,li{font-size:100%;}body{font:62.5%/180% Arial,"Helvetica Neue",Helvetica,sans-serif;color:#222;background-color:#fff;}
+h1,h2,h3,h4,h5,h6{font-weight:bold;color:#203a55;}h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{text-decoration:none;}
+h6,p,ul,ol,blockquote,dt,dd,legend,td,th{font-size:12px;}a{color:#559dcf;}a:visited{color:#adc0cc;}
+p,ul,ol{margin-bottom:15px;}ol,ul{padding-left:24px;}ul{list-style:disc outside;}
+ol{list-style:decimal outside;}li ul,li ol,blockquote p{margin-bottom:0;font-size:100%;}
+h1{color:#69c;float:right;font-size:11px;text-align:right;margin-top:-10px;line-height:12px;text-transform:uppercase;}
+h1 span{color:#222;font-style:italic;font-weight:normal;text-transform:none;}h2{color:#222;font-style:italic;font-weight:normal;font-size:16px;margin-bottom:-6px;}
+h3{clear:both;font-weight:400;color:#0053a4;font-size:36px;margin:16px 0;}h4{font-size:12px;font-weight:900;}
+.page1 h4{margin-bottom:15px;}.page2 h4{color:#0053a4;font-size:18px;margin-bottom:5px;}
+.wetlands .page1 h4,.wetlands .page2 .noborder h4{color:#203a55;font-size:15px;margin-bottom:15px;}
+h5{color:#0053a4;font-size:14px;}#main{width:680px;margin:0 auto;}.header{margin-top:20px;}
+.article,.section{clear:both;}.page1{border-top:6px solid #222;border-bottom:6px solid #222;}
+.section{border-top:1px solid #222;clear:both;overflow:auto;padding:10px 0 0;margin-bottom:0;}
+.printFooter{display:none;color:#69c;}.footer{border-top:6px solid #222;clear:both;overflow:auto;padding:20px 0;}
+#process{background:transparent url(../img/loadinfo.gif) no-repeat left top;display:none;height:48px;position:absolute;width:48px;}
+#snapshot{background-color:#fff;}form{display:none;}.toolbar{background-color:#69c;overflow:auto;border-left:1px solid #69c;border-top:1px solid #69c;}
+.toolbar a{border-right:1px solid #fff;color:#fff;display:block;float:left;padding:3px 5px;text-decoration:none;}
+.panes{border:1px solid #69c;border-top:0;clear:both;height:0;position:relative;}
+#welcome{margin:5px 15px;}#welcome strong{color:#69c;font-size:16px;}.panes div[id]{position:absolute;}
+.panes .annouce{font-size:12px;padding-top:20px;width:300px;}.close{display:none;position:relative;height:20px;float:right;}
+.close img{float:right;position:absolute;right:0;top:0;margin-top:2px;margin-right:4px;}
+#pane1{padding:10px 15px;}#pane1 p{margin-left:10px;}#pane1 button{background:#fff url(../img/snapshotImg.jpg) no-repeat 10px 0;border-width:1px;cursor:pointer;font-size:12px;height:142px;margin-top:10px;padding:10px;text-align:left;width:300px;}
+.ie7 #pane1 button,.ie8 #pane1 button{padding-right:1px;}#pane1 button[name=ocean]{background-position:10px -140px;}
+#pane1 button[name=wetlands]{background-position:10px -280px;}#pane1 button[disabled=disabled]{background-position:10px -420px;}
+#pane1 button p{margin:0;margin-left:110px;width:168px;}#pane1 button img{float:left;margin-right:10px;}
+#flashContent{height:370px;width:678px;}.download,.reset{background-color:#69c;border-left:1px solid #fff;color:#fff;cursor:pointer;display:none;float:right;margin:0;padding:4px 5px 3px;}
+.active{background-color:#fff;color:#69c!important;}.charts{float:right;text-align:center;}
+#demographics{float:left;margin-right:10px;width:235px;}#infrastructure{float:left;margin-right:10px;width:270px;}
+#environment{float:left;margin-right:10px;width:250px;}#economy,#safer,#productive,#protect{float:left;width:320px;}
+#sector{float:left;width:140px;}#trends{float:left;margin-right:20px;width:250px;}
+#trendsLegend{float:right;width:410px;}#wages{float:left;width:280px;margin-bottom:3px;}
+.demoChart{float:left;width:145px;}.infraChart{float:left;width:400px;}.envChart{float:left;width:210px;}
+.econChart{border-right:1px solid #ccc;float:left;margin-top:-5px;padding:12px 10px 3px;width:99px;}
+.econChart p{font-size:11px;margin-bottom:0;line-height:22px;}.econChart p strong{background-color:#036;color:#fff;font-size:20px;padding:3px 10px;-moz-border-radius:15px;-webkit-border-radius:15px;-khtml-border-radius:15px;border-radius:15px;}
+.sectorChart{float:left;width:180px;}.trendsChart,.protectChart,.productiveChart,.saferChart{float:left;width:340px;}
+.wagesChart{float:left;padding:0 10px;width:380px;}.protectChart{padding-top:15px;}
+.protectChart p{margin-top:15px;}.protectChart .County_Wetlands_Percent{font-weight:bold;font-size:54px;color:#6fa359;border-bottom:3px solid #222;line-height:90px;}
+.protectChart .County_Wetlands_Acres{font-size:18px;}.productiveChart p{text-align:left;}
+#demo1,#demo2,#demo3,#infra,#env1,#env2,#sector1,#sector2,#sector3,#trends1,#trends2,#wages1,#productive1{width:100%;height:150px;cursor:pointer;}
+#infra{height:230px;}#env1,#env2{height:180px;}#sector1,#sector2,#sector3{height:130px;}
+#wages1{height:190px;}#safer2{float:left;height:180px;width:200px;cursor:pointer;}
+#safer2+p{float:left;margin-left:20px;margin-top:30px;text-align:left;width:120px;}
+#productive1{border-left:1px solid #222;border-top:1px solid #222;cursor:default;}
+#productive1 th,#productive1 td{border-bottom:1px solid #222;border-right:1px solid #222;padding:10px;}
+#productive1 th{background-color:#6fa359;color:#fff;font-weight:bold;text-align:center;}
+#productive1 td:first-child{background-color:#ddd;}#floodmap{border:1px solid #222;float:left;height:350px;margin-bottom:15px;margin-right:15px;width:510px;}
+#oceanmap{border:1px solid #222;float:left;height:310px;margin-bottom:15px;margin-right:15px;width:490px;}
+#wetlandsmap{border:1px solid #222;float:right;height:330px;margin-bottom:5px;margin-left:30px;width:330px;}
+.largerMap{float:right;width:330px;}.mapLegend{font-size:9px;font-weight:bold;}.legendBlock{display:inline-block;width:10px;height:13px;overflow:hidden;}
+.ie7 .legendBlock img{margin-top:4px;}.outside img{margin-left:-20px;}.agri img{margin-left:-40px;}
+.natural img{margin-left:-60px;}.insideMap img{margin-left:-100px;}.outsideMap img{margin-left:-80px;}
+.water img{margin-left:-120px;}.tourism img{margin-left:-240px;}.mineral img{margin-left:-200px;}
+.ship img{margin-left:-220px;}.transport img{margin-left:-180px;}.living img{margin-left:-140px;}
+.construction img{margin-left:-160px;}.ocean1 img{margin-left:-260px;}.ocean2 img,.suppress img{margin-left:-280px;}
+.ocean3 img{margin-left:-300px;}.ocean4 img{margin-left:-320px;}.ocean5 img{margin-left:-340px;}
+.ocean6 img{margin-left:-360px;}.ocean7 img{margin-left:-380px;}.ocean8 img{margin-left:-400px;}
+.wetland img{margin-left:-420px;}.develop img{margin-left:-440px;}.agriculture img{margin-left:-460px;}
+.other img{margin-left:-480px;}.nochange{padding:80px 0 0;font-weight:bold;font-style:italic;}
+#simplemodal-overlay{background-color:#000;cursor:wait;}#simplemodal-container{width:680px;background-color:#fff;margin-top:-200px;}
+#simplemodal-container #modal{margin-top:5px;}#simplemodal-container a.modalCloseImg,#selectFirst a.modalCloseImg{background:url(../img/cross.png) no-repeat;width:16px;height:16px;display:inline;z-index:3200;position:absolute;top:15px;right:10px;cursor:pointer;}
+#simplemodal-container a.modalSaveImg{background:url(../img/drive-download.png) no-repeat;width:16px;height:16px;display:inline;z-index:3200;position:absolute;top:15px;right:30px;cursor:pointer;}
+#selectFirst{background-color:#fff;height:90px;padding:17px 20px 0;width:200px;}
+#selectFirst p{margin:0;}.clear{clear:both;}.noborder{border:0;}.nomargin{margin:0!important;}
+.nodisplay{display:none;}.floatleft{float:left;margin-right:20px;}.floatright{float:right;margin-left:20px;}
+.hide{visibility:hidden!important;}.notice{background-color:#FF6;text-align:center;font-size:18px;padding:10px 0;border:1px solid #FC3;}
+@media print{a,a:visited{color:#222!important;text-decoration:none;}a[href]:after{content:"(" attr(href) ")";}
+.section em a[href]:after,.productiveChart a[href]:after{content:"";}abbr[title]:after{content:"(" attr(title) ")";}
+.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:"";}pre,blockquote{border:1px solid #999;page-break-inside:avoid;}
+thead{display:table-header-group;}tr,img{page-break-inside:avoid;}p,h2,h3{orphans:3;widows:3;}
+h1,h2,h3{page-break-after:avoid;}.header,.article{page-break-before:avoid;page-break-after:avoid;}
+.toolbar_wrapper,.footer,#welcome,.close,.close img,.largerMap,.notice,.no-print{display:none;}
+body{font-size:30%;line-height:300%;}.printFooter{display:block;margin-top:6px;}
+.flood .printFooter{margin-bottom:100px;}.wetlands .page1 .section{padding:26px 0;}
+.wetlands .printFooter{margin-bottom:120px;}#wetlandsmap{margin-bottom:15px;}}

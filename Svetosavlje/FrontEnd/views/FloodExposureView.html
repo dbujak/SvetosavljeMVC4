@@ -1,0 +1,135 @@
+<div id="main" class="flood">
+  <div class="article page1 page">
+  <div class="header">
+    <h1>Coastal County Snapshots<br>
+     <span>www.coast.noaa.gov/snapshots/</span></h1>
+    <h2>Flood Exposure Snapshot</h2>
+    <h3><span class="CountyState">{{floodModel.CountyState}}</span></h3>
+  </div>
+    <div class="section">
+      <div id="demographics">
+        <h4>People + Floodplains = Not Good<br>
+        High-Risk Populations + Floodplains = Even Worse</h4>
+        <p>The more homes and people located in a floodplain, the greater the potential for harm from flooding. Impacts are likely to be even greater when additional risk factors (age, income, capabilities) are involved, since people at greatest flood risk may have difficulty evacuating or taking action to reduce potential damage.</p>
+        <p><em>Based on <a href="http://coast.noaa.gov/digitalcoast/data/stics" target="_blank">2010 U.S. Census records</a> and <a href="http://www.census.gov/acs/www/data_documentation/summary_file/" target="_blank">2006-2010 American Community Survey 5-year Summary File data</a></em>.</p>
+      </div>
+      <div class="charts">
+        <div class="demoChart">
+          <p class="nomargin"><strong>Population</strong><br>
+            Total: <span class="TotalPop_Display">{{floodModel.TotalPop_Display}}</span></p>
+          <div id="demo1"></div>
+        </div>
+        <div class="demoChart">
+          <p class="nomargin"><strong>Population over 65</strong><br>
+            Total: <span class="Total_Over65_Display">{{floodModel.Total_Over65_Display}}</span></p>
+          <div id="demo2"></div>
+        </div>
+        <div class="demoChart">
+          <p class="nomargin"><strong>Population in Poverty</strong><br>
+            Total: <span class="Total_Poverty_Display">{{floodModel.Total_Poverty_Display}}</span></p>
+          <div id="demo3"></div>
+        </div>
+        <p class="clear"><span class="legendBlock inside"><img src="img/legend.png" alt=""/></span> Inside FEMA Floodplain <span class="legendBlock outside" style="margin-left:20px;"><img src="img/legend.png" alt=""/></span> Outside FEMA Floodplain</p>
+      </div>
+    </div>
+    <div class="section">
+      <div id="infrastructure">
+        <h4>Community Infrastructure + Floodplains = Bad News</h4>
+        <p><span class="pctCF">{{floodModel.pctCF}}</span>% of critical facilities and <span class="PCT_Miles_SFHA">{{floodModel.PCT_Miles_SFHA}}</span>% of road miles (<span class="SFHA_Miles">{{floodModel.SFHA_Miles}}</span> miles) in <span class="CountyState">{{floodModel.CountyState}}</span>, are within the floodplain.</p>
+        <p>Hospitals. Roads. Schools. Shelters. These facilities play a central role in disaster response and recovery. Understanding which facilities are exposed, and the degree of that exposure, can help reduce or eliminate service interruptions and costly redevelopment. Incorporating this information into development planning helps communities get back on their feet faster.</p>
+        <p><em>Based on <a href="http://www.fema.gov/plan/prevent/hazus/" target="_blank">Critical Facilities</a> from FEMA HAZUS</em>.</p>
+      </div>
+      <div class="charts">
+        <div class="infraChart">
+          <p class="nomargin"><strong>Critical Facilities in FEMA Floodplain</strong></p>
+          <div id="infra"></div>
+        </div>
+        <p class="clear"><span class="legendBlock inside"><img src="img/legend.png" alt=""/></span> Inside FEMA Floodplain <span class="legendBlock outside" style="margin-left:20px;"><img src="img/legend.png" alt=""/></span> Outside FEMA Floodplain</p>
+      </div>
+    </div>
+    <div class="section">
+      <div id="environment">
+        <h4>Increasing Development in Floodplains = More People in Harm's Way<br>
+        Loss of Natural Buffers = Less Protection</h4>
+        <p>A county with more natural areas (wetlands, forests, etc.) and less development within floodplains typically has lower exposure to flooding. A county that monitors land cover changes within the floodplain will detect important trends that indicate whether flood exposure is increasing or decreasing. Armed with this information, local leaders can take steps to improve their safety and resilience.</p>
+        <p><em>Based on <a href="http://www.coast.noaa.gov/digitalcoast/data/ccapregional" target="_blank">NOAA Land Cover Data</a></em>.</p>
+      </div>
+      <div class="charts">
+        <div class="envChart">
+          <p class="nomargin"><strong>Amount of Land Converted to Development 2001-2006 (acres)</strong><br>
+            Total: <span class="Acres_Converted_Display">{{floodModel.Acres_Converted_Display}}</span></p>
+          <div id="env1"></div>
+          <p><span class="legendBlock inside"><img src="img/legend.png" alt=""/></span> Inside FEMA Floodplain<br>
+            <span class="legendBlock outside"><img src="img/legend.png" alt=""/></span> Outside FEMA Floodplain</p>
+        </div>
+        <div class="envChart">
+          <p class="nomargin"><strong>Type of Land Converted to Development 2001-2006 (acres)</strong><br>
+            Total: <span class="Acres_Converted_Display">{{floodModel.Acres_Converted_Display}}</span></p>
+          <div id="env2"></div>
+          <p><span class="legendBlock agri"><img src="img/legend.png" alt=""/></span> Agricultural Areas<br>
+            <span class="legendBlock natural"><img src="img/legend.png" alt=""/></span> Natural Areas</p>
+        </div>
+      </div>
+    </div>
+
+      <div class="printFooter">
+      <!--#config timefmt="%B, %Y" -->
+      <p class="floatright">Date Printed: <!--#echo var="DATE_LOCAL" --></p>
+      <p class="floatleft"><img src="img/noaa-logo-full-color.svg" width="250" height="45"/></p>
+    </div>
+  </div>
+
+  <div class="article page2 page">
+    <div class="section noborder">
+      <h4><span class="County_Name">{{floodModel.County_Name}}</span> Floodplain</h4>
+      <div id="floodmap">
+        <img src={{floodModel.mapImage}} alt='Floodplain for the county and surrounding counties'>
+      </div> 
+      <p class="mapLegend"><span class="legendBlock outsideMap"><img src="img/legend.png" alt=""/></span> Outside FEMA Floodplain<br>
+      <span class="legendBlock insideMap"><img src="img/legend.png" alt=""/></span> Inside FEMA Floodplain<br>
+      <span class="legendBlock water"><img src="img/legend.png" alt=""/></span> Water</p>
+      <p>Note: This map may not represent the county&rsquo;s entire floodplain.</p>
+    </div>
+
+    <div class="section">
+      <h4>Next Steps</h4>
+      <p>Through adaptation planning, all communities can be better prepared to face coastal hazards. While each community is different, there are some basic steps that all communities can follow to become more resilient.</p>
+      <p><strong>Training</strong> that will lead your organization through this task can be brought to your office. Visit the <a href="http://www.coast.noaa.gov/digitalcoast/training/roadmap" target="_blank">Roadmap for Adapting to 
+        Coastal Risk training</a> to learn more. Many of the components 
+        of this course (which are outlined below) can be found within the Digital Coast&rsquo;s <a href="http://www.coast.noaa.gov/digitalcoast/inundation/understand" target="_blank">Coastal Inundation Toolkit</a>.</p>
+      <ol>
+        <li><strong>Know your risks</strong> &ndash; If your county has a hazard mitigation plan, get a copy of it from your county emergency 
+          management office or the <a href="http://www.fema.gov/plan/mitplanning/status.shtm#1" target="_blank">Federal Emergency Management Agency (FEMA)</a>. Having county information about potential hazards, vulnerabilities, and 
+          priority hazard mitigation projects is important.</li>
+        <li><strong>Develop a team</strong> &ndash; To see the issues and opportunities from as many perspectives as possible, engaging a diverse 
+          group of stakeholders is always a good idea. The <a href="http://www.coast.noaa.gov/snapshots" target="_blank">County Snapshots</a> are used to help 
+          people visualize the issues.</li>
+        <li><strong>Know what resources are available</strong> &ndash; Federal and state agencies have funds available for risk reduction activities. 
+          See the funding opportunities listed below to learn more. There are also data and tools available to help people visualize 
+          the issues and solutions. For information on creating inundation maps for your community, visit the Visualization section of the 
+          <a href="http://www.coast.noaa.gov/digitalcoast/inundation/visualize" target="_blank">Coastal Inundation Toolkit</a>.<br>
+        <strong>Funding Sources</strong></li>
+        <ul>
+          <li><a href="http://www.fema.gov/government/grant/hmgp/" target="_blank"><strong>FEMA</strong></a></li>
+          <li><a href="http://coastalmanagement.noaa.gov/funding/welcome.html" target="_blank"><strong>NOAA Coastal Management Program</strong></a></li>
+        </ul>
+        <li><strong>Discover what others are doing</strong> &ndash; See how other communities are addressing these issues. Visit the discover section 
+          of the <a href="http://www.coast.noaa.gov/digitalcoast/inundation/discover" target="_blank">Coastal Inundation Toolkit</a>. You may also contribute a 
+          story about your community efforts.</li>
+      </ol>
+      <p><a href="http://www.coast.noaa.gov/snapshots/faq/flood-exposure.pdf" target="_blank">Frequently Asked Questions</a></p>
+    </div>
+     <div class="section">
+      <h4>Data Sources for This Snapshot</h4>
+        <ul>
+          <li><a href="http://msc.fema.gov" target="_blank"><strong>Flood Zones</strong></a> &ndash; Based on FEMA 1% annual chance flood zones</li>
+          <li><a href="http://www.fema.gov/plan/prevent/hazus/" target="_blank"><strong>Critical Facilities</strong></a> &ndash; FEMA HAZUS-MH data</li>
+          <li><strong>Roads</strong> &ndash; Based on ESRI 2005 streets data </li>
+          <li><a href="http://coast.noaa.gov/digitalcoast/data/stics" target="_blank"><strong>Demographic Data</strong></a> &ndash; NOAA</li>
+          <li><a href="http://www.coast.noaa.gov/digitalcoast/data/ccapregional" target="_blank"><strong>Land Cover Data</strong></a> &ndash; NOAA</li>
+        </ul>
+  </div>
+     
+  </div><!--END PAGE 2-->
+
+</div> 
