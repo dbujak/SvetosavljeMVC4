@@ -29,9 +29,17 @@ namespace Svetosavlje.Controllers
             return View(Mmodel);
         }
 
-        public ActionResult PrikazMolitve()
+        public ActionResult PrikazMolitve(int nMolitvaId)
         {
-            return View();
+            MolitveModel Mmodel = new MolitveModel();
+
+            Mmodel.Molitve = new List<Molitva>();
+
+            Mmodel.Molitve.Add(GetMolitva(nMolitvaId));
+
+            ViewData["naslovMolitve"] = Mmodel.Molitve[0].sNaslovMolitve;
+
+            return View(Mmodel);
         }
 
         public IList<MolitveKateg> GetMolitveKateg()
@@ -39,10 +47,19 @@ namespace Svetosavlje.Controllers
             return _provider.GetMolitveKategList();
         }
 
-        public IList<Molitve> GetMolitveList()
+        public IList<Molitva> GetMolitveList()
         {
             return _provider.GetMolitveList();
         }
 
+        public IList<Molitva> GetMolitveList(int nKateg)
+        {
+            return _provider.GetMolitveList(nKateg);
+        }
+
+        public Molitva GetMolitva(int nMolitvaId)
+        {
+            return _provider.GetMolitva(nMolitvaId);
+        }
     }
 }
