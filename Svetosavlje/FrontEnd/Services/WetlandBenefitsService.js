@@ -1,4 +1,4 @@
-cscSnapshots.factory('WetlandBenefitsService', function($http, SharedService) {
+svetosavlje.factory('WetlandBenefitsService', function($http, SharedService) {
 
   var WetlandBenefitsService = {
     async : function (StateCountyFIPS) {

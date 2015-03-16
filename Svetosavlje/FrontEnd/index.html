@@ -16,23 +16,13 @@
 	</head>
 	<body>
 
-		<div ng-app="cscSnapshots">
-			<div class="container">
-				<div class="toolbar no-print" ng-controller="NavigationCtrl" ng-show="showNavigation">
-			      <a class="countybtn" href="javascript:" ng-click="showMap()">Select Different Snapshot and/or County</a>
-			      <a class="resetbtn" href="javascript:" ng-click="startOver()" >Start Over</a>
-			      <a class="printbtn" href="javascript:" ng-click="print()">Print This Snapshot</a>
-			    </div>	
-			    
+		<div ng-app="svetosavlje">
+			<div id="header" ng-include src='"views/header.html"'></div>
+			
+			<div id="homeView" ng-include src='"views/HomeView.html"'></div>
 
-
-				<div id="mapView" ng-include src='"views/IndexView.html"' onload="onHtmlLoaded()" ng-controller="IndexCtrl" ng-show="showMap"></div>
-				<div id="floodExposure" ng-include src='"views/FloodExposureView.html"' ng-controller="FloodExposureCtrl" ng-show="showFloods"></div>
-				<div id="oceanJoba" ng-include src='"views/OceanJobsView.html"' ng-controller="OceanJobsCtrl" ng-show="showOceanJobs"></div>
-				<div id="wetlandBenefits" ng-include src='"views/WetlandBenefitsView.html"' ng-controller="WetlandBenefitsCtrl" ng-show="showWetlandBenefits"></div>
-			</div>
 			<div id="footer" ng-include src='"views/footer.html"'></div>
-			<div  ng-show="showLoading" style="position: absolute; top:0px; left:0px; background-color:white; width:100%; height:100%; opacity:0.9; filter:alpha(opacity=90);z-index:1000; text-align: center"><img src="img/loading5.gif"></div>
+			
 		</div>
 
 
@@ -41,24 +31,12 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular-route.min.js"></script>
 		<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script> 
-		<script src="http://leafletjs.com/dist/leaflet.js"></script>
 		<script src="http://coast.noaa.gov/js/angulartics.js"></script>
 		<script src="http://coast.noaa.gov/js/angulartics-google-analytics.js"></script>
 
 		<script src="js/main.js"></script>
-		<script src="js/jsonConverter.js"></script>
-		<script src="js/highcharts.min.js"></script>
-		<script src="controllers/NavigationController.js"></script>
-		<script src="controllers/IndexController.js"></script>
-		<script src="controllers/FloodExposureController.js"></script>
-		<script src="controllers/OceanJobsController.js"></script>
-		<script src="controllers/WetlandBenefitsController.js"></script>
-		<script src="services/SharedService.js"></script>
-		<script src="services/StateCountyService.js"></script>
-		<script src="services/FloodExposureService.js"></script>
-		<script src="services/OceanJobsService.js"></script>
+		<script src="controllers/HomeController.js"></script>
 		<script src="services/WetlandBenefitsService.js"></script>
-		<script src="services/BoundariesService.js"></script>
 
 	</body>
 
