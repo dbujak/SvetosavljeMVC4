@@ -1,6 +1,6 @@
-var svetosavlje = angular.module('svetosavlje', ['ngRoute', 'angulartics', 'angulartics.google.analytics']);
+var svetosavlje = angular.module('svetosavlje', ['ngRoute']);
 
-svetosavlje.config(function ($analyticsProvider) {
+svetosavlje.config(function () {
     // turn off automatic tracking
     // $analyticsProvider.virtualPageviews(false);
 });
