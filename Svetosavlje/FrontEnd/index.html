@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Светосавље</title>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<link rel="stylesheet" href="css/style.css" />
 	</head>
 	<body>
@@ -9,10 +10,9 @@
 		<div ng-app="svetosavlje">
 			<div id="header" ng-include src='"views/header.html"'></div>
 			
-			<div id="homeView" ng-include src='"views/HomeView.html"'></div>
+			<div ng-view></div>
 
 			<div id="footer" ng-include src='"views/footer.html"'></div>
-			
 		</div>
 
 
@@ -30,8 +30,10 @@
 		<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script> 
 
 		<script src="js/main.js"></script>
+		<script src="js/date-sr-Cyrl-CS.js"></script>
 		<script src="controllers/HomeController.js"></script>
-		<script src="services/WetlandBenefitsService.js"></script>
+		<script src="services/SharedService.js"></script>
+		<script src="services/PrologService.js"></script>
 
 	</body>
 
