@@ -1,14 +1,5 @@
     <div class="container">
-    	<div class="HeaderSection">
-    		<!-- logo i slika oca Justina -->
-    		<div class="row">
-    			<div class="span6">
-    				<img src="http://dummyimage.com/530x150/666/fff&amp;text=slika+oca+justina+i+logo+svetosavlje+ide+ovde" width="60%">
-    			</div>
-    		</div>
-    		<!-- row -->            
-    	</div>
-    	<hr />
+
 
 
 
@@ -21,17 +12,17 @@
     		<div class="span6">
     			<!-- facebook like -->
     			<div class="fb-like" data-href="http://www.facebook.com/groups/46142913208" data-send="true" data-width="300" data-show-faces="true" data-action="recommend" data-font="arial"></div>
-    			<p>Данас је {{homeModel.dan}}, {{homeModel.julianDate.getDate()}}.  {{homeModel.mjesec}} {{homeModel.julianDate.getFullYear()}}. У нашој светој, саборној и апостолској Цркви слави се</p>
+    			<p>Данас је {{dan}}, {{julianDate.getDate()}}.  {{mjesec}} {{julianDate.getFullYear()}}. У нашој светој, саборној и апостолској Цркви слави се</p>
     			<div class="row">
     				<div class="span4">
     					<img src="http://placehold.it/160x120" width="80" height="120" style="float: left; margin: 0 20px 20px 0;" />
     					<div ng-repeat="sveti in homeModel.svetiDana"><a href="/prolog">{{sveti}}</a></div>
-    				(<a href="http://svetosavlje.org/biblioteka/AvaJustin/ZitijaSvetih/ZitijaSvetih{{homeModel.julianDate.toString('MMdd')}}.htm">Житија Светих за данас</a>)
+    				(<a href="http://svetosavlje.org/biblioteka/AvaJustin/ZitijaSvetih/ZitijaSvetih{{julianDate.toString('MMdd')}}.htm">Житија Светих за данас</a>)
 
     			</div>
     			<div class="span2">
-    				@Model.DailyFasting<br />
-    				<a href="#">Календар за @Mjes</a>
+    				{{homeModel.postDana}}<br />
+    				<a href="#">Календар за {{mjesec}}</a>
     			</div>
     		</div>
     	</div>
@@ -45,18 +36,17 @@
     <div class="row">
     	<div class="span8">
     		<h4>Са св. Јустином из дана у дан</h4>
-    		<p>@Html.Raw(Model.DailyQuote.Substring(0, Math.Min(Model.DailyQuote.Length, 350)))...</p>
-    		<p><a href="@Url.Action("IzDanaUDan", "Home")">Читај даље</a> »</p>
+    		<p>{{homeModel.citatDana.substring(0,350)}}...</p>
+    		<p><a href="xxx">Читај даље</a> »</p>
     	</div>
     	<div class="span4">
     		<h4>Дневно читање из Светог Писма</h4>
-    		@if (Model.DailyReading.CompactVersion != null)
-    		{
+    		
     		<div style="height: 150px; overflow: auto">
-    			<p>@Html.Raw(Server.HtmlDecode(Model.DailyReading.CompactVersion))</p>
+                <div ng-bind-html="homeModel.dnevnoCitanjeDana"></div>
     		</div>
-    		<p><a href="@Url.Action("DnevnoCitanje", "Home")">Читај даље</a> »</p>
-    	}
+    		<p><a href="xxx">Читај даље</a> »</p>
+    	
     </div>
 </div>
 <!-- row -->
@@ -71,17 +61,12 @@
 		<div class="row">
 			<div class="span8">
 				<h2><a href="http://blogs.svetosavlje.org/vesti/">Вести</a> »</h2>
-				<h3><a href="@Model.Vijesti[0].Link">@Model.Vijesti[0].Title </a></h3>
-				<p>@Model.Vijesti[0].Content [...]</p>
-				<p><a href="@Model.Vijesti[0].Link">Читај даље</a> »</p>
+				<h3><a href="{{homeModel.vijesti[0].link}}">{{homeModel.vijesti[0].title}}</a></h3>
+				<p>{{homeModel.vijesti[0].content}}</p>
+				<p><a href="{{homeModel.vijesti[0].link}}">Читај даље</a> »</p>
 				<ul>
-
-					@for (int n = 1; n < Model.Vijesti.Count; ++n)
-					{
-					<li><a href="@Model.Vijesti[n].Link">@Model.Vijesti[n].Title </a></li>
-				}
-
-			</ul>
+					<li ng-repeat="vijest in homeModel.vijesti"><a href="{{vijest.link}}">{{vijest.title}}</a></li>
+	       		</ul>
 		</div>
 	</div>
 
@@ -91,17 +76,12 @@
 	<div class="row">
 		<div class="span8">
 			<h2><a href="http://www.svedokverni.org/">Мисија</a> »</h2>
-			<h3><a href="@Model.Misija[0].Link">@Model.Misija[0].Title </a></h3>
-			<p>@Model.Misija[0].Content</p>
-			<p><a href="@Model.Misija[0].Link">Читај даље</a> »</p>
-			<ul>
-
-				@for (int n = 1; n < Model.Misija.Count; ++n)
-				{
-				<li><a href="@Model.Misija[n].Link">@Model.Misija[n].Title </a></li>
-			}
-
-		</ul>
+			<h3><a href="{{homeModel.misija[0].link}}">{{homeModel.misija[0].title}}</a></h3>
+			<p>{{homeModel.misija[0].content}}</p>
+			<p><a href="{{homeModel.misija[0].link}}">Читај даље</a> »</p>
+                <ul>
+                    <li ng-repeat="vijest in homeModel.misija"><a href="{{vijest.link}}">{{vijest.title}}</a></li>
+                </ul>
 	</div>
 </div>
 
@@ -111,7 +91,9 @@
 <div class="row">
 	<div class="span8">
 		<h2><a href="http://www.svetosavlje.org/listarhiva/Home.aspx">Листа</a> »</h2>
-		@Html.Action("ListaTopics", "Lista", new { rows = 10, boolList = true })
+            <ul>
+                <li ng-repeat="topic in homeModel.listaTopics"><a href="{{topic.id}}">{{topic.naziv}}</a> ({{topic.count}}) <a href="{{topic.updaterId}}">{{topic.updater}}</a> {{topic.datum}}</li>
+            </ul>
 	</div>
 </div>
 
@@ -120,9 +102,10 @@
 <!-- Pastir -->
 <div class="row">
 	<div class="span8">
-		<h2>@Html.ActionLink("Питање пастиру", "Index", "Pastir") »</h2>
-
-		@Html.Action("PastirQuestions", "Pastir", new { topicID = 0, rows = 10, orderedList = false })
+		<h2><a href="xxx">Питање пастиру »</a></h2>
+            <ul>
+                <li ng-repeat="topic in homeModel.pitanjaPastiru"><a href="{{topic.id}}">{{topic.naslov}}</a></li>
+            </ul>
 	</div>
 </div>
 
@@ -131,20 +114,22 @@
 
 </div>
 
+
+
+
+
+
+
+
 <!-- Desna kolona -->
 <div class="span4">
 	<h2><a href="http://blogs.svetosavlje.org/urednistvo/" data-toggle="tab">Из уредничког пера</a></h2>
-	<h3><a href="@Model.Vijesti[0].Link">@Model.Urednistvo[0].Title </a></h3>
-	<p>@Model.Urednistvo[0].Content [...]</p>
-	<p><a href="@Model.Urednistvo[0].Link">Читај даље</a> »</p>
-	<ul>
-
-		@for (int n = 1; n < Model.Urednistvo.Count; ++n)
-		{
-		<li><a href="@Model.Urednistvo[n].Link">@Model.Urednistvo[n].Title </a></li>
-	}
-
-</ul>
+	<h3><a href="{{homeModel.urednistvo[0].link}}">{{homeModel.urednistvo[0].title}}</a></h3>
+	<p>{{homeModel.urednistvo[0].content}}</p>
+	<p><a href="{{homeModel.urednistvo[0].link}}">Читај даље</a> »</p>
+    <ul>
+        <li ng-repeat="vijest in homeModel.urednistvo"><a href="{{vijest.link}}">{{vijest.title}}</a></li>
+    </ul>
 
 </div>
 <!-- span4 iz urednickog pera -->

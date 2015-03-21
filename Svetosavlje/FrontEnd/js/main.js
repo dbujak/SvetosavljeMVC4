@@ -1,4 +1,4 @@
-var svetosavlje = angular.module('svetosavlje', ['ngRoute']);
+var svetosavlje = angular.module('svetosavlje', ['ngRoute', 'ngSanitize']);
 
 svetosavlje.config(['$routeProvider',
   function($routeProvider) {

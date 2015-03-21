@@ -1,9 +1,9 @@
-svetosavlje.factory('PrologService', function($http, SharedService) {
+svetosavlje.factory('HomeService', function($http, SharedService) {
 
-  var PrologService = {};
+  var HomeService = {};
 
-  PrologService.asyncSvetiDana = function (date) {
-     var promise = $http.get('http://localhost/Svetosavlje/Services/PrologServiceSvetiDana.js')
+  HomeService.async = function (date) {
+     var promise = $http.get('http://localhost/Svetosavlje/Services/HomeServiceTestData.js')
       .then(function(data) {
        return data.data;
       });
@@ -15,5 +15,5 @@ svetosavlje.factory('PrologService', function($http, SharedService) {
       // return promise;
     };
 
-  return PrologService;
+  return HomeService;
 })
