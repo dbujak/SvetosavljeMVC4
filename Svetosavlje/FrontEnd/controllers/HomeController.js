@@ -8,8 +8,5 @@ function HomeCtrl($scope, $routeParams, $location, SharedService, HomeService){
 		$scope.homeModel = d;
 	});
 
-
-
-	console.log($scope.homeModel);
 }
 
