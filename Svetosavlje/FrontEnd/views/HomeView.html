@@ -21,16 +21,12 @@
     		<div class="span6">
     			<!-- facebook like -->
     			<div class="fb-like" data-href="http://www.facebook.com/groups/46142913208" data-send="true" data-width="300" data-show-faces="true" data-action="recommend" data-font="arial"></div>
-    			<p>Данас је @Dan, @today.Day. @Mjes @today.Year. У нашој светој, саборној и апостолској Цркви слави се</p>
+    			<p>Данас је {{homeModel.dan}}, {{homeModel.julianDate.getDate()}}.  {{homeModel.mjesec}} {{homeModel.julianDate.getFullYear()}}. У нашој светој, саборној и апостолској Цркви слави се</p>
     			<div class="row">
     				<div class="span4">
     					<img src="http://placehold.it/160x120" width="80" height="120" style="float: left; margin: 0 20px 20px 0;" />
-    					@foreach (string sv in Model.DnevniSveti)
-    					{
-    					@Html.ActionLink(sv, "Index", "Prolog")<br />
-    				}
-    				@{string link = "http://svetosavlje.org/biblioteka/AvaJustin/ZitijaSvetih/ZitijaSvetih" + DateTime.Now.AddDays(-13).ToString("MMdd") + ".htm";}
-    				(<a href="@link">Житија Светих за данас</a>)
+    					<div ng-repeat="sveti in homeModel.svetiDana"><a href="/prolog">{{sveti}}</a></div>
+    				(<a href="http://svetosavlje.org/biblioteka/AvaJustin/ZitijaSvetih/ZitijaSvetih{{homeModel.julianDate.toString('MMdd')}}.htm">Житија Светих за данас</a>)
 
     			</div>
     			<div class="span2">
