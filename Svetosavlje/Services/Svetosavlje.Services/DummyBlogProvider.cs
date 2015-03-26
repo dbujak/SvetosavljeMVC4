@@ -25,7 +25,7 @@ namespace Svetosavlje.Services
 
             for (int i = 0; i < 10; i++)
             {
-                list.Add(new WPBlogModel(new HtmlString("This is some TOPIC " + i.ToString()), new HtmlString("This is some text or CONTENT " + i.ToString()), "L " + i.ToString()));
+                list.Add(new WPBlogModel(("This is some TOPIC " + i.ToString()), ("This is some text or CONTENT " + i.ToString()), "L " + i.ToString()));
             }
             return list;
         }

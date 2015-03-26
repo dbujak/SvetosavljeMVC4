@@ -22,9 +22,9 @@ namespace Svetosavlje.Data_Layer.Core
               from e in document.Descendants(xsd + "entry")
               select new WPBlogModel()
               {
-                  Title = new HtmlString((string)e.Element(xsd + "title")),
+                  Title = (string)e.Element(xsd + "title"),
                   Link = (string)e.Element(xsd + "id"),
-                  Content = new HtmlString((string)e.Element(xsd + "summary"))
+                  Content = (string)e.Element(xsd + "summary")
               };
 
             return blog.ToList<WPBlogModel>();

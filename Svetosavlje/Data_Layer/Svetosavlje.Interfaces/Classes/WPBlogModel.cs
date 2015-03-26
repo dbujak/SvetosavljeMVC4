@@ -8,11 +8,11 @@ namespace Svetosavlje.Interfaces.Classes
 {
     public class WPBlogModel
     {
-        public HtmlString Title;
+        public string Title;
         public string Link;
-        public HtmlString Content;
+        public string Content;
 
-        public WPBlogModel(HtmlString t, HtmlString c, string l)
+        public WPBlogModel(string t, string c, string l)
         {
             Title = t;
             Content = c;
