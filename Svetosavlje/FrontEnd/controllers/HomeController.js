@@ -8,6 +8,19 @@ function HomeCtrl($scope, $routeParams, $location, SharedService, HomeService){
 		$scope.homeModel = d;
 	});
 
+	HomeService.getSvetiDana().then(function(d){
+		$scope.homeModel.svetiDana = d;
+	});
+
+	HomeService.getPostDana().then(function(d){
+		$scope.homeModel.postDana = d.replace(/\"/g, '');
+	});
+
+	HomeService.getCitatDana().then(function(d){
+		console.log(d);
+		$scope.homeModel.citatDana = d;
+	});
+
 	HomeService.getMisija().then(function(d){
 		$scope.homeModel.misija = SharedService.decodeWordPress(d);
 	});
@@ -19,6 +32,17 @@ function HomeCtrl($scope, $routeParams, $location, SharedService, HomeService){
 	HomeService.getUrednistvo().then(function(d){
 		$scope.homeModel.urednistvo = SharedService.decodeWordPress(d);
 	});
+
+	HomeService.getListaTopics().then(function(d){
+		$scope.homeModel.listaTopics = d;
+	});
+
+	HomeService.getPitanjaPastiru().then(function(d){
+		$scope.homeModel.pitanjaPastiru = d;
+	});
+
+
+
 
 }
 

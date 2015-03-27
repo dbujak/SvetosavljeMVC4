@@ -10,6 +10,7 @@ using Svetosavlje.Controllers;
 
 namespace Svetosavlje.WebAPIs
 {
+    [AllowCrossSiteJson]
     public class ListaController : ApiController
     {
         private ListArhivaData listArhiva = new ListArhivaData();

@@ -9,6 +9,7 @@ using Svetosavlje.Controllers;
 
 namespace Svetosavlje.WebAPIs
 {
+    [AllowCrossSiteJson]
     public class PastirController : ApiController
     {
         private PitanjaPastiru pitanjaPastiru = new PitanjaPastiru();

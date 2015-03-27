@@ -28,7 +28,7 @@ namespace Svetosavlje.Data_Layer.MySQLServices
 
             foreach (DataRow row in list.Rows)
             {
-                fastingType = row["Tekst"].ToString();
+                fastingType = row["Tekst"].ToString().Replace("\r\n","");
             }
             
             return fastingType;

@@ -21,7 +21,7 @@ namespace Svetosavlje.Services
             _provider = new AtomBlogProvider();
 #endif
 
-            _provider = new AtomBlogProvider();
+            //_provider = new AtomBlogProvider();
         }
 
 

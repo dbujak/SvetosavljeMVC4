@@ -42,5 +42,59 @@ svetosavlje.factory('HomeService', function($http, SharedService) {
     }
 
 
+    HomeService.getLista = function(){
+      var promise = $http.get(SharedService.config.webServicePath + 'lista')
+      .then(function(data) {
+       return data.data;
+      });
+      return promise;
+    }
+
+
+    HomeService.getListaTopics = function(){
+      var promise = $http.get(SharedService.config.webServicePath + 'lista')
+      .then(function(data) {
+       return data.data;
+      });
+      return promise;
+    }
+
+
+    HomeService.getPitanjaPastiru = function(){
+      var promise = $http.get(SharedService.config.webServicePath + 'pastir')
+      .then(function(data) {
+       return data.data;
+      });
+      return promise;
+    }
+
+
+    HomeService.getSvetiDana = function(){
+      var promise = $http.get(SharedService.config.webServicePath + 'svetidana')
+      .then(function(data) {
+       return data.data;
+      });
+      return promise;
+    }
+
+
+    HomeService.getPostDana = function(){
+      var promise = $http.get(SharedService.config.webServicePath + 'post')
+      .then(function(data) {
+       return data.data;
+      });
+      return promise;
+    }
+
+
+    HomeService.getCitatDana = function(){
+      var promise = $http.get(SharedService.config.webServicePath + 'izdanaudan')
+      .then(function(data) {
+       return data.data;
+      });
+      return promise;
+    }
+
+
   return HomeService;
 })
