@@ -9,6 +9,7 @@ using Svetosavlje.Controllers;
 
 namespace Svetosavlje.WebAPIs
 {
+    [AllowCrossSiteJson]
     public class UrednistvoController : ApiController
     {
         private Blogs blogs = new Blogs();

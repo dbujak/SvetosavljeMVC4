@@ -31,6 +31,8 @@ namespace Svetosavlje.Interfaces.Classes
             Topic = topic;
             Author = author;
         }
+
+        public PitanjeInfo() { }
     }
 
     /// <summary>
@@ -46,5 +48,7 @@ namespace Svetosavlje.Interfaces.Classes
             ID = id;
             Title = title;
         }
+
+        public PastirTopic() { }
     }
 }

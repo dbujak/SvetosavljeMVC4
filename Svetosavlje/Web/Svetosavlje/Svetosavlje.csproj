@@ -206,7 +206,14 @@
     <Compile Include="Models\PrologModel.cs" />
     <Compile Include="Models\SvetoModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebAPIs\AllowCrossSiteJsonAttribute.cs" />
+    <Compile Include="WebAPIs\CitanjeIzSvetogPismaController.cs" />
+    <Compile Include="WebAPIs\IzDanaUDanController.cs" />
+    <Compile Include="WebAPIs\PostController.cs" />
+    <Compile Include="WebAPIs\SvetiDanaController.cs" />
+    <Compile Include="WebAPIs\ListaController.cs" />
     <Compile Include="WebAPIs\MisijaController.cs" />
+    <Compile Include="WebAPIs\PastirController.cs" />
     <Compile Include="WebAPIs\UrednistvoController.cs" />
     <Compile Include="WebAPIs\VijestiController.cs" />
   </ItemGroup>

@@ -14,6 +14,15 @@ namespace Svetosavlje
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+            config.Routes.MapHttpRoute(
+                name: "TwoParametersApi",
+                routeTemplate: "api/{controller}/{param1}/{param2}"
+            );
+            config.Routes.MapHttpRoute(
+                name: "ThreeParametersApi",
+                routeTemplate: "api/{controller}/{param1}/{param2}/{param3}"
+            );
+
         }
     }
 }

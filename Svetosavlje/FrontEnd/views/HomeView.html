@@ -61,11 +61,11 @@
 		<div class="row">
 			<div class="span8">
 				<h2><a href="http://blogs.svetosavlje.org/vesti/">Вести</a> »</h2>
-				<h3><a href="{{homeModel.vijesti[0].link}}">{{homeModel.vijesti[0].title}}</a></h3>
-				<p>{{homeModel.vijesti[0].content}}</p>
-				<p><a href="{{homeModel.vijesti[0].link}}">Читај даље</a> »</p>
+				<h3><a href="{{homeModel.vijesti[0].Link}}">{{homeModel.vijesti[0].Title}}</a></h3>
+				<p>{{homeModel.vijesti[0].Content}}</p>
+				<p><a href="{{homeModel.vijesti[0].Link}}">Читај даље</a> »</p>
 				<ul>
-					<li ng-repeat="vijest in homeModel.vijesti"><a href="{{vijest.link}}">{{vijest.title}}</a></li>
+					<li ng-repeat="vijest in homeModel.vijesti"><a href="{{vijest.Link}}">{{vijest.Title}}</a></li>
 	       		</ul>
 		</div>
 	</div>
@@ -76,11 +76,11 @@
 	<div class="row">
 		<div class="span8">
 			<h2><a href="http://www.svedokverni.org/">Мисија</a> »</h2>
-			<h3><a href="{{homeModel.misija[0].link}}">{{homeModel.misija[0].title}}</a></h3>
-			<p>{{homeModel.misija[0].content}}</p>
-			<p><a href="{{homeModel.misija[0].link}}">Читај даље</a> »</p>
+			<h3><a href="{{homeModel.misija[0].Link}}">{{homeModel.misija[0].Title}}</a></h3>
+			<p>{{homeModel.misija[0].Content}}</p>
+			<p><a href="{{homeModel.misija[0].Link}}">Читај даље</a> »</p>
                 <ul>
-                    <li ng-repeat="vijest in homeModel.misija"><a href="{{vijest.link}}">{{vijest.title}}</a></li>
+                    <li ng-repeat="vijest in homeModel.misija"><a href="{{vijest.Link}}">{{vijest.Title}}</a></li>
                 </ul>
 	</div>
 </div>
@@ -124,11 +124,11 @@
 <!-- Desna kolona -->
 <div class="span4">
 	<h2><a href="http://blogs.svetosavlje.org/urednistvo/" data-toggle="tab">Из уредничког пера</a></h2>
-	<h3><a href="{{homeModel.urednistvo[0].link}}">{{homeModel.urednistvo[0].title}}</a></h3>
-	<p>{{homeModel.urednistvo[0].content}}</p>
-	<p><a href="{{homeModel.urednistvo[0].link}}">Читај даље</a> »</p>
+	<h3><a href="{{homeModel.urednistvo[0].Link}}">{{homeModel.urednistvo[0].Title}}</a></h3>
+	<p>{{homeModel.urednistvo[0].Content}}</p>
+	<p><a href="{{homeModel.urednistvo[0].Link}}">Читај даље</a> »</p>
     <ul>
-        <li ng-repeat="vijest in homeModel.urednistvo"><a href="{{vijest.link}}">{{vijest.title}}</a></li>
+        <li ng-repeat="vijest in homeModel.urednistvo"><a href="{{vijest.Link}}">{{vijest.Title}}</a></li>
     </ul>
 
 </div>

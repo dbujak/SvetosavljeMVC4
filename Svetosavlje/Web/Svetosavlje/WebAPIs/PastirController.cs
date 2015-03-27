@@ -9,34 +9,33 @@ using Svetosavlje.Controllers;
 
 namespace Svetosavlje.WebAPIs
 {
-    [AllowCrossSiteJson]
-    public class VijestiController : ApiController
+    public class PastirController : ApiController
     {
-        private Blogs blogs = new Blogs();
+        private PitanjaPastiru pitanjaPastiru = new PitanjaPastiru();
 
-        // GET api/vijesti
-        public IEnumerable<WPBlogModel> Get()
+        // GET api/pastir
+        public IList<PitanjeInfo> Get()
         {
-            return blogs.GetNews();
+            return pitanjaPastiru.GetQuestionList(0, 10);
         }
 
-        //// GET api/vijesti/5
+        //// GET api/pastir/5
         //public string Get(int id)
         //{
         //    return "value";
         //}
 
-        //// POST api/vijesti
+        //// POST api/pastir
         //public void Post([FromBody]string value)
         //{
         //}
 
-        //// PUT api/vijesti/5
+        //// PUT api/pastir/5
         //public void Put(int id, [FromBody]string value)
         //{
         //}
 
-        //// DELETE api/vijesti/5
+        //// DELETE api/pastir/5
         //public void Delete(int id)
         //{
         //}

@@ -20,6 +20,8 @@ namespace Svetosavlje.Services
 #else
             _provider = new AtomBlogProvider();
 #endif
+
+            _provider = new AtomBlogProvider();
         }
 
 

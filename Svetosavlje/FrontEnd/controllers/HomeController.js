@@ -8,5 +8,17 @@ function HomeCtrl($scope, $routeParams, $location, SharedService, HomeService){
 		$scope.homeModel = d;
 	});
 
+	HomeService.getMisija().then(function(d){
+		$scope.homeModel.misija = SharedService.decodeWordPress(d);
+	});
+
+	HomeService.getVijesti().then(function(d){
+		$scope.homeModel.vijesti = SharedService.decodeWordPress(d);
+	});
+
+	HomeService.getUrednistvo().then(function(d){
+		$scope.homeModel.urednistvo = SharedService.decodeWordPress(d);
+	});
+
 }
 

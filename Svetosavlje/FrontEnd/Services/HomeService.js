@@ -15,5 +15,32 @@ svetosavlje.factory('HomeService', function($http, SharedService) {
       // return promise;
     };
 
+    HomeService.getMisija = function(){
+      var promise = $http.get(SharedService.config.webServicePath + 'misija')
+      .then(function(data) {
+       return data.data;
+      });
+      return promise;
+    }
+
+
+    HomeService.getVijesti = function(){
+      var promise = $http.get(SharedService.config.webServicePath + 'vijesti')
+      .then(function(data) {
+       return data.data;
+      });
+      return promise;
+    }
+
+
+    HomeService.getUrednistvo = function(){
+      var promise = $http.get(SharedService.config.webServicePath + 'urednistvo')
+      .then(function(data) {
+       return data.data;
+      });
+      return promise;
+    }
+
+
   return HomeService;
 })

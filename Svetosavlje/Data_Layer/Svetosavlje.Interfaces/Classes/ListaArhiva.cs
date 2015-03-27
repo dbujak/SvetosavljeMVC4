@@ -22,6 +22,7 @@ namespace Svetosavlje.Interfaces.Classes
             updaterID = updId;
         }
 
+        public MessageThread() { }
     }
 
     public class AttachmentInfo
@@ -38,6 +39,8 @@ namespace Svetosavlje.Interfaces.Classes
             type = typ;
             size = sz;
         }
+
+        public AttachmentInfo() { }
     }
 
     public class TopicMessage
@@ -82,5 +85,7 @@ namespace Svetosavlje.Interfaces.Classes
             WordCodes = null;
             InReplyTo = null;
         }
+
+        public TopicMessage() { }
     }
 }

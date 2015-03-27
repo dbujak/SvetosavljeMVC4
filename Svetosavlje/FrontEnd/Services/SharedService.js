@@ -1,10 +1,23 @@
-svetosavlje.factory('SharedService', function($http) {
+svetosavlje.factory('SharedService', function($location) {
 
   var SharedService = {
     config: {
       webServicePath: 'http://...'
     }
   };
+
+  var host = $location.$$host;
+  var webServicePath = "";
+
+  switch (host.toLowerCase()){
+    case "localhost":   // Developers
+      webServicePath = "http://localhost:1389/api/";
+      break;
+    default:  // everything else
+      webServicePath = 'http://www.svetosavlje.org/net4/api/';
+  }
+
+  SharedService.config.webServicePath = webServicePath;
 
   SharedService.getJulianDate = function(gregorianDate){  // if no date will return today's date
     
@@ -85,6 +98,21 @@ svetosavlje.factory('SharedService', function($http) {
     //     break;
     // }
   };  
+
+  SharedService.decodeHTML = function(value){
+    return $('<div/>').html(value).text();
+  };
+
+  SharedService.decodeWordPress = function(jsonObject){
+    for (var key in jsonObject){
+      if (jsonObject.hasOwnProperty(key)){
+        jsonObject[key].Title = SharedService.decodeHTML(jsonObject[key].Title);
+        jsonObject[key].Content = SharedService.decodeHTML(jsonObject[key].Content);
+      }
+    }
+
+    return jsonObject;
+  };
 
   return SharedService;
 

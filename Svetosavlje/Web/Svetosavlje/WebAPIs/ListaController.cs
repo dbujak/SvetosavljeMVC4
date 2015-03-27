@@ -7,36 +7,36 @@ using System.Web.Http;
 using Svetosavlje.Interfaces.Classes;
 using Svetosavlje.Controllers;
 
+
 namespace Svetosavlje.WebAPIs
 {
-    [AllowCrossSiteJson]
-    public class VijestiController : ApiController
+    public class ListaController : ApiController
     {
-        private Blogs blogs = new Blogs();
+        private ListArhivaData listArhiva = new ListArhivaData();
 
-        // GET api/vijesti
-        public IEnumerable<WPBlogModel> Get()
+        // GET api/lista
+        public IEnumerable<MessageThread> Get()
         {
-            return blogs.GetNews();
+            return listArhiva.GetMessageThreads(10);
         }
 
-        //// GET api/vijesti/5
+        //// GET api/lista/5
         //public string Get(int id)
         //{
         //    return "value";
         //}
 
-        //// POST api/vijesti
+        //// POST api/lista
         //public void Post([FromBody]string value)
         //{
         //}
 
-        //// PUT api/vijesti/5
+        //// PUT api/lista/5
         //public void Put(int id, [FromBody]string value)
         //{
         //}
 
-        //// DELETE api/vijesti/5
+        //// DELETE api/lista/5
         //public void Delete(int id)
         //{
         //}
