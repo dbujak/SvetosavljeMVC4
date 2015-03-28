@@ -4,9 +4,7 @@ function HomeCtrl($scope, $routeParams, $location, SharedService, HomeService){
 	$scope.dan = SharedService.getDay(SharedService.getJulianDate());
 	$scope.mjesec = SharedService.getMonth(SharedService.getJulianDate());
 
-	HomeService.async($scope.julianDate).then(function(d){
-		$scope.homeModel = d;
-	});
+	$scope.homeModel = {};
 
 	HomeService.getSvetiDana().then(function(d){
 		$scope.homeModel.svetiDana = d;
@@ -17,8 +15,11 @@ function HomeCtrl($scope, $routeParams, $location, SharedService, HomeService){
 	});
 
 	HomeService.getCitatDana().then(function(d){
-		console.log(d);
 		$scope.homeModel.citatDana = d;
+	});
+
+	HomeService.getDnevnoCitanjeDana().then(function(d){
+		$scope.homeModel.dnevnoCitanjeDana = d;
 	});
 
 	HomeService.getMisija().then(function(d){

@@ -6,7 +6,7 @@
     	<!-- logo i slika oca Justina -->
     	<div class="row">
     		<div class="span6">
-    			<img src="http://dummyimage.com/530x120/666/fff&text=slika+oca+justina+i+logo+svetosavlje+ide+ovde">
+    			<img src="images/slikaocajustinailogosvetosavljeideovde.png">
     		</div>
     		<!-- prolog -->
     		<div class="span6">
@@ -15,7 +15,7 @@
     			<p>Данас је {{dan}}, {{julianDate.getDate()}}.  {{mjesec}} {{julianDate.getFullYear()}}. У нашој светој, саборној и апостолској Цркви слави се</p>
     			<div class="row">
     				<div class="span4">
-    					<img src="http://placehold.it/160x120" width="80" height="120" style="float: left; margin: 0 20px 20px 0;" />
+    					<img src="images/160x120.gif" width="80" height="120" style="float: left; margin: 0 20px 20px 0;" />
     					<div ng-repeat="sveti in homeModel.svetiDana"><a href="/prolog">{{sveti}}</a></div>
     				(<a href="http://svetosavlje.org/biblioteka/AvaJustin/ZitijaSvetih/ZitijaSvetih{{julianDate.toString('MMdd')}}.htm">Житија Светих за данас</a>)
 
@@ -43,7 +43,7 @@
     		<h4>Дневно читање из Светог Писма</h4>
     		
     		<div style="height: 150px; overflow: auto">
-                <div ng-bind-html="homeModel.dnevnoCitanjeDana"></div>
+                <div ng-bind-html="homeModel.dnevnoCitanjeDana.CompactVersion"></div>
     		</div>
     		<p><a href="xxx">Читај даље</a> »</p>
     	

@@ -96,5 +96,14 @@ svetosavlje.factory('HomeService', function($http, SharedService) {
     }
 
 
+    HomeService.getDnevnoCitanjeDana = function(){
+      var promise = $http.get(SharedService.config.webServicePath + 'CitanjeIzSvetogPisma/8/1/1989')
+      .then(function(data) {
+       return data.data;
+      });
+      return promise;
+    }
+
+
   return HomeService;
 })
