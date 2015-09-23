@@ -1,139 +1,178 @@
-    <div class="container">
-
-
-
-
-    	<!-- logo i slika oca Justina -->
-    	<div class="row">
-    		<div class="span6">
-    			<img src="images/slikaocajustinailogosvetosavljeideovde.png">
-    		</div>
-    		<!-- prolog -->
-    		<div class="span6">
-    			<!-- facebook like -->
-    			<div class="fb-like" data-href="http://www.facebook.com/groups/46142913208" data-send="true" data-width="300" data-show-faces="true" data-action="recommend" data-font="arial"></div>
-    			<p>Данас је {{dan}}, {{julianDate.getDate()}}.  {{mjesec}} {{julianDate.getFullYear()}}. У нашој светој, саборној и апостолској Цркви слави се</p>
-    			<div class="row">
-    				<div class="span4">
-    					<img src="images/160x120.gif" width="80" height="120" style="float: left; margin: 0 20px 20px 0;" />
-    					<div ng-repeat="sveti in homeModel.svetiDana"><a href="/prolog">{{sveti}}</a></div>
-    				(<a href="http://svetosavlje.org/biblioteka/AvaJustin/ZitijaSvetih/ZitijaSvetih{{julianDate.toString('MMdd')}}.htm">Житија Светих за данас</a>)
-
-    			</div>
-    			<div class="span2">
-    				{{homeModel.postDana}}<br />
-    				<a href="#">Календар за {{mjesec}}</a>
-    			</div>
-    		</div>
-    	</div>
-    </div>
-    <!-- row -->
-
-
-
-
-    <!-- Dnevno citanje-->
+<div class="header-wrap">  
     <div class="row">
-    	<div class="span8">
-    		<h4>Са св. Јустином из дана у дан</h4>
-    		<p>{{homeModel.citatDana.substring(0,350)}}...</p>
-    		<p><a href="xxx">Читај даље</a> »</p>
-    	</div>
-    	<div class="span4">
-    		<h4>Дневно читање из Светог Писма</h4>
-    		
-    		<div style="height: 150px; overflow: auto">
-                <div ng-bind-html="homeModel.dnevnoCitanjeDana.CompactVersion"></div>
-    		</div>
-    		<p><a href="xxx">Читај даље</a> »</p>
-    	
+      <div class="large-8 medium-6 small-12 columns" style="text-align:center;">
+        <img src="images/logo.svg" style="width:450px; height:182px;">
+      </div>
+
+      <div class="large-4 medium-4 small-12 columns panel">
+        <h4 class="section-title">Житија светих</h4>
+        <p class="summary">Данас је {{dan}}, {{julianDate.getDate()}}.  {{mjesec}} {{julianDate.getFullYear()}}. У нашој светој, саборној и апостолској Цркви слави се:</p>
+        <div class="small-12 columns">
+          <ul class="summary">
+            <li ng-repeat="sveti in homeModel.svetiDana"><a href="/prolog">{{sveti}}</a></li>
+            <li>(<a href="http://svetosavlje.org/biblioteka/AvaJustin/ZitijaSvetih/ZitijaSvetih{{julianDate.toString('MMdd')}}.htm">Житија Светих за данас</a>)</li>
+            <li>{{homeModel.postDana}}</li>
+            <li><a href="">Календар за {{mjesec}}</a></li>
+        </ul>      
+        </div>
+      </div>
+    </div>
+
+
+  <div class="row">
+
+        <!-- Urednicko pero -->
+        <div class="large-4 medium-4 small-12 columns">
+            <h4 class="section-title"><a href="http://blogs.svetosavlje.org/urednistvo/" >Из уредничког пера</a></h4>
+            <h5 class="article-title"><a href="{{homeModel.urednistvo[0].Link}}">{{homeModel.urednistvo[0].Title}}</a></h5>
+            <p class="summary">{{homeModel.urednistvo[0].Content}}<p>
+        </div>
+
+      <!-- Sa sv. Justinom -->
+        <div class="large-4 medium-4 small-12 columns">
+          <h4 class="section-title"><a href="#">Са св. Јустином из дана у дан</a></h4>
+          <p class="summary">{{homeModel.citatDana.substring(0,350)}}... <a href="xxx">Читај даље</a> »</p>
+        </div>
+
+        <!-- Sv Pismo -->
+      <div class="large-4 medium-4 small-12 columns">
+         <h4 class="section-title"><a href="#">Дневно читање из Светог Писма</a></h4>
+         <span class="summary" ng-bind-html="homeModel.dnevnoCitanjeDana.CompactVersion"></span>
+      </div>
+
     </div>
 </div>
-<!-- row -->
-<hr />
 
 
-<div class="row">
-	<!-- Leva kolona -->
-	<div class="span8">
 
-		<!-- Vesti -->
-		<div class="row">
-			<div class="span8">
-				<h2><a href="http://blogs.svetosavlje.org/vesti/">Вести</a> »</h2>
-				<h3><a href="{{homeModel.vijesti[0].Link}}">{{homeModel.vijesti[0].Title}}</a></h3>
-				<p>{{homeModel.vijesti[0].Content}}</p>
-				<p><a href="{{homeModel.vijesti[0].Link}}">Читај даље</a> »</p>
-				<ul>
-					<li ng-repeat="vijest in homeModel.vijesti"><a href="{{vijest.Link}}">{{vijest.Title}}</a></li>
-	       		</ul>
-		</div>
-	</div>
+  <div class="row" style="padding-top:1em; border-top:3px solid #666;">
+        <div class="large-8 medium-8 small-12 columns column-border-right">
+          <!-- Biblioteka -->
+          <div>
+                <h4 class="section-title">Библиотека</h4>
+                <article class="story">
+                  <h6 class="kicker">31. ЈУЛ, <a href="#">САВРЕМЕНИ ИЗАЗОВИ И ИСКУШЕЊА</a></h6>
+                  <h5 class="article-title"><a href="#">Постоји ли рационализам у самом разумевању богослужења богослужења богослужења богослужења богослужења?</a></h5>
+                  <h6 class="byline">Протојереј-ставрофор ЉУБО Милошевић</h6>
+                  <p class="summary">"Можемо ли да сачувамо православну богослужбену структуру дана; да сачувамо богослужбени језик; да сачувамо обредну или боље рећи сакраменталну мистику, и да учинимо да нам буде доступно, разумљиво, богословље из богослужења дана? Можемо ли све то? Одговори на ова питања као да плаше, као да смо већ губитнички на коленима под малодушним утиском да нам је на свим пољима разрушене инфраструктуре идентитета ово недостижно."</p>
+                </article>
 
-	<hr />
+                <article class="story">
+                  <h6 class="kicker">31. ЈУЛ, <a href="#">ПОРОДИЦА</a></h6>
+                  <h5 class="article-title"><a href="#">Где ти је муж"?</a></h5>
+                  <h6 class="byline">Архимандрит АНДРЕЈ Конанос</h6>
+                </article>
 
-	<!-- Misija  -->
-	<div class="row">
-		<div class="span8">
-			<h2><a href="http://www.svedokverni.org/">Мисија</a> »</h2>
-			<h3><a href="{{homeModel.misija[0].Link}}">{{homeModel.misija[0].Title}}</a></h3>
-			<p>{{homeModel.misija[0].Content}}</p>
-			<p><a href="{{homeModel.misija[0].Link}}">Читај даље</a> »</p>
-                <ul>
-                    <li ng-repeat="vijest in homeModel.misija"><a href="{{vijest.Link}}">{{vijest.Title}}</a></li>
-                </ul>
-	</div>
-</div>
+                <article class="story">
+                  <h6 class="kicker">31. ЈУЛ, <a href="#">ИСТОРИЈА</a></h6>
+                  <h5 class="article-title"><a href="#">Православно духовно школство у Далмацији</a></h5>
+                  <h6 class="byline">Протојереј-ставрофор СЛАВКО Зорица</h6>
+                </article>
 
-<hr />
+                <article class="story">
+                  <h6 class="kicker">31. ЈУЛ, <a href="#">ЖИТИЈА</a></h6>
+                  <h5 class="article-title"><a href="#">Сузе за свет - савремени грчки старци I</a></h5>
+                  <h6 class="byline">Старац Тихон, Старац Пајсије и Старац Порфирије</h6>
+                  <p class="summary">"Они који су се удостојили да постану чеда Божија и да доживе вишње препорођење Светим Духом, носећи унутар себе Христа Који их просветљује и даје смирење, бивају вођени Духом на многе и разнолике начине. Они на тајинствен начин примају Божију благодат у своја срца и она им дарује духовну утеху."</p>
+                  <hr class="border-bottom">
+                </article>
 
-<!-- Lista -->
-<div class="row">
-	<div class="span8">
-		<h2><a href="http://www.svetosavlje.org/listarhiva/Home.aspx">Листа</a> »</h2>
-            <ul>
-                <li ng-repeat="topic in homeModel.listaTopics"><a href="{{topic.id}}">{{topic.naziv}}</a> ({{topic.count}}) <a href="{{topic.updaterId}}">{{topic.updater}}</a> {{topic.datum}}</li>
-            </ul>
-	</div>
-</div>
+          </div><!-- /Biblioteka -->
 
-<hr />
+          <!-- Misija -->
+          <h4 class="section-title"><a href="http://www.svedokverni.org/">Мисија</a></h2>
+          <h5 class="article-title"><a href="{{homeModel.misija[0].Link}}">{{homeModel.misija[0].Title}}</a></h5>
+          <p class="small-text">{{homeModel.misija[0].Content}} <a href="{{homeModel.misija[0].Link}}">Читај даље</a> »</p>
+          <ul class="small-text">
+            <li><a href="{{homeModel.misija[1].Link}}">{{homeModel.misija[1].Title}}</a></li>
+            <li><a href="{{homeModel.misija[2].Link}}">{{homeModel.misija[2].Title}}</a></li>
+            <li><a href="{{homeModel.misija[3].Link}}">{{homeModel.misija[3].Title}}</a></li>
+          </ul>
+          <!-- /Misija -->
 
-<!-- Pastir -->
-<div class="row">
-	<div class="span8">
-		<h2><a href="xxx">Питање пастиру »</a></h2>
-            <ul>
+          <hr class="border-bottom">
+
+          <!-- Molitve -->
+          <div>
+                <h4 class="section-title">Молитве</h4>
+                <blockquote class="citat"><em>Ако су демони преклињали Господа да их не пошаље у бездан и молба им беше испуњена, колико ли ће пре бити услишене молитве нас који смо се обукли у Христа, када се молимо да се избавимо од умне (духовне) смрти? Посветимо се стога, молитви, јер је велика њена сила.</em></blockquote><cite class="right">Антиох Пандект</cite>
+                <hr>
+                <div class="row">
+                  <div class="small-12 medium-4 large-4 columns">
+                    <ul class="summary">
+                      <li><a href="#">Четири свакодневне молитве</a></li>
+                      <li><a href="#">Молитва у свако доба</a></li>
+                      <li><a href="#">Исусова молитва</a></li>
+                      <li><a href="#">Молитва свенародног покајања</a></li>
+                    </ul>
+                  </div>
+                  <div class="small-12 medium-4 large-4 columns">
+                    <ul class="summary">
+                      <li><a href="#">Молитве славе и хвале</a></li>
+                      <li><a href="#">Молитве у очајању и потиштености</a></li>
+                      <li><a href="#">Акатисти</a></li>
+                      <li><a href="#">Канони</a></li>
+                      <li><a href="#">Богослужбени текстови </a></li>
+                    </ul>
+                  </div>
+                  <div class="small-12 medium-4 large-4 columns">
+                    <ul class="summary">
+                      <li><a href="#">Молитвено правило пред свето причешће</a></li>
+                      <li><a href="#">Мајчина молитва</a></li>
+                      <li><a href="#">Молитва за српски народ</a></li>
+                      <li><a href="#">Молитва за упокојене</a></li>
+                    </ul>
+                  </div>
+                </div>
+                
+          </div>
+          <!-- /Molitve -->
+
+        </div><!-- /leva kolona -->
+
+        <!-- Desna kolona 
+      #######################
+      #######################
+      #######################
+        -->
+        <div class="large-4 medium-4 small-12 columns">
+
+          <!-- Vesti -->
+          <h4 class="section-title"><a href="http://blogs.svetosavlje.org/vesti/">Вести</a></h4>
+          <h5 class="article-title"><a href="{{homeModel.vijesti[0].Link}}">{{homeModel.vijesti[0].Title}}</a></h5>
+          <p class="summary">{{homeModel.vijesti[0].Content}} <a href="{{homeModel.vijesti[0].Link}}">Читај даље</a> »</p>
+          <ul class="summary">
+              <li><a href="{{homeModel.vijesti[1].Link}}">{{homeModel.vijesti[1].Title}}</a></li>
+              <li><a href="{{homeModel.vijesti[2].Link}}">{{homeModel.vijesti[2].Title}}</a></li>
+          </ul>
+          <!-- /Vesti -->
+
+          <!-- Pitanje pastiru -->
+          <div class="panel">
+              <h4 class="section-title">Питање пастиру</h4>
+              <h6>Неколико последњих питања:</h6>
+              <ol class="summary">
                 <li ng-repeat="topic in homeModel.pitanjaPastiru"><a href="{{topic.ID}}">{{topic.Naslov}}</a></li>
-            </ul>
-	</div>
-</div>
+              </ol>
+              <h4 class="section-title">Листа</h4>
+              <h6>Неке од тема:</h6>
+              <ul class="summary">
+                <li  ng-repeat="topic in homeModel.listaTopics"><a href="{{topic.id}}">{{topic.naziv}}</a></li>
+              </ul>
+            </div><!-- /Pitanje pastiru -->
 
-<hr />
+            <h5>Eksluzivno Mitropolit Amfilohije za Svetosavlje.org</h5>
+            <iframe width="300" height="169" src="https://www.youtube.com/embed/qHfbEhJ0cZs?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
+            <h5>Eksluzivno Episkop Mitrofan za Svetosavlje.org</h5>
+            <iframe width="300" height="169" src="https://www.youtube.com/embed/HW2a8pProCI?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
-</div>
+            
 
+          </div><!-- Desna kolona -->
 
-
-
-
-
-
-
-<!-- Desna kolona -->
-<div class="span4">
-	<h2><a href="http://blogs.svetosavlje.org/urednistvo/" data-toggle="tab">Из уредничког пера</a></h2>
-	<h3><a href="{{homeModel.urednistvo[0].Link}}">{{homeModel.urednistvo[0].Title}}</a></h3>
-	<p>{{homeModel.urednistvo[0].Content}}</p>
-	<p><a href="{{homeModel.urednistvo[0].Link}}">Читај даље</a> »</p>
-    <ul>
-        <li ng-repeat="vijest in homeModel.urednistvo"><a href="{{vijest.Link}}">{{vijest.Title}}</a></li>
-    </ul>
-
-</div>
-<!-- span4 iz urednickog pera -->
+        </div>
+  </div>
 
 
-</div>
-</div>
+

@@ -12,7 +12,7 @@ svetosavlje.factory('SharedService', function($location) {
   switch (host.toLowerCase()){
     case "localhost":   // Developers
       webServicePath = "http://localhost:1389/api/";
-      break;
+      //break;
     default:  // everything else
       webServicePath = 'http://www.svetosavlje.org/net4/api/';
   }

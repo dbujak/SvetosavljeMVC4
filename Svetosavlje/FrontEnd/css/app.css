@@ -1,0 +1,266 @@
+/* Sasa Popovic je dodao ove stilove 
+
+top nav:
+http://zurb.com/building-blocks/header-menu-simple-centered i 
+http://zurb.com/building-blocks/flat-navigation-menu
+*/
+
+body {background-color:#FFFCF2;}
+a, h1, h2, h3, h4, h5, h6 {color:#000;}
+.header-wrap {
+  background-image:url("../images/background-top.jpg"); 
+  background-repeat: repeat-x;
+  width:100%;
+
+  
+}
+.header-wrap-small {
+  background-image:url("../images/background-small.jpg"); 
+  background-repeat: no-repeat;
+  width:100%;
+  height:30%;  
+}
+
+.top-bar{background-color:#990000; }
+a.top-bar-section:link{background-color:#ff0000; border:3px solid black;}
+.top-bar-section li.active {background-color: pink}
+/* link, active, visited, hover, focus */
+.citat { border-left: 5px solid #990000; padding: 10px 0 10px 30px; margin: 0 0 1rem -10px; }
+  .citat p {font-style: italic; }
+.panel {padding:.8em;background-color:#fff;}
+.column-border-right {border-right:1px solid #ccc;}
+.border-bottom{border-bottom:2px solid #333;}
+
+.logo-svetosavlje {margin-top:2rem;}
+.small-text {font-size:.86rem;}
+.tiny-text {font-size:.7rem;}
+.tabs dd > a, .tabs .tab-title > a {padding:0.7rem;}
+.section-title {font-style:italic; font-weight:bold; line-height: 1em; margin-bottom:.8em;}
+.linija {border-bottom:1px solid #ccc; margin-bottom:1rem;}
+.panel-header {background-color:#ECE5CF; margin:0; padding:0.2rem 1rem; color:#fff;}
+.story {margin:0 1em 1em 0;}
+.kicker {font-family: helvetica, arial, sans-serif; font-size:.65em; color:#666;margin:0; padding:0;}
+.article-title {font-family:Helvetica, Arial, sans-serif;  line-height: 1.2em; margin:0 0 2px 0; padding:0;}
+ .article-title a{color:#700202;}
+  .article-title a:hover{color:#837857;}
+.byline {font-family: helvetica, arial, sans-serif; font-size:.75em; color:#666;margin:0 0 0 0; padding:0;}
+.summary {font-size:.81em; line-height: 1.4em;}
+
+/* Posebni fontovi 
+@font-face {
+  font-family:"Miroslav";
+  src:url("fonts/MIROSLN.eot?") 
+  format("eot"),url("fonts/MIROSLN.woff") 
+  format("woff"),url("fonts/MIROSLN.ttf") 
+  format("truetype"),url("fonts/MIROSLN.svg#MiroslavNormal") 
+  format("svg");
+  font-weight:normal;
+  font-style:normal;
+}
+*/
+
+/* footer from  http://codepen.io/rafibomb/pen/fxcut?editors=110 */
+
+.footer {
+margin-top:1em;
+  padding-top:1em;
+  border-top:3px solid #666;  
+}
+
+
+
+
+/* Media queries 
+########################
+########################
+https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
+*/
+
+/* ----------- Laptops Non-Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) {   
+}
+
+}
+
+/* ----------- Laptops Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) { 
+
+}
+
+
+/* ----------- iPhone 4 and 4S ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
+}
+
+/* ----------- iPhone 5 and 5S ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
+}
+
+/* ----------- iPhone 6 ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) { 
+
+}
+
+
+
+/* ----------- Galaxy S3 ----------- */
+
+/* Portrait and Landscape */
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 2) {
+
+}
+
+/* Portrait */
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 2) 
+  and (orientation: portrait) {
+
+}
+
+/* Landscape */
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 2) 
+  and (orientation: landscape) {
+
+}
+
+/* ----------- Galaxy S4 ----------- */
+
+/* Portrait and Landscape */
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) {
+
+}
+
+/* Portrait */
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) 
+  and (orientation: portrait) {
+
+}
+
+/* Landscape */
+@media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) 
+  and (orientation: landscape) {
+
+}
+
+/* ----------- Galaxy S5 ----------- */
+
+/* Portrait and Landscape */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) {
+
+}
+
+/* Portrait */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) 
+  and (orientation: portrait) {
+
+}
+
+/* Landscape */
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 3) 
+  and (orientation: landscape) {
+
+}
+
+
+
+
