@@ -15,10 +15,13 @@ a, h1, h2, h3, h4, h5, h6 {color:#000;}
   
 }
 .header-wrap-small {
-  background-image:url("../images/background-small.jpg"); 
+  background-image:url("../images/background-small.jpg");  
+  background-position: top right;
   background-repeat: no-repeat;
+  position: absolute;
+  z-index: -1;
   width:100%;
-  height:30%;  
+  height:100%;  
 }
 
 .top-bar{background-color:#990000; }

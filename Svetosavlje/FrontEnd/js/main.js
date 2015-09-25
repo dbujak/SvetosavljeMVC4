@@ -7,6 +7,10 @@ svetosavlje.config(['$routeProvider',
         templateUrl: 'views/HomeView.html',
         controller: 'HomeCtrl'
       }).
+      when('/prolog', {
+        templateUrl: 'views/PrologView.html',
+        controller: 'PrologCtrl'
+      }).
       when('/phones/:phoneId', {
         templateUrl: 'partials/phone-detail.html',
         controller: 'PhoneDetailCtrl'
